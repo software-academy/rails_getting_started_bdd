@@ -15,6 +15,12 @@ feature 'Posts' do
     expect(current_path).to eq posts_path
   end
 
+  scenario 'can be created from link on posts page' do
+    visit posts_path
+    click_link 'New post'
+    expect(current_path).to eq new_post_path
+  end
+
   context 'when there are posts' do
     before do
       create :post, title: 'My first post'
@@ -27,5 +33,4 @@ feature 'Posts' do
       expect(page).to have_content('My second post')
     end
   end
-
 end
