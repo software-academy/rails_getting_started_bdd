@@ -14,10 +14,6 @@ Add
    end</code></pre>
 
 
-Remove
-<pre><code></code></pre>
-
-
 Becomes
 <pre><code>     expect(current_path).to eq posts_path
    end

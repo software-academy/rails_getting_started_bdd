@@ -35,14 +35,6 @@ To
 <pre><code>   root &#39;welcome#index&#39;</code></pre>
 
 
-Change
-<pre><code></code></pre>
-
-
-To
-<pre><code></code></pre>
-
-
 Becomes
 <pre><code> Blog::Application.routes.draw do
    # The priority is based upon order of creation: first created -&gt; highest priority.
