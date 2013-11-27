@@ -19,7 +19,14 @@ Remove
 
 
 Becomes
-<pre><code>     expect(current_path).to eq posts_path
+<pre><code>     click_button &#39;Save Post&#39;
+     expect(page).to have_content(&#39;Rails is Awesome!&#39;)
+   end
+&nbsp;
+   scenario &#39;can be accessed from link on home page&#39; do
+     visit root_path
+     click_link &#39;My Blog&#39;
+     expect(current_path).to eq posts_path
    end
 &nbsp;
    scenario &#39;can be created from link on posts page&#39; do
@@ -31,7 +38,12 @@ Becomes
    context &#39;when there are posts&#39; do
      before do
        create :post, title: &#39;My first post&#39;
-@@ -27,5 +33,4 @@ feature &#39;Posts&#39; do
+       create :post, title: &#39;My second post&#39;
+     end
+&nbsp;
+     scenario &#39;can be listed&#39; do
+       visit posts_path
+       expect(page).to have_content(&#39;My first post&#39;)
        expect(page).to have_content(&#39;My second post&#39;)
      end
    end

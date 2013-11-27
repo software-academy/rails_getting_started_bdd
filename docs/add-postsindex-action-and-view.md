@@ -13,7 +13,14 @@ Add
 
 
 Becomes
-<pre><code>     redirect_to @post
+<pre><code>   def new
+   end
+&nbsp;
+   def create
+     @post = Post.new(params[:post].permit(:title, :text))
+&nbsp;
+     @post.save
+     redirect_to @post
    end
 &nbsp;
    def index
@@ -23,6 +30,7 @@ Becomes
    def show
      @post = Post.find(params[:id])
    end
+ end
 </code></pre>
 
 

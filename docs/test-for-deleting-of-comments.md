@@ -21,7 +21,14 @@ Add
 
 
 Becomes
-<pre><code>         expect(response).to redirect_to post_path(my_post)
+<pre><code> describe CommentsController do
+   context &#39;when there is a post&#39; do
+     let(:my_post) { create :post }
+&nbsp;
+     describe &#39;POST #create&#39; do
+       it &quot;redirects to the post&#39;s :show view&quot; do
+         post :create, { post_id: my_post.id, comment: { commenter: &#39;Concerned Person&#39;, body: &#39;Great Post!&#39; } }
+         expect(response).to redirect_to post_path(my_post)
        end
      end
 &nbsp;
@@ -51,7 +58,10 @@ To
 
 
 Becomes
-<pre><code>   factory :comment do
+<pre><code> # Read about factories at https://github.com/thoughtbot/factory_girl
+&nbsp;
+ FactoryGirl.define do
+   factory :comment do
      commenter &quot;MyString&quot;
      body &quot;MyText&quot;
      post
@@ -83,7 +93,8 @@ Add
 
 
 Becomes
-<pre><code>&nbsp;
+<pre><code> require &#39;spec_helper&#39;
+&nbsp;
  feature &#39;Comments&#39; do
    background do
      @comment = build :comment, body: &#39;This is the comment&#39;
@@ -93,7 +104,10 @@ Becomes
    end
 &nbsp;
    scenario &#39;can be added when viewing a post&#39; do
-@@ -13,4 +16,12 @@ feature &#39;Comments&#39; do
+     visit post_path(@post)
+     fill_in &#39;Commenter&#39;, with: &#39;Concerned Citizen&#39;
+     fill_in &#39;Body&#39;, with: &#39;Great post!&#39;
+     click_button &#39;Create Comment&#39;
      expect(current_path).to eq post_path(@post)
      expect(page).to have_content(&#39;Comment: Great post!&#39;)
    end

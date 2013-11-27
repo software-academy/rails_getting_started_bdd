@@ -17,7 +17,14 @@ Add
 
 
 Becomes
-<pre><code>   &lt;p&gt;
+<pre><code>   &lt;/p&gt;
+&nbsp;
+   &lt;p&gt;
+     &lt;%= f.label :text %&gt;&lt;br&gt;
+     &lt;%= f.text_area :text %&gt;
+   &lt;/p&gt;
+&nbsp;
+   &lt;p&gt;
      &lt;%= f.submit %&gt;
    &lt;/p&gt;
 \ No newline at end of file

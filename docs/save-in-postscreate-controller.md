@@ -18,7 +18,9 @@ To
 
 
 Becomes
-<pre><code>   end
+<pre><code> class PostsController &lt; ApplicationController
+   def new
+   end
 &nbsp;
    def create
      @post = Post.new(params[:post])

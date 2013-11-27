@@ -55,6 +55,13 @@ Becomes
    # The priority is based upon order of creation: first created -&gt; highest priority.
    # See how all your routes lay out with &quot;rake routes&quot;.
 &nbsp;
+   # You can have the root of your site routed with &quot;root&quot;
+   # root &#39;welcome#index&#39;
+&nbsp;
+   # Example of regular route:
+   #   get &#39;products/:id&#39; =&gt; &#39;catalog#view&#39;
+&nbsp;
+   # Example of named route that can be invoked with purchase_url(id: product.id)
 </code></pre>
 
 

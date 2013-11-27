@@ -17,7 +17,10 @@ Add
 
 
 Becomes
-<pre><code>     @comment = @post.comments.create(params[:comment].permit(:commenter, :body))
+<pre><code> class CommentsController &lt; ApplicationController
+   def create
+     @post = Post.find(params[:post_id])
+     @comment = @post.comments.create(params[:comment].permit(:commenter, :body))
      redirect_to post_path(@post)
    end
 &nbsp;
@@ -44,6 +47,11 @@ Add
 
 Becomes
 <pre><code> &lt;p&gt;
+   &lt;strong&gt;Commenter:&lt;/strong&gt;
+   &lt;%= comment.commenter %&gt;
+ &lt;/p&gt;
+&nbsp;
+ &lt;p&gt;
    &lt;strong&gt;Comment:&lt;/strong&gt;
    &lt;%= comment.body %&gt;
  &lt;/p&gt;

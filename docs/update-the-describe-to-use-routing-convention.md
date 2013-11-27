@@ -23,7 +23,8 @@ To
 
 
 Becomes
-<pre><code>&nbsp;
+<pre><code> require &#39;spec_helper&#39;
+&nbsp;
  describe PostsController do
 &nbsp;
    describe &#39;GET #new&#39; do
@@ -32,6 +33,8 @@ Becomes
        response.should be_success
      end
    end
+&nbsp;
+ end
 </code></pre>
 
 

@@ -16,7 +16,14 @@ Add
 
 
 Becomes
-<pre><code>     end
+<pre><code>&nbsp;
+ describe PostsController do
+&nbsp;
+   describe &#39;GET #new&#39; do
+     it &quot;returns http success&quot; do
+       get :new
+       response.should be_success
+     end
    end
 &nbsp;
    describe &#39;POST #create&#39; do

@@ -27,7 +27,14 @@ Add
 
 
 Becomes
-<pre><code>     end
+<pre><code>&nbsp;
+ describe PostsController do
+&nbsp;
+   describe &#39;GET #new&#39; do
+     it &quot;returns http success&quot; do
+       get :new
+       expect(response).to be_success
+     end
    end
 &nbsp;
    context &#39;when there is a post&#39; do
@@ -51,6 +58,13 @@ Becomes
    describe &#39;POST #create&#39; do
      context &#39;when the post is valid&#39; do
        it &quot;redirects to the :show view&quot; do
+         post :create, post: { title: &#39;title&#39;, text: &#39;text&#39; }
+         expect(response).to redirect_to assigns[:post]
+       end
+     end
+&nbsp;
+     context &#39;when the post is not valid&#39; do
+       it &quot;renders the :new view&quot; do
 </code></pre>
 
 

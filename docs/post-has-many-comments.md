@@ -19,6 +19,8 @@ Becomes
    describe &#39;#title&#39; do
      it { expect(subject).to have_valid(:title).when &#39;X&#39;*5 }
      it { expect(subject).to_not have_valid(:title).when nil, &#39;&#39;, &#39;X&#39;*4 }
+   end
+ end
 </code></pre>
 
 
