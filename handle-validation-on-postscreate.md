@@ -40,13 +40,6 @@ Becomes
    end
 &nbsp;
    def index
-     @posts = Post.all
-   end
-&nbsp;
-   def show
-     @post = Post.find(params[:id])
-   end
- end
 </code></pre>
 
 
@@ -84,13 +77,6 @@ Becomes
    &lt;p&gt;
      &lt;%= f.label :title %&gt;&lt;br&gt;
      &lt;%= f.text_field :title %&gt;
-   &lt;/p&gt;
-&nbsp;
-   &lt;p&gt;
-     &lt;%= f.label :text %&gt;&lt;br&gt;
-     &lt;%= f.text_area :text %&gt;
-   &lt;/p&gt;
-&nbsp;
 </code></pre>
 
 

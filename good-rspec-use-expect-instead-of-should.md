@@ -23,24 +23,14 @@ To
 
 
 Becomes
-<pre><code> require &#39;spec_helper&#39;
-&nbsp;
- describe PostsController do
-&nbsp;
-   describe &#39;GET #new&#39; do
+<pre><code>   describe &#39;GET #new&#39; do
      it &quot;returns http success&quot; do
        get :new
        expect(response).to be_success
      end
    end
 &nbsp;
-   describe &#39;POST #create&#39; do
-     it &quot;redirects to the :show view&quot; do
-       post :create, post: { title: &#39;title&#39;, text: &#39;text&#39; }
-       expect(response).to redirect_to assigns[:post]
-     end
-   end
-&nbsp;
+@@ -19,7 +19,7 @@ describe PostsController do
    describe &#39;GET #index&#39; do
      it &quot;returns http success&quot; do
        get :index

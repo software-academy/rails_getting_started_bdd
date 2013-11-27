@@ -17,11 +17,7 @@ Add
 
 
 Becomes
-<pre><code> &lt;h1&gt;Listing posts&lt;/h1&gt;
- &lt;%= link_to &#39;New post&#39;, new_post_path %&gt;
-&nbsp;
- &lt;table&gt;
-   &lt;tr&gt;
+<pre><code>   &lt;tr&gt;
      &lt;th&gt;Title&lt;/th&gt;
      &lt;th&gt;Text&lt;/th&gt;
      &lt;th&gt;&lt;/th&gt;
@@ -53,14 +49,7 @@ Add
 
 
 Becomes
-<pre><code> &lt;p&gt;
-   &lt;strong&gt;Title:&lt;/strong&gt;
-   &lt;%= @post.title %&gt;
- &lt;/p&gt;
-&nbsp;
- &lt;p&gt;
-   &lt;strong&gt;Text:&lt;/strong&gt;
-   &lt;%= @post.text %&gt;
+<pre><code>   &lt;%= @post.text %&gt;
  &lt;/p&gt;
 &nbsp;
 \ No newline at end of file

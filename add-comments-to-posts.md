@@ -72,14 +72,7 @@ Add
 
 
 Becomes
-<pre><code> &lt;p&gt;
-   &lt;strong&gt;Title:&lt;/strong&gt;
-   &lt;%= @post.title %&gt;
- &lt;/p&gt;
-&nbsp;
- &lt;p&gt;
-   &lt;strong&gt;Text:&lt;/strong&gt;
-   &lt;%= @post.text %&gt;
+<pre><code>   &lt;%= @post.text %&gt;
  &lt;/p&gt;
 &nbsp;
  &lt;h2&gt;Comments&lt;/h2&gt;

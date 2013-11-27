@@ -17,14 +17,7 @@ Add
 
 
 Becomes
-<pre><code>       response.should be_success
-     end
-   end
-&nbsp;
-   describe &#39;POST #create&#39; do
-     it &quot;redirects to the :show view&quot; do
-       post :create, post: { title: &#39;title&#39;, text: &#39;text&#39; }
-       expect(response).to redirect_to assigns[:post]
+<pre><code>       expect(response).to redirect_to assigns[:post]
      end
    end
 &nbsp;

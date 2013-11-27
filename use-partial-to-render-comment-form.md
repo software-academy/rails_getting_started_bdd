@@ -45,14 +45,7 @@ Add
 
 
 Becomes
-<pre><code>&nbsp;
- &lt;p&gt;
-   &lt;strong&gt;Text:&lt;/strong&gt;
-   &lt;%= @post.text %&gt;
- &lt;/p&gt;
-&nbsp;
- &lt;h2&gt;Comments&lt;/h2&gt;
- &lt;%= render @post.comments %&gt;
+<pre><code> &lt;%= render @post.comments %&gt;
 &nbsp;
  &lt;h2&gt;Add a comment:&lt;/h2&gt;
  &lt;%= render &quot;comments/form&quot; %&gt;

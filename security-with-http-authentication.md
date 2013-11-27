@@ -19,13 +19,6 @@ Becomes
    def new
      @post = Post.new
    end
-&nbsp;
-   def create
-     @post = Post.new(params[:post].permit(:title, :text))
-&nbsp;
-     if @post.save
-       redirect_to @post
-     else
 </code></pre>
 
 

@@ -16,13 +16,6 @@ Becomes
 &nbsp;
  &lt;table&gt;
    &lt;tr&gt;
-     &lt;th&gt;Title&lt;/th&gt;
-     &lt;th&gt;Text&lt;/th&gt;
-   &lt;/tr&gt;
-&nbsp;
-   &lt;% @posts.each do |post| %&gt;
-     &lt;tr&gt;
-       &lt;td&gt;&lt;%= post.title %&gt;&lt;/td&gt;
 </code></pre>
 
 

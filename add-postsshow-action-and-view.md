@@ -14,14 +14,7 @@ Add
 
 
 Becomes
-<pre><code> class PostsController &lt; ApplicationController
-   def new
-   end
-&nbsp;
-   def create
-     @post = Post.new(params[:post].permit(:title, :text))
-&nbsp;
-     @post.save
+<pre><code>     @post.save
      redirect_to @post
    end
 &nbsp;

@@ -28,14 +28,7 @@ Add
 
 
 Becomes
-<pre><code> describe PostsController do
-&nbsp;
-   describe &#39;GET #new&#39; do
-     it &quot;returns http success&quot; do
-       get :new
-       expect(response).to be_success
-     end
-   end
+<pre><code>   end
 &nbsp;
    describe &#39;POST #create&#39; do
      context &#39;when the post is valid&#39; do
@@ -53,13 +46,6 @@ Becomes
      end
    end
 &nbsp;
-   describe &#39;GET #index&#39; do
-     it &quot;returns http success&quot; do
-       get :index
-       expect(response).to be_success
-     end
-&nbsp;
-     it &quot;assigns @posts to Post.all&quot; do
 </code></pre>
 
 

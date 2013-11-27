@@ -26,14 +26,7 @@ Add
 
 
 Becomes
-<pre><code>   def create
-     @post = Post.new(params[:post].permit(:title, :text))
-&nbsp;
-     if @post.save
-       redirect_to @post
-     else
-       render &#39;new&#39;
-     end
+<pre><code>     end
    end
 &nbsp;
    def edit
@@ -43,7 +36,7 @@ Becomes
    def index
      @posts = Post.all
    end
-&nbsp;
+@@ -20,4 +24,14 @@ class PostsController &lt; ApplicationController
    def show
      @post = Post.find(params[:id])
    end

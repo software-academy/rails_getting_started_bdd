@@ -16,8 +16,7 @@ Add
 
 
 Becomes
-<pre><code> require &#39;spec_helper&#39;
-&nbsp;
+<pre><code>&nbsp;
  describe PostsController do
 &nbsp;
    describe &quot;GET &#39;new&#39;&quot; do

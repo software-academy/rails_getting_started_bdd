@@ -64,14 +64,7 @@ To
 
 
 Becomes
-<pre><code> # incrementally modify your database, and then regenerate this schema definition.
- #
- # Note that this schema.rb definition is the authoritative source for your
- # database schema. If you need to create the application database on another
- # system, you should be using db:schema:load, not running all the migrations
- # from scratch. The latter is a flawed and unsustainable approach (the more migrations
- # you&#39;ll amass, the slower it&#39;ll run and the greater likelihood for issues).
- #
+<pre><code> #
  # It&#39;s strongly recommended that you check this file into your version control system.
 &nbsp;
  ActiveRecord::Schema.define(version: 20131106022339) do
@@ -88,12 +81,6 @@ Becomes
 &nbsp;
    create_table &quot;posts&quot;, force: true do |t|
      t.string   &quot;title&quot;
-     t.text     &quot;text&quot;
-     t.datetime &quot;created_at&quot;
-     t.datetime &quot;updated_at&quot;
-   end
-&nbsp;
- end
 </code></pre>
 
 
