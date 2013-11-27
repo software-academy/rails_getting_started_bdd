@@ -8,7 +8,7 @@ Create file `spec/factories/posts.rb`
 
 Add
 <pre><code> # Read about factories at https://github.com/thoughtbot/factory_girl
- 
+&nbsp;
  FactoryGirl.define do
    factory :post do
      title &quot;MyString&quot;

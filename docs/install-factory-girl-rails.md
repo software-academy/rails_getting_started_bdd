@@ -16,7 +16,7 @@ Becomes
    gem &#39;capybara-webkit&#39;
    gem &#39;factory_girl_rails&#39;
  end
- 
+&nbsp;
  # Use ActiveModel has_secure_password
 </code></pre>
 

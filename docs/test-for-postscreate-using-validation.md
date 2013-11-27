@@ -13,7 +13,7 @@ Change
 To
 <pre><code>     expect(current_path).to eq post_path(Post.where(title: &#39;Rails is Awesome!&#39;).first)
    end
- 
+&nbsp;
    scenario &#39;cannot be created without a title&#39; do
      visit new_post_path
      fill_in &#39;Title&#39;, with: &#39;&#39;
@@ -27,14 +27,14 @@ Becomes
      click_button &#39;Save Post&#39;
      expect(current_path).to eq post_path(Post.where(title: &#39;Rails is Awesome!&#39;).first)
    end
- 
+&nbsp;
    scenario &#39;cannot be created without a title&#39; do
      visit new_post_path
      fill_in &#39;Title&#39;, with: &#39;&#39;
      click_button &#39;Save Post&#39;
      expect(page).to have_content(&quot;Title can&#39;t be blank&quot;)
    end
- 
+&nbsp;
    scenario &#39;can get back to list page from new page&#39; do
 </code></pre>
 

@@ -13,10 +13,10 @@ Add
 
 
 Add
-<pre><code> 
+<pre><code>&nbsp;
    def update
      @post = Post.find(params[:id])
- 
+&nbsp;
      if @post.update(params[:post].permit(:title, :text))
        redirect_to @post
      else
@@ -28,11 +28,11 @@ Add
 Becomes
 <pre><code>     end
    end
- 
+&nbsp;
    def edit
      @post = Post.find(params[:id])
    end
- 
+&nbsp;
    def index
      @posts = Post.all
    end
@@ -40,10 +40,10 @@ Becomes
    def show
      @post = Post.find(params[:id])
    end
- 
+&nbsp;
    def update
      @post = Post.find(params[:id])
- 
+&nbsp;
      if @post.update(params[:post].permit(:title, :text))
        redirect_to @post
      else
@@ -58,7 +58,7 @@ Create file `app/views/posts/edit.html.erb`
 
 Add
 <pre><code> &lt;h1&gt;Editing post&lt;/h1&gt;
- 
+&nbsp;
  &lt;%= form_for :post, url: post_path(@post.id), method: :patch do |f| %&gt;
    &lt;% if @post.errors.any? %&gt;
      &lt;div id=&quot;errorExplanation&quot;&gt;
@@ -75,17 +75,17 @@ Add
      &lt;%= f.label :title %&gt;&lt;br&gt;
      &lt;%= f.text_field :title %&gt;
    &lt;/p&gt;
- 
+&nbsp;
    &lt;p&gt;
      &lt;%= f.label :text %&gt;&lt;br&gt;
      &lt;%= f.text_area :text %&gt;
    &lt;/p&gt;
- 
+&nbsp;
    &lt;p&gt;
      &lt;%= f.submit %&gt;
    &lt;/p&gt;
  &lt;% end %&gt;
- 
+&nbsp;
  &lt;%= link_to &#39;Back&#39;, posts_path %&gt;</code></pre>
 
 

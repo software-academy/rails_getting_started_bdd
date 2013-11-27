@@ -1,0 +1,25 @@
+<h1 id='main'>Test for commenting on a post</h1>
+<p>Create file <code>spec/features/comments_spec.rb</code></p>
+
+<p>Add <pre><code> require &#39;spec_helper&#39;
+&nbsp;
+ feature &#39;Comments&#39; do
+   background do
+     @post = create :post
+   end
+&nbsp;
+   scenario &#39;can be added when viewing a post&#39; do
+     visit post_path(@post)
+     fill_in &#39;Commenter&#39;, with: &#39;Concerned Citizen&#39;
+     fill_in &#39;Body&#39;, with: &#39;Great post!&#39;
+     click_button &#39;Create Comment&#39;
+     expect(current_path).to eq post_path(@post)
+     expect(page).to have_content(&#39;Comment: Great post!&#39;)
+   end
+ end</code></pre></p>
+
+<h3 id='additional_resources'>Additional Resources</h3>
+
+<ul>
+<li><a href='https://github.com/stevenhallen/rails_getting_started_bdd/commit/0feb72974ee16d0531553bd17099563dacf159da'>Changes in this step in <code>diff</code> format</a></li>
+</ul>

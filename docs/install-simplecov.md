@@ -17,7 +17,7 @@ Becomes
    gem &#39;simplecov&#39;, require: false
    gem &#39;valid_attribute&#39;
  end
- 
+&nbsp;
 </code></pre>
 
 

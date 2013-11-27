@@ -20,12 +20,12 @@ Becomes
    gem &#39;factory_girl_rails&#39;
    gem &#39;jazz_hands&#39;
  end
- 
+&nbsp;
  group :test do
    gem &#39;launchy&#39;
    gem &#39;valid_attribute&#39;
  end
- 
+&nbsp;
 </code></pre>
 
 
@@ -259,7 +259,7 @@ Becomes
      xpath (2.0.0)
        nokogiri (~&gt; 1.3)
      yard (0.8.7.2)
- 
+&nbsp;
  PLATFORMS
    ruby
 @@ -143,8 +203,10 @@ DEPENDENCIES

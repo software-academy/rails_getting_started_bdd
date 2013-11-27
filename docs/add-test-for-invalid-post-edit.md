@@ -19,7 +19,7 @@ Add
            expect(response).to redirect_to post_path(post)
          end
        end
- 
+&nbsp;
        context &#39;when the post is not valid&#39; do
          it &quot;renders the :new view&quot; do
            patch :update, id: post.id, post: { title: &#39;&#39; }
@@ -29,7 +29,7 @@ Add
 
 Becomes
 <pre><code>     end
- 
+&nbsp;
      describe &#39;PATCH #update&#39; do
        context &#39;when the post is valid&#39; do
          it &quot;redirects to the :show view&quot; do
@@ -37,7 +37,7 @@ Becomes
            expect(response).to redirect_to post_path(post)
          end
        end
- 
+&nbsp;
        context &#39;when the post is not valid&#39; do
          it &quot;renders the :new view&quot; do
            patch :update, id: post.id, post: { title: &#39;&#39; }
@@ -45,7 +45,7 @@ Becomes
          end
        end
      end
- 
+&nbsp;
 </code></pre>
 
 

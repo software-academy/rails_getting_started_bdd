@@ -27,18 +27,18 @@ Add
 
 
 Becomes
-<pre><code> 
+<pre><code>&nbsp;
    context &#39;when there are posts&#39; do
      before do
        @post1 = create :post, title: &#39;My first post&#39;
        @post2 = create :post, title: &#39;My second post&#39;
      end
- 
+&nbsp;
      scenario &#39;can be listed&#39; do
 @@ -46,6 +46,14 @@ feature &#39;Posts&#39; do
        expect(page).to have_content(&#39;My second post&#39;)
      end
- 
+&nbsp;
      scenario &#39;can be edited&#39; do
        visit edit_post_path(@post1)
        fill_in &#39;Title&#39;, with: &#39;My first post has a new title&#39;
@@ -46,7 +46,7 @@ Becomes
        expect(current_path).to eq post_path(@post1)
        expect(page).to have_content(&#39;My first post has a new title&#39;)
      end
- 
+&nbsp;
      scenario &#39;can get back to list page from show page&#39; do
        visit post_path(Post.first)
        click_link &#39;Back&#39;

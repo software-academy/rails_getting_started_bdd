@@ -23,7 +23,7 @@ Becomes
      &lt;th&gt;&lt;/th&gt;
      &lt;th&gt;&lt;/th&gt;
    &lt;/tr&gt;
- 
+&nbsp;
    &lt;% @posts.each do |post| %&gt;
      &lt;tr&gt;
        &lt;td&gt;&lt;%= post.title %&gt;&lt;/td&gt;
@@ -51,7 +51,7 @@ Add
 Becomes
 <pre><code>   &lt;%= @post.text %&gt;
  &lt;/p&gt;
- 
+&nbsp;
 \ No newline at end of file
  &lt;%= link_to &#39;Back&#39;, posts_path %&gt;
  | &lt;%= link_to &#39;Edit&#39;, edit_post_path(@post) %&gt;

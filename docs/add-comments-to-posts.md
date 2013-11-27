@@ -48,13 +48,13 @@ Add
      &lt;strong&gt;Commenter:&lt;/strong&gt;
      &lt;%= comment.commenter %&gt;
    &lt;/p&gt;
- 
+&nbsp;
    &lt;p&gt;
      &lt;strong&gt;Comment:&lt;/strong&gt;
      &lt;%= comment.body %&gt;
    &lt;/p&gt;
  &lt;% end %&gt;
- 
+&nbsp;
  &lt;h2&gt;Add a comment:&lt;/h2&gt;
  &lt;%= form_for([@post, @post.comments.build]) do |f| %&gt;
    &lt;p&gt;
@@ -74,20 +74,20 @@ Add
 Becomes
 <pre><code>   &lt;%= @post.text %&gt;
  &lt;/p&gt;
- 
+&nbsp;
  &lt;h2&gt;Comments&lt;/h2&gt;
  &lt;% @post.comments.each do |comment| %&gt;
    &lt;p&gt;
      &lt;strong&gt;Commenter:&lt;/strong&gt;
      &lt;%= comment.commenter %&gt;
    &lt;/p&gt;
- 
+&nbsp;
    &lt;p&gt;
      &lt;strong&gt;Comment:&lt;/strong&gt;
      &lt;%= comment.body %&gt;
    &lt;/p&gt;
  &lt;% end %&gt;
- 
+&nbsp;
  &lt;h2&gt;Add a comment:&lt;/h2&gt;
  &lt;%= form_for([@post, @post.comments.build]) do |f| %&gt;
    &lt;p&gt;
@@ -102,7 +102,7 @@ Becomes
      &lt;%= f.submit %&gt;
    &lt;/p&gt;
  &lt;% end %&gt;
- 
+&nbsp;
  &lt;%= link_to &#39;Back&#39;, posts_path %&gt;
  | &lt;%= link_to &#39;Edit&#39;, edit_post_path(@post) %&gt;
 \ No newline at end of file
@@ -126,7 +126,7 @@ Becomes
    resources :posts do
      resources :comments
    end
- 
+&nbsp;
    root &#39;welcome#index&#39;
  end
 </code></pre>
@@ -136,11 +136,11 @@ Create file `spec/controllers/comments_controller_spec.rb`
 
 Add
 <pre><code> require &#39;spec_helper&#39;
- 
+&nbsp;
  describe CommentsController do
    context &#39;when there is a post&#39; do
      let(:my_post) { create :post }
- 
+&nbsp;
      describe &#39;POST #create&#39; do
        it &quot;redirects to the post&#39;s :show view&quot; do
          post :create, { post_id: my_post.id, comment: { commenter: &#39;Concerned Person&#39;, body: &#39;Great Post!&#39; } }
@@ -155,7 +155,7 @@ Create file `spec/helpers/comments_helper_spec.rb`
 
 Add
 <pre><code> require &#39;spec_helper&#39;
- 
+&nbsp;
  # Specs in this file have access to a helper object that includes
  # the CommentsHelper. For example:
  #

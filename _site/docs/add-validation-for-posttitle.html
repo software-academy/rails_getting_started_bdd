@@ -1,0 +1,17 @@
+<h1 id='main'>Add validation for Post#title</h1>
+<p>Update file <code>app/models/post.rb</code></p>
+
+<p>Add <pre><code>   validates :title, presence: true,
+                     length: { minimum: 5 }</code></pre></p>
+
+<p>Becomes <pre><code> class Post &lt; ActiveRecord::Base
+   validates :title, presence: true,
+                     length: { minimum: 5 }
+ end
+</code></pre></p>
+
+<h3 id='additional_resources'>Additional Resources</h3>
+
+<ul>
+<li><a href='https://github.com/stevenhallen/rails_getting_started_bdd/commit/04c16ce742179e2a64a0af07fcb8ef99892bd882'>Changes in this step in <code>diff</code> format</a></li>
+</ul>

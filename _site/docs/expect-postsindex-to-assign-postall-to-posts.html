@@ -1,0 +1,25 @@
+<p><h1 id='main'>Expect posts#index to assign Post.all to @posts</h1> Update file <code>spec/controllers/posts_controller_spec.rb</code></p>
+
+<p>Add <pre><code>&nbsp;
+     it &quot;assigns @posts to Post.all&quot; do
+       get :index
+       expect(assigns[:posts]).to eq Post.all
+     end</code></pre></p>
+
+<p>Becomes <pre><code>       get :index
+       expect(response).to be_success
+     end
+&nbsp;
+     it &quot;assigns @posts to Post.all&quot; do
+       get :index
+       expect(assigns[:posts]).to eq Post.all
+     end
+   end
+ end
+</code></pre></p>
+
+<h3 id='additional_resources'>Additional Resources</h3>
+
+<ul>
+<li><a href='https://github.com/stevenhallen/rails_getting_started_bdd/commit/7b456dea5eab32097179722d9e47cd14c450bb05'>Changes in this step in <code>diff</code> format</a></li>
+</ul>

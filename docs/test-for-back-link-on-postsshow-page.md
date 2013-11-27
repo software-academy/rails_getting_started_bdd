@@ -7,7 +7,7 @@ title: Test for Back link on posts#show page
 Update file `spec/features/posts_spec.rb`
 
 Add
-<pre><code> 
+<pre><code>&nbsp;
      scenario &#39;can get back to list page from show page&#39; do
        visit post_path(Post.first)
        click_link &#39;Back&#39;
@@ -19,7 +19,7 @@ Becomes
 <pre><code>       expect(page).to have_content(&#39;My first post&#39;)
        expect(page).to have_content(&#39;My second post&#39;)
      end
- 
+&nbsp;
      scenario &#39;can get back to list page from show page&#39; do
        visit post_path(Post.first)
        click_link &#39;Back&#39;

@@ -12,7 +12,7 @@ Remove
 
 Add
 <pre><code> &lt;/p&gt;
- 
+&nbsp;
  &lt;%= link_to &#39;Back&#39;, posts_path %&gt;</code></pre>
 
 
@@ -22,7 +22,7 @@ Becomes
    &lt;%= @post.text %&gt;
 \ No newline at end of file
  &lt;/p&gt;
- 
+&nbsp;
  &lt;%= link_to &#39;Back&#39;, posts_path %&gt;
 \ No newline at end of file
 </code></pre>

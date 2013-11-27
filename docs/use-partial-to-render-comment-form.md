@@ -46,10 +46,10 @@ Add
 
 Becomes
 <pre><code> &lt;%= render @post.comments %&gt;
- 
+&nbsp;
  &lt;h2&gt;Add a comment:&lt;/h2&gt;
  &lt;%= render &quot;comments/form&quot; %&gt;
- 
+&nbsp;
  &lt;%= link_to &#39;Back&#39;, posts_path %&gt;
  | &lt;%= link_to &#39;Edit&#39;, edit_post_path(@post) %&gt;
 \ No newline at end of file

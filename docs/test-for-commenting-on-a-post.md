@@ -8,12 +8,12 @@ Create file `spec/features/comments_spec.rb`
 
 Add
 <pre><code> require &#39;spec_helper&#39;
- 
+&nbsp;
  feature &#39;Comments&#39; do
    background do
      @post = create :post
    end
- 
+&nbsp;
    scenario &#39;can be added when viewing a post&#39; do
      visit post_path(@post)
      fill_in &#39;Commenter&#39;, with: &#39;Concerned Citizen&#39;

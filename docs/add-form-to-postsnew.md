@@ -12,18 +12,18 @@ Remove
 
 Add
 <pre><code> &lt;h1&gt;New Post&lt;/h1&gt;
- 
+&nbsp;
  &lt;%= form_for :post do |f| %&gt;
    &lt;p&gt;
      &lt;%= f.label :title %&gt;&lt;br&gt;
      &lt;%= f.text_field :title %&gt;
    &lt;/p&gt;
- 
+&nbsp;
    &lt;p&gt;
      &lt;%= f.label :text %&gt;&lt;br&gt;
      &lt;%= f.text_area :text %&gt;
    &lt;/p&gt;
- 
+&nbsp;
    &lt;p&gt;
      &lt;%= f.submit %&gt;
    &lt;/p&gt;
@@ -33,18 +33,18 @@ Add
 Becomes
 <pre><code>\ No newline at end of file
  &lt;h1&gt;New Post&lt;/h1&gt;
- 
+&nbsp;
  &lt;%= form_for :post do |f| %&gt;
    &lt;p&gt;
      &lt;%= f.label :title %&gt;&lt;br&gt;
      &lt;%= f.text_field :title %&gt;
    &lt;/p&gt;
- 
+&nbsp;
    &lt;p&gt;
      &lt;%= f.label :text %&gt;&lt;br&gt;
      &lt;%= f.text_area :text %&gt;
    &lt;/p&gt;
- 
+&nbsp;
    &lt;p&gt;
      &lt;%= f.submit %&gt;
    &lt;/p&gt;

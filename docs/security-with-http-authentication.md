@@ -7,15 +7,15 @@ title: Security with HTTP Authentication
 Update file `app/controllers/posts_controller.rb`
 
 Add
-<pre><code> 
+<pre><code>&nbsp;
    http_basic_authenticate_with name: &quot;dhh&quot;, password: &quot;secret&quot;, except: [:index, :show]</code></pre>
 
 
 Becomes
 <pre><code> class PostsController &lt; ApplicationController
- 
+&nbsp;
    http_basic_authenticate_with name: &quot;dhh&quot;, password: &quot;secret&quot;, except: [:index, :show]
- 
+&nbsp;
    def new
      @post = Post.new
    end

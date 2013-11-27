@@ -29,7 +29,7 @@ Becomes
        expect(response).to be_success
      end
    end
- 
+&nbsp;
 @@ -19,7 +19,7 @@ describe PostsController do
    describe &#39;GET #index&#39; do
      it &quot;returns http success&quot; do

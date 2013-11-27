@@ -13,7 +13,7 @@ Add
 Becomes
 <pre><code> &lt;h1&gt;Listing posts&lt;/h1&gt;
  &lt;%= link_to &#39;New post&#39;, new_post_path %&gt;
- 
+&nbsp;
  &lt;table&gt;
    &lt;tr&gt;
 </code></pre>

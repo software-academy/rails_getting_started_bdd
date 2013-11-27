@@ -11,7 +11,7 @@ Add
    &lt;strong&gt;Commenter:&lt;/strong&gt;
    &lt;%= comment.commenter %&gt;
  &lt;/p&gt;
- 
+&nbsp;
  &lt;p&gt;
    &lt;strong&gt;Comment:&lt;/strong&gt;
    &lt;%= comment.body %&gt;
@@ -26,7 +26,7 @@ Remove
      &lt;strong&gt;Commenter:&lt;/strong&gt;
      &lt;%= comment.commenter %&gt;
    &lt;/p&gt;
- 
+&nbsp;
    &lt;p&gt;
      &lt;strong&gt;Comment:&lt;/strong&gt;
      &lt;%= comment.body %&gt;
@@ -40,10 +40,10 @@ Add
 
 Becomes
 <pre><code> &lt;/p&gt;
- 
+&nbsp;
  &lt;h2&gt;Comments&lt;/h2&gt;
  &lt;%= render @post.comments %&gt;
- 
+&nbsp;
  &lt;h2&gt;Add a comment:&lt;/h2&gt;
  &lt;%= form_for([@post, @post.comments.build]) do |f| %&gt;
 </code></pre>

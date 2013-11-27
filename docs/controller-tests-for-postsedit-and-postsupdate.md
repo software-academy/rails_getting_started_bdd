@@ -9,14 +9,14 @@ Update file `spec/controllers/posts_controller_spec.rb`
 Add
 <pre><code>   context &#39;when there is a post&#39; do
      let(:post) { create :post }
- 
+&nbsp;
      describe &#39;GET #edit&#39; do
        it &quot;returns http success&quot; do
          get :edit, id: post.id
          expect(response).to be_success
        end
      end
- 
+&nbsp;
      describe &#39;PATCH #update&#39; do
        it &quot;redirects to the :show view&quot; do
          patch :update, id: post.id, post: { title: &#39;change it&#39; }
@@ -29,17 +29,17 @@ Add
 Becomes
 <pre><code>     end
    end
- 
+&nbsp;
    context &#39;when there is a post&#39; do
      let(:post) { create :post }
- 
+&nbsp;
      describe &#39;GET #edit&#39; do
        it &quot;returns http success&quot; do
          get :edit, id: post.id
          expect(response).to be_success
        end
      end
- 
+&nbsp;
      describe &#39;PATCH #update&#39; do
        it &quot;redirects to the :show view&quot; do
          patch :update, id: post.id, post: { title: &#39;change it&#39; }
@@ -47,7 +47,7 @@ Becomes
        end
      end
    end
- 
+&nbsp;
    describe &#39;POST #create&#39; do
      context &#39;when the post is valid&#39; do
        it &quot;redirects to the :show view&quot; do

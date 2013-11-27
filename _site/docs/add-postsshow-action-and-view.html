@@ -1,0 +1,35 @@
+<h1 id='main'>Add posts#show action and view</h1>
+<p>Update file <code>app/controllers/posts_controller.rb</code></p>
+
+<p>Add <pre><code>&nbsp;
+   def show
+     @post = Post.find(params[:id])
+   end</code></pre></p>
+
+<p>Becomes <pre><code>     @post.save
+     redirect_to @post
+   end
+&nbsp;
+   def show
+     @post = Post.find(params[:id])
+   end
+ end
+</code></pre></p>
+
+<p>Create file <code>app/views/posts/show.html.erb</code></p>
+
+<p>Add <pre><code> &lt;p&gt;
+   &lt;strong&gt;Title:&lt;/strong&gt;
+   &lt;%= @post.title %&gt;
+ &lt;/p&gt;
+&nbsp;
+ &lt;p&gt;
+   &lt;strong&gt;Text:&lt;/strong&gt;
+   &lt;%= @post.text %&gt;
+ &lt;/p&gt;</code></pre></p>
+
+<h3 id='additional_resources'>Additional Resources</h3>
+
+<ul>
+<li><a href='https://github.com/stevenhallen/rails_getting_started_bdd/commit/e8971cd13d0217537f24addfb2d9d319b1280d45'>Changes in this step in <code>diff</code> format</a></li>
+</ul>

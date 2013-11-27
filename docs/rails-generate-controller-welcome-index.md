@@ -54,7 +54,7 @@ Becomes
    get &quot;welcome/index&quot;
    # The priority is based upon order of creation: first created -&gt; highest priority.
    # See how all your routes lay out with &quot;rake routes&quot;.
- 
+&nbsp;
 </code></pre>
 
 
@@ -62,16 +62,16 @@ Create file `spec/controllers/welcome_controller_spec.rb`
 
 Add
 <pre><code> require &#39;spec_helper&#39;
- 
+&nbsp;
  describe WelcomeController do
- 
+&nbsp;
    describe &quot;GET &#39;index&#39;&quot; do
      it &quot;returns http success&quot; do
        get &#39;index&#39;
        response.should be_success
      end
    end
- 
+&nbsp;
  end</code></pre>
 
 
@@ -79,7 +79,7 @@ Create file `spec/helpers/welcome_helper_spec.rb`
 
 Add
 <pre><code> require &#39;spec_helper&#39;
- 
+&nbsp;
  # Specs in this file have access to a helper object that includes
  # the WelcomeHelper. For example:
  #
@@ -99,7 +99,7 @@ Create file `spec/views/welcome/index.html.erb_spec.rb`
 
 Add
 <pre><code> require &#39;spec_helper&#39;
- 
+&nbsp;
  describe &quot;welcome/index.html.erb&quot; do
    pending &quot;add some examples to (or delete) #{__FILE__}&quot;
  end</code></pre>

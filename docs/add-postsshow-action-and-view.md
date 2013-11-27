@@ -7,7 +7,7 @@ title: Add posts#show action and view
 Update file `app/controllers/posts_controller.rb`
 
 Add
-<pre><code> 
+<pre><code>&nbsp;
    def show
      @post = Post.find(params[:id])
    end</code></pre>
@@ -17,7 +17,7 @@ Becomes
 <pre><code>     @post.save
      redirect_to @post
    end
- 
+&nbsp;
    def show
      @post = Post.find(params[:id])
    end
@@ -32,7 +32,7 @@ Add
    &lt;strong&gt;Title:&lt;/strong&gt;
    &lt;%= @post.title %&gt;
  &lt;/p&gt;
- 
+&nbsp;
  &lt;p&gt;
    &lt;strong&gt;Text:&lt;/strong&gt;
    &lt;%= @post.text %&gt;

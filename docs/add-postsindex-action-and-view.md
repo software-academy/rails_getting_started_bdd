@@ -15,11 +15,11 @@ Add
 Becomes
 <pre><code>     redirect_to @post
    end
- 
+&nbsp;
    def index
      @posts = Post.all
    end
- 
+&nbsp;
    def show
      @post = Post.find(params[:id])
    end
@@ -30,13 +30,13 @@ Create file `app/views/posts/index.html.erb`
 
 Add
 <pre><code> &lt;h1&gt;Listing posts&lt;/h1&gt;
- 
+&nbsp;
  &lt;table&gt;
    &lt;tr&gt;
      &lt;th&gt;Title&lt;/th&gt;
      &lt;th&gt;Text&lt;/th&gt;
    &lt;/tr&gt;
- 
+&nbsp;
    &lt;% @posts.each do |post| %&gt;
      &lt;tr&gt;
        &lt;td&gt;&lt;%= post.title %&gt;&lt;/td&gt;

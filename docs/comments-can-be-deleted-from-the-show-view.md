@@ -7,7 +7,7 @@ title: Comments can be deleted from the show view
 Update file `app/controllers/comments_controller.rb`
 
 Add
-<pre><code> 
+<pre><code>&nbsp;
    def destroy
      @post = Post.find(params[:post_id])
      @comment = @post.comments.find(params[:id])
@@ -20,7 +20,7 @@ Becomes
 <pre><code>     @comment = @post.comments.create(params[:comment].permit(:commenter, :body))
      redirect_to post_path(@post)
    end
- 
+&nbsp;
    def destroy
      @post = Post.find(params[:post_id])
      @comment = @post.comments.find(params[:id])
@@ -35,7 +35,7 @@ Update file `app/views/comments/_comment.html.erb`
 
 Add
 <pre><code> &lt;/p&gt;
- 
+&nbsp;
  &lt;p&gt;
    &lt;%= link_to &#39;Destroy Comment&#39;, [comment.post, comment],
                 method: :delete,
@@ -47,7 +47,7 @@ Becomes
    &lt;strong&gt;Comment:&lt;/strong&gt;
    &lt;%= comment.body %&gt;
  &lt;/p&gt;
- 
+&nbsp;
  &lt;p&gt;
    &lt;%= link_to &#39;Destroy Comment&#39;, [comment.post, comment],
                 method: :delete,

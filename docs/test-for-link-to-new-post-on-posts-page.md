@@ -21,13 +21,13 @@ Remove
 Becomes
 <pre><code>     expect(current_path).to eq posts_path
    end
- 
+&nbsp;
    scenario &#39;can be created from link on posts page&#39; do
      visit posts_path
      click_link &#39;New post&#39;
      expect(current_path).to eq new_post_path
    end
- 
+&nbsp;
    context &#39;when there are posts&#39; do
      before do
        create :post, title: &#39;My first post&#39;

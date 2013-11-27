@@ -29,7 +29,7 @@ Becomes
 <pre><code> # This file is copied to spec/ when you run &#39;rails generate rspec:install&#39;
  require &#39;simplecov&#39;
  SimpleCov.start
- 
+&nbsp;
  ENV[&quot;RAILS_ENV&quot;] ||= &#39;test&#39;
  require File.expand_path(&quot;../../config/environment&quot;, __FILE__)
  require &#39;rspec/rails&#39;

@@ -23,9 +23,9 @@ To
 
 
 Becomes
-<pre><code> 
+<pre><code>&nbsp;
  describe PostsController do
- 
+&nbsp;
    describe &#39;GET #new&#39; do
      it &quot;returns http success&quot; do
        get :new

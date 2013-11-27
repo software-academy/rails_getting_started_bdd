@@ -10,7 +10,7 @@ Add
 <pre><code>   def destroy
      @post = Post.find(params[:id])
      @post.destroy
- 
+&nbsp;
      redirect_to posts_path
    end</code></pre>
 
@@ -18,14 +18,14 @@ Add
 Becomes
 <pre><code>     end
    end
- 
+&nbsp;
    def destroy
      @post = Post.find(params[:id])
      @post.destroy
- 
+&nbsp;
      redirect_to posts_path
    end
- 
+&nbsp;
    def edit
      @post = Post.find(params[:id])
    end

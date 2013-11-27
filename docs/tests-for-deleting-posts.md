@@ -7,7 +7,7 @@ title: Tests for deleting posts
 Update file `spec/controllers/posts_controller_spec.rb`
 
 Add
-<pre><code> 
+<pre><code>&nbsp;
      describe &#39;DELETE #destroy&#39; do
        it &quot;redirects to the :index view&quot; do
          delete :destroy, id: post.id
@@ -20,7 +20,7 @@ Becomes
 <pre><code>         expect(response).to redirect_to post_path(post)
        end
      end
- 
+&nbsp;
      describe &#39;DELETE #destroy&#39; do
        it &quot;redirects to the :index view&quot; do
          delete :destroy, id: post.id
@@ -28,7 +28,7 @@ Becomes
        end
      end
    end
- 
+&nbsp;
    describe &#39;POST #create&#39; do
 </code></pre>
 
@@ -50,7 +50,7 @@ Add
 Becomes
 <pre><code>       @post2 = create :post, title: &#39;My second post&#39;
      end
- 
+&nbsp;
      scenario &#39;can be deleted from link on posts page&#39;, js: true do
        visit posts_path
        within &#39;tr:last-child&#39; do
@@ -60,7 +60,7 @@ Becomes
          expect(page).not_to have_content(&#39;My second post&#39;)
        end
      end
- 
+&nbsp;
      scenario &#39;can be edited from link on posts page&#39; do
        visit posts_path
        within &#39;tr:last-child&#39; do

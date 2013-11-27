@@ -19,7 +19,7 @@ Becomes
    # examples within a transaction, remove the following line or assign false
    # instead of true.
    config.use_transactional_fixtures = false
- 
+&nbsp;
    # If true, the base class of anonymous controllers will be inferred
    # automatically. This will be the default behavior in future versions of
 </code></pre>
@@ -33,7 +33,7 @@ Add
      DatabaseCleaner.strategy = example.metadata[:js] ? :truncation : :transaction
      DatabaseCleaner.start
    end
- 
+&nbsp;
    config.after(:each) do
      DatabaseCleaner.clean
    end

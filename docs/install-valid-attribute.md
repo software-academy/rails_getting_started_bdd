@@ -15,14 +15,14 @@ Add
 Becomes
 <pre><code>   gem &#39;factory_girl_rails&#39;
  end
- 
+&nbsp;
  group :test do
    gem &#39;valid_attribute&#39;
  end
- 
+&nbsp;
  # Use ActiveModel has_secure_password
  # gem &#39;bcrypt-ruby&#39;, &#39;~&gt; 3.0.0&#39;
- 
+&nbsp;
 </code></pre>
 
 
@@ -43,7 +43,7 @@ Becomes
      valid_attribute (1.3.1)
      xpath (2.0.0)
        nokogiri (~&gt; 1.3)
- 
+&nbsp;
 @@ -151,3 +152,4 @@ DEPENDENCIES
    sqlite3
    turbolinks

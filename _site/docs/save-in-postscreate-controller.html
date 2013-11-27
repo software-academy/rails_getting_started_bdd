@@ -1,0 +1,26 @@
+<h1 id='main'>Save in posts#create controller</h1>
+<p>Update file <code>app/controllers/posts_controller.rb</code></p>
+
+<p>Change <pre><code>     render text: params[:post].inspect</code></pre></p>
+
+<p>To <pre><code>     @post = Post.new(params[:post])
+&nbsp;
+     @post.save
+     redirect_to action: :show, id: @post.id</code></pre></p>
+
+<p>Becomes <pre><code>   end
+&nbsp;
+   def create
+     @post = Post.new(params[:post])
+&nbsp;
+     @post.save
+     redirect_to action: :show, id: @post.id
+   end
+ end
+</code></pre></p>
+
+<h3 id='additional_resources'>Additional Resources</h3>
+
+<ul>
+<li><a href='https://github.com/stevenhallen/rails_getting_started_bdd/commit/9967c91b6c35b45df35b6b768092eb24bed897bc'>Changes in this step in <code>diff</code> format</a></li>
+</ul>

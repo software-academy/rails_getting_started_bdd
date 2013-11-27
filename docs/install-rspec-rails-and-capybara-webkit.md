@@ -16,15 +16,15 @@ Add
 Becomes
 <pre><code>   gem &#39;sdoc&#39;, require: false
  end
- 
+&nbsp;
  group :development, :test do
    gem &#39;rspec-rails&#39;
    gem &#39;capybara-webkit&#39;
  end
- 
+&nbsp;
  # Use ActiveModel has_secure_password
  # gem &#39;bcrypt-ruby&#39;, &#39;~&gt; 3.0.0&#39;
- 
+&nbsp;
 </code></pre>
 
 
@@ -142,10 +142,10 @@ Becomes
        json (&gt;= 1.8.0)
      xpath (2.0.0)
        nokogiri (~&gt; 1.3)
- 
+&nbsp;
  PLATFORMS
    ruby
- 
+&nbsp;
  DEPENDENCIES
    capybara-webkit
    coffee-rails (~&gt; 4.0.0)

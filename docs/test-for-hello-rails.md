@@ -8,7 +8,7 @@ Create file `spec/features/hello_world_spec.rb`
 
 Add
 <pre><code> require &#39;spec_helper&#39;
- 
+&nbsp;
  feature &#39;The world&#39; do
    scenario &#39;sees Hello, Rails!&#39; do
      visit &#39;/&#39;

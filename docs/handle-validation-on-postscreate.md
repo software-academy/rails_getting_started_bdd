@@ -28,17 +28,17 @@ Becomes
    def new
      @post = Post.new
    end
- 
+&nbsp;
    def create
      @post = Post.new(params[:post].permit(:title, :text))
- 
+&nbsp;
      if @post.save
        redirect_to @post
      else
        render &#39;new&#39;
      end
    end
- 
+&nbsp;
    def index
 </code></pre>
 
@@ -61,7 +61,7 @@ Add
 
 Becomes
 <pre><code> &lt;h1&gt;New Post&lt;/h1&gt;
- 
+&nbsp;
  &lt;%= form_for :post, url: posts_path do |f| %&gt;
    &lt;% if @post.errors.any? %&gt;
      &lt;div id=&quot;errorExplanation&quot;&gt;

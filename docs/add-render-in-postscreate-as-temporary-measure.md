@@ -7,7 +7,7 @@ title: Add render in posts#create as temporary measure
 Update file `app/controllers/posts_controller.rb`
 
 Add
-<pre><code> 
+<pre><code>&nbsp;
    def create
      render text: params[:post].inspect
    end</code></pre>
@@ -17,7 +17,7 @@ Becomes
 <pre><code> class PostsController &lt; ApplicationController
    def new
    end
- 
+&nbsp;
    def create
      render text: params[:post].inspect
    end

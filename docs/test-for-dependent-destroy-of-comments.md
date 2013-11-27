@@ -16,10 +16,10 @@ To
 
 Becomes
 <pre><code> require &#39;spec_helper&#39;
- 
+&nbsp;
  describe Post do
    it { should have_many(:comments).dependent(:destroy) }
- 
+&nbsp;
    describe &#39;#title&#39; do
      it { expect(subject).to have_valid(:title).when &#39;X&#39;*5 }
 </code></pre>

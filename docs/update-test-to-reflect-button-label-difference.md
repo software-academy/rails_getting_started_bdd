@@ -37,14 +37,14 @@ Becomes
      click_button &#39;Create Post&#39;
      expect(current_path).to eq post_path(Post.where(title: &#39;Rails is Awesome!&#39;).first)
    end
- 
+&nbsp;
    scenario &#39;cannot be created without a title&#39; do
      visit new_post_path
      fill_in &#39;Title&#39;, with: &#39;&#39;
      click_button &#39;Create Post&#39;
      expect(page).to have_content(&quot;Title can&#39;t be blank&quot;)
    end
- 
+&nbsp;
 @@ -65,7 +65,7 @@ feature &#39;Posts&#39; do
      scenario &#39;can be edited&#39; do
        visit edit_post_path(@post1)

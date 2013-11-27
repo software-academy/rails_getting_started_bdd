@@ -1,0 +1,33 @@
+<h1 id='main'>Good RSpec, use expect instead of should</h1>
+<p>Update file <code>spec/controllers/posts_controller_spec.rb</code></p>
+
+<p>Change <pre><code>       response.should be_success</code></pre></p>
+
+<p>To <pre><code>       expect(response).to be_success</code></pre></p>
+
+<p>Change <pre><code>       response.should be_success</code></pre></p>
+
+<p>To <pre><code>       expect(response).to be_success</code></pre></p>
+
+<p>Becomes <pre><code>   describe &#39;GET #new&#39; do
+     it &quot;returns http success&quot; do
+       get :new
+       expect(response).to be_success
+     end
+   end
+&nbsp;
+@@ -19,7 +19,7 @@ describe PostsController do
+   describe &#39;GET #index&#39; do
+     it &quot;returns http success&quot; do
+       get :index
+       expect(response).to be_success
+     end
+   end
+ end
+</code></pre></p>
+
+<h3 id='additional_resources'>Additional Resources</h3>
+
+<ul>
+<li><a href='https://github.com/stevenhallen/rails_getting_started_bdd/commit/be54eb69ef1a3179bf7b36344de9c7a3759824ea'>Changes in this step in <code>diff</code> format</a></li>
+</ul>

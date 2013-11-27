@@ -7,7 +7,7 @@ title: Controller test for posts#index
 Update file `spec/controllers/posts_controller_spec.rb`
 
 Add
-<pre><code> 
+<pre><code>&nbsp;
    describe &#39;GET #index&#39; do
      it &quot;returns http success&quot; do
        get :index
@@ -20,7 +20,7 @@ Becomes
 <pre><code>       expect(response).to redirect_to assigns[:post]
      end
    end
- 
+&nbsp;
    describe &#39;GET #index&#39; do
      it &quot;returns http success&quot; do
        get :index

@@ -16,16 +16,16 @@ Add
 
 
 Becomes
-<pre><code> 
+<pre><code>&nbsp;
  describe PostsController do
- 
+&nbsp;
    describe &quot;GET &#39;new&#39;&quot; do
      it &quot;returns http success&quot; do
        get &#39;new&#39;
        response.should be_success
      end
    end
- 
+&nbsp;
  end
 </code></pre>
 

@@ -14,7 +14,7 @@ Add
          expect(current_path).to eq edit_post_path(@post2)
        end
      end
- 
+&nbsp;
      scenario &#39;can be viewed from link on posts page&#39; do
        visit posts_path
        within &#39;tr:last-child&#39; do
@@ -25,7 +25,7 @@ Add
 
 
 Add
-<pre><code> 
+<pre><code>&nbsp;
      scenario &#39;can be edited from show page&#39; do
        visit post_path(Post.first)
        click_link &#39;Edit&#39;
@@ -36,7 +36,7 @@ Add
 Becomes
 <pre><code>       @post2 = create :post, title: &#39;My second post&#39;
      end
- 
+&nbsp;
      scenario &#39;can be edited from link on posts page&#39; do
        visit posts_path
        within &#39;tr:last-child&#39; do
@@ -44,7 +44,7 @@ Becomes
          expect(current_path).to eq edit_post_path(@post2)
        end
      end
- 
+&nbsp;
      scenario &#39;can be viewed from link on posts page&#39; do
        visit posts_path
        within &#39;tr:last-child&#39; do
@@ -52,7 +52,7 @@ Becomes
          expect(current_path).to eq post_path(@post2)
        end
      end
- 
+&nbsp;
      scenario &#39;can be listed&#39; do
        visit posts_path
        expect(page).to have_content(&#39;My first post&#39;)
@@ -60,7 +60,7 @@ Becomes
        click_link &#39;Back&#39;
        expect(current_path).to eq posts_path
      end
- 
+&nbsp;
      scenario &#39;can be edited from show page&#39; do
        visit post_path(Post.first)
        click_link &#39;Edit&#39;

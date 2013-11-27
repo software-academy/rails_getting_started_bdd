@@ -16,7 +16,7 @@ To
 
 Becomes
 <pre><code> &lt;h1&gt;New Post&lt;/h1&gt;
- 
+&nbsp;
  &lt;%= form_for :post, url: posts_path do |f| %&gt;
    &lt;p&gt;
      &lt;%= f.label :title %&gt;&lt;br&gt;

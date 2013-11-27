@@ -8,7 +8,7 @@ Create file `spec/features/posts_spec.rb`
 
 Add
 <pre><code> require &#39;spec_helper&#39;
- 
+&nbsp;
  feature &#39;Posts&#39; do
    scenario &#39;can be created&#39; do
      visit new_post_path

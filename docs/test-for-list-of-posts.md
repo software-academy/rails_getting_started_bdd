@@ -7,13 +7,13 @@ title: Test for list of posts
 Update file `spec/features/posts_spec.rb`
 
 Add
-<pre><code> 
+<pre><code>&nbsp;
    context &#39;when there are posts&#39; do
      before do
        create :post, title: &#39;My first post&#39;
        create :post, title: &#39;My second post&#39;
      end
- 
+&nbsp;
      scenario &#39;can be listed&#39; do
        visit posts_path
        expect(page).to have_content(&#39;My first post&#39;)
@@ -26,20 +26,20 @@ Becomes
 <pre><code>     click_button &#39;Save Post&#39;
      expect(page).to have_content(&#39;Rails is Awesome!&#39;)
    end
- 
+&nbsp;
    context &#39;when there are posts&#39; do
      before do
        create :post, title: &#39;My first post&#39;
        create :post, title: &#39;My second post&#39;
      end
- 
+&nbsp;
      scenario &#39;can be listed&#39; do
        visit posts_path
        expect(page).to have_content(&#39;My first post&#39;)
        expect(page).to have_content(&#39;My second post&#39;)
      end
    end
- 
+&nbsp;
  end
 </code></pre>
 

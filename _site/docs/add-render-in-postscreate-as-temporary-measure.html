@@ -1,0 +1,23 @@
+<h1 id='main'>Add render in posts#create as temporary measure</h1>
+<p>Update file <code>app/controllers/posts_controller.rb</code></p>
+
+<p>Add <pre><code>&nbsp;
+   def create
+     render text: params[:post].inspect
+   end</code></pre></p>
+
+<p>Becomes <pre><code> class PostsController &lt; ApplicationController
+   def new
+   end
+&nbsp;
+   def create
+     render text: params[:post].inspect
+   end
+ end
+</code></pre></p>
+
+<h3 id='additional_resources'>Additional Resources</h3>
+
+<ul>
+<li><a href='https://github.com/stevenhallen/rails_getting_started_bdd/commit/583d4731d228cfe3e7ccda00543c21b737f42e49'>Changes in this step in <code>diff</code> format</a></li>
+</ul>

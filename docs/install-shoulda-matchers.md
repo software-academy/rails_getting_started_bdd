@@ -17,7 +17,7 @@ Becomes
    gem &#39;shoulda-matchers&#39;
    gem &#39;valid_attribute&#39;
  end
- 
+&nbsp;
 </code></pre>
 
 

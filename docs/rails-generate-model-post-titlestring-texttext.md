@@ -19,7 +19,7 @@ Add
      create_table :posts do |t|
        t.string :title
        t.text :text
- 
+&nbsp;
        t.timestamps
      end
    end
@@ -41,16 +41,16 @@ Add
  # you&#39;ll amass, the slower it&#39;ll run and the greater likelihood for issues).
  #
  # It&#39;s strongly recommended that you check this file into your version control system.
- 
+&nbsp;
  ActiveRecord::Schema.define(version: 20131101193007) do
- 
+&nbsp;
    create_table &quot;posts&quot;, force: true do |t|
      t.string   &quot;title&quot;
      t.text     &quot;text&quot;
      t.datetime &quot;created_at&quot;
      t.datetime &quot;updated_at&quot;
    end
- 
+&nbsp;
  end</code></pre>
 
 
@@ -58,7 +58,7 @@ Create file `spec/models/post_spec.rb`
 
 Add
 <pre><code> require &#39;spec_helper&#39;
- 
+&nbsp;
  describe Post do
    pending &quot;add some examples to (or delete) #{__FILE__}&quot;
  end</code></pre>

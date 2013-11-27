@@ -24,10 +24,10 @@ To
 
 Becomes
 <pre><code>   end
- 
+&nbsp;
    def create
      @post = Post.new(params[:post].permit(:title, :text))
- 
+&nbsp;
      @post.save
      redirect_to @post
    end

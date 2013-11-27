@@ -17,13 +17,13 @@ Add
 Becomes
 <pre><code>     expect(page).to have_content(&#39;Rails is Awesome!&#39;)
    end
- 
+&nbsp;
    scenario &#39;can get back to list page from new page&#39; do
      visit new_post_path
      click_link &#39;Back&#39;
      expect(current_path).to eq posts_path
    end
- 
+&nbsp;
    scenario &#39;can be accessed from link on home page&#39; do
      visit root_path
      click_link &#39;My Blog&#39;

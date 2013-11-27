@@ -8,7 +8,7 @@ Update file `spec/controllers/posts_controller_spec.rb`
 
 Add
 <pre><code>   include AuthHelper
- 
+&nbsp;
    before(:each) do
      http_login
    end</code></pre>
@@ -16,14 +16,14 @@ Add
 
 Becomes
 <pre><code> require &#39;spec_helper&#39;
- 
+&nbsp;
  describe PostsController do
    include AuthHelper
- 
+&nbsp;
    before(:each) do
      http_login
    end
- 
+&nbsp;
    describe &#39;GET #new&#39; do
      it &quot;returns http success&quot; do
 </code></pre>
@@ -39,14 +39,14 @@ Remove
      click_button &#39;Create Post&#39;
      expect(current_path).to eq post_path(Post.where(title: &#39;Rails is Awesome!&#39;).first)
    end
- 
+&nbsp;
    scenario &#39;cannot be created without a title&#39; do
      visit new_post_path
      fill_in &#39;Title&#39;, with: &#39;&#39;
      click_button &#39;Create Post&#39;
      expect(page).to have_content(&quot;Title can&#39;t be blank&quot;)
    end
- 
+&nbsp;
    scenario &#39;can get back to list page from new page&#39; do
      visit new_post_path
      click_link &#39;Back&#39;
@@ -167,7 +167,7 @@ Add
            expect(current_path).to eq edit_post_path(@post2)
          end
        end
- 
+&nbsp;
        scenario &#39;can be edited&#39; do
          visit edit_post_path(@post1)
          fill_in &#39;Title&#39;, with: &#39;My first post has a new title&#39;
@@ -175,7 +175,7 @@ Add
          expect(current_path).to eq post_path(@post1)
          expect(page).to have_content(&#39;My first post has a new title&#39;)
        end
- 
+&nbsp;
        scenario &#39;can be edited from show page&#39; do
          visit post_path(Post.first)
          click_link &#39;Edit&#39;
@@ -251,7 +251,7 @@ Add
          @post1 = create :post, title: &#39;My first post&#39;
          @post2 = create :post, title: &#39;My second post&#39;
        end
- 
+&nbsp;
        scenario &#39;can be viewed from link on posts page&#39; do
          visit posts_path
          within &#39;tr:last-child&#39; do
@@ -259,13 +259,13 @@ Add
            expect(current_path).to eq post_path(@post2)
          end
        end
- 
+&nbsp;
        scenario &#39;can be listed&#39; do
          visit posts_path
          expect(page).to have_content(&#39;My first post&#39;)
          expect(page).to have_content(&#39;My second post&#39;)
        end
- 
+&nbsp;
        scenario &#39;can get back to list page from show page&#39; do
          visit post_path(Post.first)
          click_link &#39;Back&#39;
@@ -275,13 +275,13 @@ Add
 
 Becomes
 <pre><code> require &#39;spec_helper&#39;
- 
+&nbsp;
  feature &#39;Posts&#39; do
    context &#39;when the user has authenticated&#39; do
      background do
        page.driver.browser.basic_authorize &#39;dhh&#39;, &#39;secret&#39;
      end
- 
+&nbsp;
      scenario &#39;can be created&#39; do
        visit new_post_path
        fill_in &#39;Title&#39;, with: &#39;Rails is Awesome!&#39;
@@ -289,32 +289,32 @@ Becomes
        click_button &#39;Create Post&#39;
        expect(current_path).to eq post_path(Post.where(title: &#39;Rails is Awesome!&#39;).first)
      end
- 
+&nbsp;
      scenario &#39;cannot be created without a title&#39; do
        visit new_post_path
        fill_in &#39;Title&#39;, with: &#39;&#39;
        click_button &#39;Create Post&#39;
        expect(page).to have_content(&quot;Title can&#39;t be blank&quot;)
      end
- 
+&nbsp;
      scenario &#39;can get back to list page from new page&#39; do
        visit new_post_path
        click_link &#39;Back&#39;
        expect(current_path).to eq posts_path
      end
- 
+&nbsp;
      scenario &#39;can be created from link on posts page&#39; do
        visit posts_path
        click_link &#39;New post&#39;
        expect(current_path).to eq new_post_path
      end
- 
+&nbsp;
      context &#39;when there are posts&#39; do
        before do
          @post1 = create :post, title: &#39;My first post&#39;
          @post2 = create :post, title: &#39;My second post&#39;
        end
- 
+&nbsp;
        scenario &#39;can be edited from link on posts page&#39; do
          visit posts_path
          within &#39;tr:last-child&#39; do
@@ -322,7 +322,7 @@ Becomes
            expect(current_path).to eq edit_post_path(@post2)
          end
        end
- 
+&nbsp;
        scenario &#39;can be edited&#39; do
          visit edit_post_path(@post1)
          fill_in &#39;Title&#39;, with: &#39;My first post has a new title&#39;
@@ -330,7 +330,7 @@ Becomes
          expect(current_path).to eq post_path(@post1)
          expect(page).to have_content(&#39;My first post has a new title&#39;)
        end
- 
+&nbsp;
        scenario &#39;can be edited from show page&#39; do
          visit post_path(Post.first)
          click_link &#39;Edit&#39;
@@ -338,12 +338,12 @@ Becomes
        end
      end
    end
- 
+&nbsp;
    context &#39;when the user has authenticated and javascript is needed&#39; do
      background do
        # TODO: Issue basic_auth headers
      end
- 
+&nbsp;
      scenario &#39;can be deleted from link on posts page&#39;, js: true do
        pending(&#39;Unable to issue basic auth when js: true&#39;) do
          visit posts_path
@@ -356,20 +356,20 @@ Becomes
        end
      end
    end
- 
+&nbsp;
    context &#39;when the user is anonymous&#39; do
      scenario &#39;can be accessed from link on home page&#39; do
        visit root_path
        click_link &#39;My Blog&#39;
        expect(current_path).to eq posts_path
      end
- 
+&nbsp;
      context &#39;when there are posts&#39; do
        before do
          @post1 = create :post, title: &#39;My first post&#39;
          @post2 = create :post, title: &#39;My second post&#39;
        end
- 
+&nbsp;
        scenario &#39;can be viewed from link on posts page&#39; do
          visit posts_path
          within &#39;tr:last-child&#39; do
@@ -377,13 +377,13 @@ Becomes
            expect(current_path).to eq post_path(@post2)
          end
        end
- 
+&nbsp;
        scenario &#39;can be listed&#39; do
          visit posts_path
          expect(page).to have_content(&#39;My first post&#39;)
          expect(page).to have_content(&#39;My second post&#39;)
        end
- 
+&nbsp;
        scenario &#39;can get back to list page from show page&#39; do
          visit post_path(Post.first)
          click_link &#39;Back&#39;
@@ -400,10 +400,10 @@ Create file `spec/support/auth_helper.rb`
 Add
 <pre><code> module AuthHelper
    def http_login
- 
+&nbsp;
      username = &#39;dhh&#39;
      password = &#39;secret&#39;
- 
+&nbsp;
      request.env[&#39;HTTP_AUTHORIZATION&#39;] = ActionController::HttpAuthentication::Basic.encode_credentials(username, password)
    end
  end</code></pre>

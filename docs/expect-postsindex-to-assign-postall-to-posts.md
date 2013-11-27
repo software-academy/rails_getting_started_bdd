@@ -7,7 +7,7 @@ title: Expect posts#index to assign Post.all to @posts
 Update file `spec/controllers/posts_controller_spec.rb`
 
 Add
-<pre><code> 
+<pre><code>&nbsp;
      it &quot;assigns @posts to Post.all&quot; do
        get :index
        expect(assigns[:posts]).to eq Post.all
@@ -18,7 +18,7 @@ Becomes
 <pre><code>       get :index
        expect(response).to be_success
      end
- 
+&nbsp;
      it &quot;assigns @posts to Post.all&quot; do
        get :index
        expect(assigns[:posts]).to eq Post.all

@@ -12,17 +12,17 @@ Change
 
 To
 <pre><code>     @post = Post.new(params[:post])
- 
+&nbsp;
      @post.save
      redirect_to action: :show, id: @post.id</code></pre>
 
 
 Becomes
 <pre><code>   end
- 
+&nbsp;
    def create
      @post = Post.new(params[:post])
- 
+&nbsp;
      @post.save
      redirect_to action: :show, id: @post.id
    end

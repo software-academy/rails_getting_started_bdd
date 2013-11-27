@@ -1,0 +1,87 @@
+<h1 id='main'>rails generate controller welcome index</h1>
+<p>Create file <code>app/assets/javascripts/welcome.js.coffee</code></p>
+
+<p>Add <pre><code> # Place all the behaviors and hooks related to the matching controller here.
+ # All this logic will automatically be available in application.js.
+ # You can use CoffeeScript in this file: http://coffeescript.org/</code></pre></p>
+
+<p>Create file <code>app/assets/stylesheets/welcome.css.scss</code></p>
+
+<p>Add <pre><code> // Place all the styles related to the welcome controller here.
+ // They will automatically be included in application.css.
+ // You can use Sass (SCSS) here: http://sass-lang.com/</code></pre></p>
+
+<p>Create file <code>app/controllers/welcome_controller.rb</code></p>
+
+<p>Add <pre><code> class WelcomeController &lt; ApplicationController
+   def index
+   end
+ end</code></pre></p>
+
+<p>Create file <code>app/helpers/welcome_helper.rb</code></p>
+
+<p>Add <pre><code> module WelcomeHelper
+ end</code></pre></p>
+
+<p>Create file <code>app/views/welcome/index.html.erb</code></p>
+
+<p>Add <pre><code> &lt;h1&gt;Welcome#index&lt;/h1&gt;
+ &lt;p&gt;Find me in app/views/welcome/index.html.erb&lt;/p&gt;</code></pre></p>
+
+<p>Update file <code>config/routes.rb</code></p>
+
+<p>Add <pre><code>   get &quot;welcome/index&quot;</code></pre></p>
+
+<p>Becomes <pre><code> Blog::Application.routes.draw do
+   get &quot;welcome/index&quot;
+   # The priority is based upon order of creation: first created -&gt; highest priority.
+   # See how all your routes lay out with &quot;rake routes&quot;.
+&nbsp;
+</code></pre></p>
+
+<p>Create file <code>spec/controllers/welcome_controller_spec.rb</code></p>
+
+<p>Add <pre><code> require &#39;spec_helper&#39;
+&nbsp;
+ describe WelcomeController do
+&nbsp;
+   describe &quot;GET &#39;index&#39;&quot; do
+     it &quot;returns http success&quot; do
+       get &#39;index&#39;
+       response.should be_success
+     end
+   end
+&nbsp;
+ end</code></pre></p>
+
+<p>Create file <code>spec/helpers/welcome_helper_spec.rb</code></p>
+
+<p>Add <pre><code> require &#39;spec_helper&#39;
+&nbsp;
+ # Specs in this file have access to a helper object that includes
+ # the WelcomeHelper. For example:
+ #
+ # describe WelcomeHelper do
+ #   describe &quot;string concat&quot; do
+ #     it &quot;concats two strings with spaces&quot; do
+ #       expect(helper.concat_strings(&quot;this&quot;,&quot;that&quot;)).to eq(&quot;this that&quot;)
+ #     end
+ #   end
+ # end
+ describe WelcomeHelper do
+   pending &quot;add some examples to (or delete) #{__FILE__}&quot;
+ end</code></pre></p>
+
+<p>Create file <code>spec/views/welcome/index.html.erb_spec.rb</code></p>
+
+<p>Add <pre><code> require &#39;spec_helper&#39;
+&nbsp;
+ describe &quot;welcome/index.html.erb&quot; do
+   pending &quot;add some examples to (or delete) #{__FILE__}&quot;
+ end</code></pre></p>
+
+<h3 id='additional_resources'>Additional Resources</h3>
+
+<ul>
+<li><a href='https://github.com/stevenhallen/rails_getting_started_bdd/commit/98c4ea75759d54749fd547a2f4ea6a1d1cbf68ea'>Changes in this step in <code>diff</code> format</a></li>
+</ul>

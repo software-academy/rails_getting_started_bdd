@@ -12,7 +12,7 @@ Add
 
 Becomes
 <pre><code> end
- 
+&nbsp;
  group :test do
    gem &#39;database_cleaner&#39;
    gem &#39;launchy&#39;

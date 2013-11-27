@@ -38,9 +38,9 @@ Create file `spec/controllers/posts_controller_spec.rb`
 
 Add
 <pre><code> require &#39;spec_helper&#39;
- 
+&nbsp;
  describe PostsController do
- 
+&nbsp;
  end</code></pre>
 
 
@@ -48,7 +48,7 @@ Create file `spec/helpers/posts_helper_spec.rb`
 
 Add
 <pre><code> require &#39;spec_helper&#39;
- 
+&nbsp;
  # Specs in this file have access to a helper object that includes
  # the PostsHelper. For example:
  #

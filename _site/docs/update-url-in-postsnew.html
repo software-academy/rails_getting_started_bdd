@@ -1,0 +1,20 @@
+<h1 id='main'>Update url in posts#new</h1>
+<p>Update file <code>app/views/posts/new.html.erb</code></p>
+
+<p>Change <pre><code> &lt;%= form_for :post do |f| %&gt;</code></pre></p>
+
+<p>To <pre><code> &lt;%= form_for :post, url: posts_path do |f| %&gt;</code></pre></p>
+
+<p>Becomes <pre><code> &lt;h1&gt;New Post&lt;/h1&gt;
+&nbsp;
+ &lt;%= form_for :post, url: posts_path do |f| %&gt;
+   &lt;p&gt;
+     &lt;%= f.label :title %&gt;&lt;br&gt;
+     &lt;%= f.text_field :title %&gt;
+</code></pre></p>
+
+<h3 id='additional_resources'>Additional Resources</h3>
+
+<ul>
+<li><a href='https://github.com/stevenhallen/rails_getting_started_bdd/commit/600b201ae415f8e568f299733c00ab867db56aaf'>Changes in this step in <code>diff</code> format</a></li>
+</ul>
