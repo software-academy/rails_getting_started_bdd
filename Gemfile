@@ -28,6 +28,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'delayed_job_active_record'
+gem 'chamber'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
