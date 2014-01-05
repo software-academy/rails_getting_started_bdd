@@ -16,7 +16,14 @@ Add
 
 
 Becomes
-<pre><code>       expect(page).to have_content(&#39;My first post&#39;)
+<pre><code>     before do
+       create :post, title: &#39;My first post&#39;
+       create :post, title: &#39;My second post&#39;
+     end
+&nbsp;
+     scenario &#39;can be listed&#39; do
+       visit posts_path
+       expect(page).to have_content(&#39;My first post&#39;)
        expect(page).to have_content(&#39;My second post&#39;)
      end
 &nbsp;
@@ -33,5 +40,5 @@ Becomes
 
 ### Additional Resources
 
-* [Changes in this step in `diff` format](https://github.com/stevenhallen/rails_getting_started_bdd/commit/74c636cb2632e447ea3bbafe2b808948c2cf3333)
+* [Changes in this step in `diff` format](https://github.com/software-academy/rails_getting_started_bdd/commit/74c636cb2632e447ea3bbafe2b808948c2cf3333)
 

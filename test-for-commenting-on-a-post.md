@@ -28,5 +28,5 @@ Add
 
 ### Additional Resources
 
-* [Changes in this step in `diff` format](https://github.com/stevenhallen/rails_getting_started_bdd/commit/0feb72974ee16d0531553bd17099563dacf159da)
+* [Changes in this step in `diff` format](https://github.com/software-academy/rails_getting_started_bdd/commit/0feb72974ee16d0531553bd17099563dacf159da)
 

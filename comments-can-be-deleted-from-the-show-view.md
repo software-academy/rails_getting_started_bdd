@@ -17,7 +17,10 @@ Add
 
 
 Becomes
-<pre><code>     @comment = @post.comments.create(params[:comment].permit(:commenter, :body))
+<pre><code> class CommentsController &lt; ApplicationController
+   def create
+     @post = Post.find(params[:post_id])
+     @comment = @post.comments.create(params[:comment].permit(:commenter, :body))
      redirect_to post_path(@post)
    end
 &nbsp;
@@ -44,6 +47,11 @@ Add
 
 Becomes
 <pre><code> &lt;p&gt;
+   &lt;strong&gt;Commenter:&lt;/strong&gt;
+   &lt;%= comment.commenter %&gt;
+ &lt;/p&gt;
+&nbsp;
+ &lt;p&gt;
    &lt;strong&gt;Comment:&lt;/strong&gt;
    &lt;%= comment.body %&gt;
  &lt;/p&gt;
@@ -60,5 +68,5 @@ Becomes
 
 ### Additional Resources
 
-* [Changes in this step in `diff` format](https://github.com/stevenhallen/rails_getting_started_bdd/commit/9e5dc158e719943ad07f3185dcdb5d3efce3a054)
+* [Changes in this step in `diff` format](https://github.com/software-academy/rails_getting_started_bdd/commit/9e5dc158e719943ad07f3185dcdb5d3efce3a054)
 

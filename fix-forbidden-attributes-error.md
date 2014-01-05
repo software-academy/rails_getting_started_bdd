@@ -23,7 +23,9 @@ To
 
 
 Becomes
-<pre><code>   end
+<pre><code> class PostsController &lt; ApplicationController
+   def new
+   end
 &nbsp;
    def create
      @post = Post.new(params[:post].permit(:title, :text))
@@ -38,5 +40,5 @@ Becomes
 
 ### Additional Resources
 
-* [Changes in this step in `diff` format](https://github.com/stevenhallen/rails_getting_started_bdd/commit/a1eca09521ecb416c21056e82cf5fe5f7931ae22)
+* [Changes in this step in `diff` format](https://github.com/software-academy/rails_getting_started_bdd/commit/a1eca09521ecb416c21056e82cf5fe5f7931ae22)
 

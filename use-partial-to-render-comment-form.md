@@ -45,7 +45,14 @@ Add
 
 
 Becomes
-<pre><code> &lt;%= render @post.comments %&gt;
+<pre><code>&nbsp;
+ &lt;p&gt;
+   &lt;strong&gt;Text:&lt;/strong&gt;
+   &lt;%= @post.text %&gt;
+ &lt;/p&gt;
+&nbsp;
+ &lt;h2&gt;Comments&lt;/h2&gt;
+ &lt;%= render @post.comments %&gt;
 &nbsp;
  &lt;h2&gt;Add a comment:&lt;/h2&gt;
  &lt;%= render &quot;comments/form&quot; %&gt;
@@ -59,5 +66,5 @@ Becomes
 
 ### Additional Resources
 
-* [Changes in this step in `diff` format](https://github.com/stevenhallen/rails_getting_started_bdd/commit/3304445370e0f4d6eb901e6b747123b61202ffca)
+* [Changes in this step in `diff` format](https://github.com/software-academy/rails_getting_started_bdd/commit/3304445370e0f4d6eb901e6b747123b61202ffca)
 

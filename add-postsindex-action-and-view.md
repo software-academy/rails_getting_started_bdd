@@ -13,7 +13,14 @@ Add
 
 
 Becomes
-<pre><code>     redirect_to @post
+<pre><code>   def new
+   end
+&nbsp;
+   def create
+     @post = Post.new(params[:post].permit(:title, :text))
+&nbsp;
+     @post.save
+     redirect_to @post
    end
 &nbsp;
    def index
@@ -23,6 +30,7 @@ Becomes
    def show
      @post = Post.find(params[:id])
    end
+ end
 </code></pre>
 
 
@@ -49,5 +57,5 @@ Add
 
 ### Additional Resources
 
-* [Changes in this step in `diff` format](https://github.com/stevenhallen/rails_getting_started_bdd/commit/d9392043a56b868c214baed5af4a54585ba53eb8)
+* [Changes in this step in `diff` format](https://github.com/software-academy/rails_getting_started_bdd/commit/d9392043a56b868c214baed5af4a54585ba53eb8)
 

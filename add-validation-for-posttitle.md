@@ -22,5 +22,5 @@ Becomes
 
 ### Additional Resources
 
-* [Changes in this step in `diff` format](https://github.com/stevenhallen/rails_getting_started_bdd/commit/04c16ce742179e2a64a0af07fcb8ef99892bd882)
+* [Changes in this step in `diff` format](https://github.com/software-academy/rails_getting_started_bdd/commit/04c16ce742179e2a64a0af07fcb8ef99892bd882)
 

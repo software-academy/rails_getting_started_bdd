@@ -72,7 +72,14 @@ Add
 
 
 Becomes
-<pre><code>   &lt;%= @post.text %&gt;
+<pre><code> &lt;p&gt;
+   &lt;strong&gt;Title:&lt;/strong&gt;
+   &lt;%= @post.title %&gt;
+ &lt;/p&gt;
+&nbsp;
+ &lt;p&gt;
+   &lt;strong&gt;Text:&lt;/strong&gt;
+   &lt;%= @post.text %&gt;
  &lt;/p&gt;
 &nbsp;
  &lt;h2&gt;Comments&lt;/h2&gt;
@@ -174,5 +181,5 @@ Add
 
 ### Additional Resources
 
-* [Changes in this step in `diff` format](https://github.com/stevenhallen/rails_getting_started_bdd/commit/86fff3cb3042907e050bf26a5d6650966858397e)
+* [Changes in this step in `diff` format](https://github.com/software-academy/rails_getting_started_bdd/commit/86fff3cb3042907e050bf26a5d6650966858397e)
 

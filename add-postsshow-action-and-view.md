@@ -14,7 +14,14 @@ Add
 
 
 Becomes
-<pre><code>     @post.save
+<pre><code> class PostsController &lt; ApplicationController
+   def new
+   end
+&nbsp;
+   def create
+     @post = Post.new(params[:post].permit(:title, :text))
+&nbsp;
+     @post.save
      redirect_to @post
    end
 &nbsp;
@@ -42,5 +49,5 @@ Add
 
 ### Additional Resources
 
-* [Changes in this step in `diff` format](https://github.com/stevenhallen/rails_getting_started_bdd/commit/e8971cd13d0217537f24addfb2d9d319b1280d45)
+* [Changes in this step in `diff` format](https://github.com/software-academy/rails_getting_started_bdd/commit/e8971cd13d0217537f24addfb2d9d319b1280d45)
 

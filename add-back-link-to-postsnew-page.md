@@ -17,7 +17,14 @@ Add
 
 
 Becomes
-<pre><code>   &lt;p&gt;
+<pre><code>   &lt;/p&gt;
+&nbsp;
+   &lt;p&gt;
+     &lt;%= f.label :text %&gt;&lt;br&gt;
+     &lt;%= f.text_area :text %&gt;
+   &lt;/p&gt;
+&nbsp;
+   &lt;p&gt;
      &lt;%= f.submit %&gt;
    &lt;/p&gt;
 \ No newline at end of file
@@ -31,5 +38,5 @@ Becomes
 
 ### Additional Resources
 
-* [Changes in this step in `diff` format](https://github.com/stevenhallen/rails_getting_started_bdd/commit/66c7f4b409d72aded3819b44ddee16bc452dde3d)
+* [Changes in this step in `diff` format](https://github.com/software-academy/rails_getting_started_bdd/commit/66c7f4b409d72aded3819b44ddee16bc452dde3d)
 

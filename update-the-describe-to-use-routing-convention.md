@@ -23,7 +23,8 @@ To
 
 
 Becomes
-<pre><code>&nbsp;
+<pre><code> require &#39;spec_helper&#39;
+&nbsp;
  describe PostsController do
 &nbsp;
    describe &#39;GET #new&#39; do
@@ -32,11 +33,13 @@ Becomes
        response.should be_success
      end
    end
+&nbsp;
+ end
 </code></pre>
 
 
 
 ### Additional Resources
 
-* [Changes in this step in `diff` format](https://github.com/stevenhallen/rails_getting_started_bdd/commit/db27eb800b64e9e470f8fc85501a95634b287256)
+* [Changes in this step in `diff` format](https://github.com/software-academy/rails_getting_started_bdd/commit/db27eb800b64e9e470f8fc85501a95634b287256)
 

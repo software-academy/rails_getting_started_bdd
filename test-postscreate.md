@@ -16,7 +16,14 @@ Add
 
 
 Becomes
-<pre><code>     end
+<pre><code>&nbsp;
+ describe PostsController do
+&nbsp;
+   describe &#39;GET #new&#39; do
+     it &quot;returns http success&quot; do
+       get :new
+       response.should be_success
+     end
    end
 &nbsp;
    describe &#39;POST #create&#39; do
@@ -32,5 +39,5 @@ Becomes
 
 ### Additional Resources
 
-* [Changes in this step in `diff` format](https://github.com/stevenhallen/rails_getting_started_bdd/commit/497cc7b2764fbd7462bd04fc363a311fd1b932d1)
+* [Changes in this step in `diff` format](https://github.com/software-academy/rails_getting_started_bdd/commit/497cc7b2764fbd7462bd04fc363a311fd1b932d1)
 

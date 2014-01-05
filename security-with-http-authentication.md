@@ -19,11 +19,18 @@ Becomes
    def new
      @post = Post.new
    end
+&nbsp;
+   def create
+     @post = Post.new(params[:post].permit(:title, :text))
+&nbsp;
+     if @post.save
+       redirect_to @post
+     else
 </code></pre>
 
 
 
 ### Additional Resources
 
-* [Changes in this step in `diff` format](https://github.com/stevenhallen/rails_getting_started_bdd/commit/5f206749ddf21e6239fdbdf446f46684f7c309cb)
+* [Changes in this step in `diff` format](https://github.com/software-academy/rails_getting_started_bdd/commit/5f206749ddf21e6239fdbdf446f46684f7c309cb)
 

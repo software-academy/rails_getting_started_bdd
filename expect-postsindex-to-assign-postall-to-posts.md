@@ -15,7 +15,14 @@ Add
 
 
 Becomes
-<pre><code>       get :index
+<pre><code>       post :create, post: { title: &#39;title&#39;, text: &#39;text&#39; }
+       expect(response).to redirect_to assigns[:post]
+     end
+   end
+&nbsp;
+   describe &#39;GET #index&#39; do
+     it &quot;returns http success&quot; do
+       get :index
        expect(response).to be_success
      end
 &nbsp;
@@ -31,5 +38,5 @@ Becomes
 
 ### Additional Resources
 
-* [Changes in this step in `diff` format](https://github.com/stevenhallen/rails_getting_started_bdd/commit/7b456dea5eab32097179722d9e47cd14c450bb05)
+* [Changes in this step in `diff` format](https://github.com/software-academy/rails_getting_started_bdd/commit/7b456dea5eab32097179722d9e47cd14c450bb05)
 

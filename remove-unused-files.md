@@ -21,5 +21,5 @@ Remove file `spec/views/welcome/index.html.erb_spec.rb`
 
 ### Additional Resources
 
-* [Changes in this step in `diff` format](https://github.com/stevenhallen/rails_getting_started_bdd/commit/debe24a6d4bc1fedc80fcc12abf4982cf0a8fb36)
+* [Changes in this step in `diff` format](https://github.com/software-academy/rails_getting_started_bdd/commit/debe24a6d4bc1fedc80fcc12abf4982cf0a8fb36)
 

@@ -16,7 +16,14 @@ Add
 
 
 Becomes
-<pre><code>     end
+<pre><code>   def create
+     @post = Post.new(params[:post].permit(:title, :text))
+&nbsp;
+     if @post.save
+       redirect_to @post
+     else
+       render &#39;new&#39;
+     end
    end
 &nbsp;
    def destroy
@@ -29,6 +36,13 @@ Becomes
    def edit
      @post = Post.find(params[:id])
    end
+&nbsp;
+   def index
+     @posts = Post.all
+   end
+&nbsp;
+   def show
+     @post = Post.find(params[:id])
 </code></pre>
 
 
@@ -40,7 +54,14 @@ Add
 
 
 Becomes
-<pre><code>       &lt;td&gt;&lt;%= post.text %&gt;&lt;/td&gt;
+<pre><code>     &lt;th&gt;&lt;/th&gt;
+     &lt;th&gt;&lt;/th&gt;
+   &lt;/tr&gt;
+&nbsp;
+   &lt;% @posts.each do |post| %&gt;
+     &lt;tr&gt;
+       &lt;td&gt;&lt;%= post.title %&gt;&lt;/td&gt;
+       &lt;td&gt;&lt;%= post.text %&gt;&lt;/td&gt;
        &lt;td&gt;&lt;%= link_to &#39;Show&#39;, post %&gt;&lt;/td&gt;
        &lt;td&gt;&lt;%= link_to &#39;Edit&#39;, edit_post_path(post) %&gt;&lt;/td&gt;
        &lt;td&gt;&lt;%= link_to &#39;Destroy&#39;, post_path(post),
@@ -55,5 +76,5 @@ Becomes
 
 ### Additional Resources
 
-* [Changes in this step in `diff` format](https://github.com/stevenhallen/rails_getting_started_bdd/commit/38cf9eddedcb07cbbf936061bbd2847716f70e38)
+* [Changes in this step in `diff` format](https://github.com/software-academy/rails_getting_started_bdd/commit/38cf9eddedcb07cbbf936061bbd2847716f70e38)
 
