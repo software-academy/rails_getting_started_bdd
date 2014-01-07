@@ -6,13 +6,13 @@ title: Test for valid Post#title
 <h1 id="main">Test for valid Post#title</h1>
 ###Update file `spec/models/post_spec.rb`
 
-Change
+####Change
 ```
    pending "add some examples to (or delete) #{__FILE__}"
 ```
 
 
-To
+####To
 ```
    describe '#title' do
      it { expect(subject).to have_valid(:title).when 'X'*5 }
@@ -21,7 +21,7 @@ To
 ```
 
 
-Becomes
+####Becomes
 ```
  require 'spec_helper'
  

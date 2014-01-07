@@ -6,7 +6,7 @@ title: rails generate controller welcome index
 <h1 id="main">rails generate controller welcome index</h1>
 ###Create file `app/assets/javascripts/welcome.js.coffee`
 
-Add
+####Add
 ```
  # Place all the behaviors and hooks related to the matching controller here.
  # All this logic will automatically be available in application.js.
@@ -16,7 +16,7 @@ Add
 
 ###Create file `app/assets/stylesheets/welcome.css.scss`
 
-Add
+####Add
 ```
  // Place all the styles related to the welcome controller here.
  // They will automatically be included in application.css.
@@ -26,7 +26,7 @@ Add
 
 ###Create file `app/controllers/welcome_controller.rb`
 
-Add
+####Add
 ```
  class WelcomeController < ApplicationController
    def index
@@ -37,7 +37,7 @@ Add
 
 ###Create file `app/helpers/welcome_helper.rb`
 
-Add
+####Add
 ```
  module WelcomeHelper
  end
@@ -46,7 +46,7 @@ Add
 
 ###Create file `app/views/welcome/index.html.erb`
 
-Add
+####Add
 ```
  <h1>Welcome#index</h1>
  <p>Find me in app/views/welcome/index.html.erb</p>
@@ -55,13 +55,13 @@ Add
 
 ###Update file `config/routes.rb`
 
-Add
+####Add
 ```
    get "welcome/index"
 ```
 
 
-Becomes
+####Becomes
 ```
  Blog::Application.routes.draw do
    get "welcome/index"
@@ -74,7 +74,7 @@ Becomes
 
 ###Create file `spec/controllers/welcome_controller_spec.rb`
 
-Add
+####Add
 ```
  require 'spec_helper'
  
@@ -93,7 +93,7 @@ Add
 
 ###Create file `spec/helpers/welcome_helper_spec.rb`
 
-Add
+####Add
 ```
  require 'spec_helper'
  
@@ -115,7 +115,7 @@ Add
 
 ###Create file `spec/views/welcome/index.html.erb_spec.rb`
 
-Add
+####Add
 ```
  require 'spec_helper'
  

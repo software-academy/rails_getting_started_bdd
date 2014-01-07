@@ -6,7 +6,7 @@ title: Use partial to render comment form
 <h1 id="main">Use partial to render comment form</h1>
 ###Create file `app/views/comments/_form.html.erb`
 
-Add
+####Add
 ```
  <%= form_for([@post, @post.comments.build]) do |f| %>
    <p>
@@ -26,7 +26,7 @@ Add
 
 ###Update file `app/views/posts/show.html.erb`
 
-Remove
+####Remove
 ```
  <%= form_for([@post, @post.comments.build]) do |f| %>
    <p>
@@ -44,13 +44,13 @@ Remove
 ```
 
 
-Add
+####Add
 ```
  <%= render "comments/form" %>
 ```
 
 
-Becomes
+####Becomes
 ```
  <%= render @post.comments %>
  

@@ -6,19 +6,19 @@ title: Configure database_cleaner
 <h1 id="main">Configure database_cleaner</h1>
 ###Update file `spec/spec_helper.rb`
 
-Change
+####Change
 ```
    config.use_transactional_fixtures = true
 ```
 
 
-To
+####To
 ```
    config.use_transactional_fixtures = false
 ```
 
 
-Becomes
+####Becomes
 ```
    # If you're not using ActiveRecord, or you'd prefer not to run each of your
    # examples within a transaction, remove the following line or assign false
@@ -33,7 +33,7 @@ Becomes
 
 ###Create file `spec/support/database.rb`
 
-Add
+####Add
 ```
  RSpec.configure do |config|
    config.before(:each) do

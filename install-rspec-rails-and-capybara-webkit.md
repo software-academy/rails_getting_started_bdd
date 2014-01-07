@@ -6,7 +6,7 @@ title: Install rspec-rails and capybara-webkit
 <h1 id="main">Install rspec-rails and capybara-webkit</h1>
 ###Update file `Gemfile`
 
-Add
+####Add
 ```
  group :development, :test do
    gem 'rspec-rails'
@@ -15,7 +15,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
    gem 'sdoc', require: false
  end
@@ -34,7 +34,7 @@ Becomes
 
 ###Update file `Gemfile.lock`
 
-Add
+####Add
 ```
      capybara (2.1.0)
        mime-types (>= 1.16)
@@ -48,7 +48,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
      arel (4.0.1)
      atomic (1.1.14)
@@ -69,13 +69,13 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
      diff-lcs (1.2.4)
 ```
 
 
-Becomes
+####Becomes
 ```
        coffee-script-source
        execjs
@@ -88,20 +88,20 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
      mini_portile (0.5.2)
 ```
 
 
-Add
+####Add
 ```
      nokogiri (1.6.0)
        mini_portile (~> 0.5.0)
 ```
 
 
-Becomes
+####Becomes
 ```
        mime-types (~> 1.16)
        treetop (~> 1.4.8)
@@ -118,7 +118,7 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
      rspec-core (2.14.7)
      rspec-expectations (2.14.3)
@@ -134,7 +134,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
      rake (10.1.0)
      rdoc (3.12.2)
@@ -157,26 +157,26 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
      xpath (2.0.0)
        nokogiri (~> 1.3)
 ```
 
 
-Add
+####Add
 ```
    capybara-webkit
 ```
 
 
-Add
+####Add
 ```
    rspec-rails
 ```
 
 
-Becomes
+####Becomes
 ```
      uglifier (2.3.0)
        execjs (>= 0.3.0)

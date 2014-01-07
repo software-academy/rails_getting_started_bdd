@@ -6,13 +6,13 @@ title: Post has_many comments
 <h1 id="main">Post has_many comments</h1>
 ###Update file `spec/models/post_spec.rb`
 
-Add
+####Add
 ```
    it { should have_many :comments }
 ```
 
 
-Becomes
+####Becomes
 ```
  require 'spec_helper'
  

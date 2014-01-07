@@ -6,7 +6,7 @@ title: Extract form into partial
 <h1 id="main">Extract form into partial</h1>
 ###Create file `app/views/posts/_form.html.erb`
 
-Add
+####Add
 ```
  <%= form_for @post do |f| %>
    <% if @post.errors.any? %>
@@ -39,19 +39,19 @@ Add
 
 ###Update file `app/views/posts/edit.html.erb`
 
-Change
+####Change
 ```
  <h1>Editing post</h1>
 ```
 
 
-To
+####To
 ```
  <h1>Edit post</h1>
 ```
 
 
-Remove
+####Remove
 ```
  <%= form_for :post, url: post_path(@post.id), method: :patch do |f| %>
    <% if @post.errors.any? %>
@@ -82,13 +82,13 @@ Remove
 ```
 
 
-Add
+####Add
 ```
  <%= render 'form' %>
 ```
 
 
-Becomes
+####Becomes
 ```
  <h1>Edit post</h1>
  
@@ -102,19 +102,19 @@ Becomes
 
 ###Update file `app/views/posts/new.html.erb`
 
-Change
+####Change
 ```
  <h1>New Post</h1>
 ```
 
 
-To
+####To
 ```
  <h1>New post</h1>
 ```
 
 
-Remove
+####Remove
 ```
  <%= form_for :post, url: posts_path do |f| %>
    <% if @post.errors.any? %>
@@ -145,13 +145,13 @@ Remove
 ```
 
 
-Add
+####Add
 ```
  <%= render 'form' %>
 ```
 
 
-Becomes
+####Becomes
 ```
  <h1>New post</h1>
  

@@ -6,13 +6,13 @@ title: Save in posts#create controller
 <h1 id="main">Save in posts#create controller</h1>
 ###Update file `app/controllers/posts_controller.rb`
 
-Change
+####Change
 ```
      render text: params[:post].inspect
 ```
 
 
-To
+####To
 ```
      @post = Post.new(params[:post])
  
@@ -21,7 +21,7 @@ To
 ```
 
 
-Becomes
+####Becomes
 ```
    end
  

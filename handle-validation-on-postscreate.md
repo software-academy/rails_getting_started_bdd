@@ -6,20 +6,20 @@ title: Handle validation on posts#create
 <h1 id="main">Handle validation on posts#create</h1>
 ###Update file `app/controllers/posts_controller.rb`
 
-Add
+####Add
 ```
      @post = Post.new
 ```
 
 
-Remove
+####Remove
 ```
      @post.save
      redirect_to @post
 ```
 
 
-Add
+####Add
 ```
      if @post.save
        redirect_to @post
@@ -29,7 +29,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
  class PostsController < ApplicationController
    def new
@@ -53,7 +53,7 @@ Becomes
 
 ###Update file `app/views/posts/new.html.erb`
 
-Add
+####Add
 ```
    <% if @post.errors.any? %>
      <div id="errorExplanation">
@@ -69,7 +69,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
  <h1>New Post</h1>
  

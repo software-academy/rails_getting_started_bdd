@@ -6,13 +6,13 @@ title: Add Back link to posts#new page
 <h1 id="main">Add Back link to posts#new page</h1>
 ###Update file `app/views/posts/new.html.erb`
 
-Remove
+####Remove
 ```
  <% end %>
 ```
 
 
-Add
+####Add
 ```
  <% end %>
  
@@ -20,7 +20,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
    <p>
      <%= f.submit %>

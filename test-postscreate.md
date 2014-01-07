@@ -6,7 +6,7 @@ title: Test posts#create
 <h1 id="main">Test posts#create</h1>
 ###Update file `spec/controllers/posts_controller_spec.rb`
 
-Add
+####Add
 ```
    describe 'POST #create' do
      it "redirects to the :show view" do
@@ -17,7 +17,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
      end
    end

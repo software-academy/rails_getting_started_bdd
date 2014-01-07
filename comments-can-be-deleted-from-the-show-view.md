@@ -6,7 +6,7 @@ title: Comments can be deleted from the show view
 <h1 id="main">Comments can be deleted from the show view</h1>
 ###Update file `app/controllers/comments_controller.rb`
 
-Add
+####Add
 ```
  
    def destroy
@@ -18,7 +18,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
      @comment = @post.comments.create(params[:comment].permit(:commenter, :body))
      redirect_to post_path(@post)
@@ -37,7 +37,7 @@ Becomes
 
 ###Update file `app/views/comments/_comment.html.erb`
 
-Add
+####Add
 ```
  </p>
  
@@ -48,7 +48,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
  <p>
    <strong>Comment:</strong>

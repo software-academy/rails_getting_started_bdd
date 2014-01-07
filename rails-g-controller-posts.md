@@ -6,7 +6,7 @@ title: rails g controller posts
 <h1 id="main">rails g controller posts</h1>
 ###Create file `app/assets/javascripts/posts.js.coffee`
 
-Add
+####Add
 ```
  # Place all the behaviors and hooks related to the matching controller here.
  # All this logic will automatically be available in application.js.
@@ -16,7 +16,7 @@ Add
 
 ###Create file `app/assets/stylesheets/posts.css.scss`
 
-Add
+####Add
 ```
  // Place all the styles related to the posts controller here.
  // They will automatically be included in application.css.
@@ -26,7 +26,7 @@ Add
 
 ###Create file `app/controllers/posts_controller.rb`
 
-Add
+####Add
 ```
  class PostsController < ApplicationController
  end
@@ -35,7 +35,7 @@ Add
 
 ###Create file `app/helpers/posts_helper.rb`
 
-Add
+####Add
 ```
  module PostsHelper
  end
@@ -44,7 +44,7 @@ Add
 
 ###Create file `spec/controllers/posts_controller_spec.rb`
 
-Add
+####Add
 ```
  require 'spec_helper'
  
@@ -56,7 +56,7 @@ Add
 
 ###Create file `spec/helpers/posts_helper_spec.rb`
 
-Add
+####Add
 ```
  require 'spec_helper'
  

@@ -6,7 +6,7 @@ title: Test for creating new post
 <h1 id="main">Test for creating new post</h1>
 ###Create file `spec/features/posts_spec.rb`
 
-Add
+####Add
 ```
  require 'spec_helper'
  

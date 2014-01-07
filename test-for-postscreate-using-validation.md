@@ -6,13 +6,13 @@ title: Test for posts#create using validation
 <h1 id="main">Test for posts#create using validation</h1>
 ###Update file `spec/features/posts_spec.rb`
 
-Change
+####Change
 ```
      expect(page).to have_content('Rails is Awesome!')
 ```
 
 
-To
+####To
 ```
      expect(current_path).to eq post_path(Post.where(title: 'Rails is Awesome!').first)
    end
@@ -25,7 +25,7 @@ To
 ```
 
 
-Becomes
+####Becomes
 ```
      fill_in 'Title', with: 'Rails is Awesome!'
      fill_in 'Text', with: 'It really is.'

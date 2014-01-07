@@ -6,13 +6,13 @@ title: Install shoulda-matchers
 <h1 id="main">Install shoulda-matchers</h1>
 ###Update file `Gemfile`
 
-Add
+####Add
 ```
    gem 'shoulda-matchers'
 ```
 
 
-Becomes
+####Becomes
 ```
  group :test do
    gem 'database_cleaner'
@@ -27,14 +27,14 @@ Becomes
 
 ###Update file `Gemfile.lock`
 
-Add
+####Add
 ```
      shoulda-matchers (2.4.0)
        activesupport (>= 3.0.0)
 ```
 
 
-Becomes
+####Becomes
 ```
      sdoc (0.3.20)
        json (>= 1.1.3)
@@ -48,13 +48,13 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
    shoulda-matchers
 ```
 
 
-Becomes
+####Becomes
 ```
    rspec-rails
    sass-rails (~> 4.0.0)

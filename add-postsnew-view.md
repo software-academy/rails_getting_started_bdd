@@ -6,14 +6,14 @@ title: Add posts#new view
 <h1 id="main">Add posts#new view</h1>
 ###Update file `app/controllers/posts_controller.rb`
 
-Add
+####Add
 ```
    def new
    end
 ```
 
 
-Becomes
+####Becomes
 ```
  class PostsController < ApplicationController
    def new
@@ -25,7 +25,7 @@ Becomes
 
 ###Create file `app/views/posts/new.html.erb`
 
-Add
+####Add
 ```
  <h1>New Post</h1>
 ```

@@ -6,7 +6,7 @@ title: rails generate rspec:install
 <h1 id="main">rails generate rspec:install</h1>
 ###Create file `.rspec`
 
-Add
+####Add
 ```
  --color
 ```
@@ -14,7 +14,7 @@ Add
 
 ###Create file `spec/spec_helper.rb`
 
-Add
+####Add
 ```
  # This file is copied to spec/ when you run 'rails generate rspec:install'
  ENV["RAILS_ENV"] ||= 'test'

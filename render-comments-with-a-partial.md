@@ -6,7 +6,7 @@ title: Render comments with a partial
 <h1 id="main">Render comments with a partial</h1>
 ###Create file `app/views/comments/_comment.html.erb`
 
-Add
+####Add
 ```
  <p>
    <strong>Commenter:</strong>
@@ -22,7 +22,7 @@ Add
 
 ###Update file `app/views/posts/show.html.erb`
 
-Remove
+####Remove
 ```
  <% @post.comments.each do |comment| %>
    <p>
@@ -38,13 +38,13 @@ Remove
 ```
 
 
-Add
+####Add
 ```
  <%= render @post.comments %>
 ```
 
 
-Becomes
+####Becomes
 ```
  </p>
  

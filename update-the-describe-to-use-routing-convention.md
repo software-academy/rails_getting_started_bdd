@@ -6,31 +6,31 @@ title: Update the describe to use routing convention
 <h1 id="main">Update the describe to use routing convention</h1>
 ###Update file `spec/controllers/posts_controller_spec.rb`
 
-Change
+####Change
 ```
    describe "GET 'new'" do
 ```
 
 
-To
+####To
 ```
    describe 'GET #new' do
 ```
 
 
-Change
+####Change
 ```
        get 'new'
 ```
 
 
-To
+####To
 ```
        get :new
 ```
 
 
-Becomes
+####Becomes
 ```
  
  describe PostsController do

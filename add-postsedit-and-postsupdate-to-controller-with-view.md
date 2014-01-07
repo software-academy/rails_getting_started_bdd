@@ -6,7 +6,7 @@ title: Add posts#edit and posts#update to controller, with view
 <h1 id="main">Add posts#edit and posts#update to controller, with view</h1>
 ###Update file `app/controllers/posts_controller.rb`
 
-Add
+####Add
 ```
    def edit
      @post = Post.find(params[:id])
@@ -14,7 +14,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
      end
    end
@@ -30,7 +30,7 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
  
    def update
@@ -45,7 +45,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
    def show
      @post = Post.find(params[:id])
@@ -67,7 +67,7 @@ Becomes
 
 ###Create file `app/views/posts/edit.html.erb`
 
-Add
+####Add
 ```
  <h1>Editing post</h1>
  

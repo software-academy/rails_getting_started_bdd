@@ -6,7 +6,7 @@ title: Create factory for Post
 <h1 id="main">Create factory for Post</h1>
 ###Create file `spec/factories/posts.rb`
 
-Add
+####Add
 ```
  # Read about factories at https://github.com/thoughtbot/factory_girl
  

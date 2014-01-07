@@ -6,20 +6,20 @@ title: Add link to blog posts on home page
 <h1 id="main">Add link to blog posts on home page</h1>
 ###Update file `app/views/welcome/index.html.erb`
 
-Remove
+####Remove
 ```
  <h1>Hello, Rails!</h1>
 ```
 
 
-Add
+####Add
 ```
  <h1>Hello, Rails!</h1>
  <%= link_to "My Blog", controller: "posts" %>
 ```
 
 
-Becomes
+####Becomes
 ```
 \ No newline at end of file
  <h1>Hello, Rails!</h1>

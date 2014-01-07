@@ -6,7 +6,7 @@ title: Test posts#new controller
 <h1 id="main">Test posts#new controller</h1>
 ###Update file `spec/controllers/posts_controller_spec.rb`
 
-Add
+####Add
 ```
    describe "GET 'new'" do
      it "returns http success" do
@@ -17,7 +17,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
  
  describe PostsController do

@@ -6,7 +6,7 @@ title: Test for deleting of comments
 <h1 id="main">Test for deleting of comments</h1>
 ###Update file `spec/controllers/comments_controller_spec.rb`
 
-Add
+####Add
 ```
  
      context 'with a comment' do
@@ -22,7 +22,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
          expect(response).to redirect_to post_path(my_post)
        end
@@ -46,19 +46,19 @@ Becomes
 
 ###Update file `spec/factories/comments.rb`
 
-Change
+####Change
 ```
      post nil
 ```
 
 
-To
+####To
 ```
      post
 ```
 
 
-Becomes
+####Becomes
 ```
    factory :comment do
      commenter "MyString"
@@ -72,20 +72,20 @@ Becomes
 
 ###Update file `spec/features/comments_spec.rb`
 
-Add
+####Add
 ```
      @comment = build :comment, body: 'This is the comment'
 ```
 
 
-Add
+####Add
 ```
      @post.comments << @comment
      @post.save
 ```
 
 
-Becomes
+####Becomes
 ```
  
  feature 'Comments' do
@@ -101,7 +101,7 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
  
    scenario 'can be deleted', js: true do
@@ -114,7 +114,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
      expect(current_path).to eq post_path(@post)
      expect(page).to have_content('Comment: Great post!')

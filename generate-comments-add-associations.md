@@ -6,7 +6,7 @@ title: Generate comments, add associations
 <h1 id="main">Generate comments, add associations</h1>
 ###Create file `app/models/comment.rb`
 
-Add
+####Add
 ```
  class Comment < ActiveRecord::Base
    belongs_to :post
@@ -16,13 +16,13 @@ Add
 
 ###Update file `app/models/post.rb`
 
-Add
+####Add
 ```
    has_many :comments
 ```
 
 
-Becomes
+####Becomes
 ```
  class Post < ActiveRecord::Base
    has_many :comments
@@ -35,7 +35,7 @@ Becomes
 
 ###Create file `db/migrate/20131106022339_create_comments.rb`
 
-Add
+####Add
 ```
  class CreateComments < ActiveRecord::Migration
    def change
@@ -53,13 +53,13 @@ Add
 
 ###Update file `db/schema.rb`
 
-Change
+####Change
 ```
  ActiveRecord::Schema.define(version: 20131101193007) do
 ```
 
 
-To
+####To
 ```
  ActiveRecord::Schema.define(version: 20131106022339) do
  
@@ -75,7 +75,7 @@ To
 ```
 
 
-Becomes
+####Becomes
 ```
  #
  # It's strongly recommended that you check this file into your version control system.
@@ -100,7 +100,7 @@ Becomes
 
 ###Create file `spec/factories/comments.rb`
 
-Add
+####Add
 ```
  # Read about factories at https://github.com/thoughtbot/factory_girl
  
@@ -116,7 +116,7 @@ Add
 
 ###Create file `spec/models/comment_spec.rb`
 
-Add
+####Add
 ```
  require 'spec_helper'
  

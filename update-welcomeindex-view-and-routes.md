@@ -6,20 +6,20 @@ title: Update welcome#index view and routes
 <h1 id="main">Update welcome#index view and routes</h1>
 ###Update file `app/views/welcome/index.html.erb`
 
-Remove
+####Remove
 ```
  <h1>Welcome#index</h1>
  <p>Find me in app/views/welcome/index.html.erb</p>
 ```
 
 
-Add
+####Add
 ```
  <h1>Hello, Rails!</h1>
 ```
 
 
-Becomes
+####Becomes
 ```
  <h1>Hello, Rails!</h1>
 \ No newline at end of file
@@ -29,25 +29,25 @@ Becomes
 
 ###Update file `config/routes.rb`
 
-Remove
+####Remove
 ```
    get "welcome/index"
 ```
 
 
-Change
+####Change
 ```
    # root 'welcome#index'
 ```
 
 
-To
+####To
 ```
    root 'welcome#index'
 ```
 
 
-Becomes
+####Becomes
 ```
  Blog::Application.routes.draw do
    # The priority is based upon order of creation: first created -> highest priority.
@@ -62,7 +62,7 @@ Becomes
 ```
 
 
-Becomes
+####Becomes
 ```
    #       get 'recent', on: :collection
    #     end

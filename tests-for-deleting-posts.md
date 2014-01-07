@@ -6,7 +6,7 @@ title: Tests for deleting posts
 <h1 id="main">Tests for deleting posts</h1>
 ###Update file `spec/controllers/posts_controller_spec.rb`
 
-Add
+####Add
 ```
  
      describe 'DELETE #destroy' do
@@ -18,7 +18,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
          expect(response).to redirect_to post_path(post)
        end
@@ -39,7 +39,7 @@ Becomes
 
 ###Update file `spec/features/posts_spec.rb`
 
-Add
+####Add
 ```
      scenario 'can be deleted from link on posts page', js: true do
        visit posts_path
@@ -53,7 +53,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
        @post2 = create :post, title: 'My second post'
      end

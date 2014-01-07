@@ -6,7 +6,7 @@ title: Add link to destroy post
 <h1 id="main">Add link to destroy post</h1>
 ###Update file `app/controllers/posts_controller.rb`
 
-Add
+####Add
 ```
    def destroy
      @post = Post.find(params[:id])
@@ -17,7 +17,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
      end
    end
@@ -38,14 +38,14 @@ Becomes
 
 ###Update file `app/views/posts/index.html.erb`
 
-Add
+####Add
 ```
        <td><%= link_to 'Destroy', post_path(post),
                      method: :delete, data: { confirm: 'Are you sure?' } %></td>
 ```
 
 
-Becomes
+####Becomes
 ```
        <td><%= post.text %></td>
        <td><%= link_to 'Show', post %></td>

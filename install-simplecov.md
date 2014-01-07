@@ -6,13 +6,13 @@ title: Install SimpleCov
 <h1 id="main">Install SimpleCov</h1>
 ###Update file `Gemfile`
 
-Add
+####Add
 ```
    gem 'simplecov', require: false
 ```
 
 
-Becomes
+####Becomes
 ```
    gem 'database_cleaner'
    gem 'launchy'
@@ -27,7 +27,7 @@ Becomes
 
 ###Update file `Gemfile.lock`
 
-Add
+####Add
 ```
      simplecov (0.7.1)
        multi_json (~> 1.0)
@@ -36,7 +36,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
        rdoc (~> 3.10)
      shoulda-matchers (2.4.0)
@@ -52,13 +52,13 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
    simplecov
 ```
 
 
-Becomes
+####Becomes
 ```
    sass-rails (~> 4.0.0)
    sdoc

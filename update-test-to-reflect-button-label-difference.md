@@ -6,31 +6,31 @@ title: Update test to reflect button label difference
 <h1 id="main">Update test to reflect button label difference</h1>
 ###Update file `spec/features/posts_spec.rb`
 
-Change
+####Change
 ```
      click_button 'Save Post'
 ```
 
 
-To
+####To
 ```
      click_button 'Create Post'
 ```
 
 
-Change
+####Change
 ```
      click_button 'Save Post'
 ```
 
 
-To
+####To
 ```
      click_button 'Create Post'
 ```
 
 
-Becomes
+####Becomes
 ```
      visit new_post_path
      fill_in 'Title', with: 'Rails is Awesome!'
@@ -50,19 +50,19 @@ Becomes
 ```
 
 
-Change
+####Change
 ```
        click_button 'Save Post'
 ```
 
 
-To
+####To
 ```
        click_button 'Update Post'
 ```
 
 
-Becomes
+####Becomes
 ```
      scenario 'can be edited' do
        visit edit_post_path(@post1)

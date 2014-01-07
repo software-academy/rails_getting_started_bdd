@@ -6,14 +6,14 @@ title: Security with HTTP Authentication
 <h1 id="main">Security with HTTP Authentication</h1>
 ###Update file `app/controllers/posts_controller.rb`
 
-Add
+####Add
 ```
  
    http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
 ```
 
 
-Becomes
+####Becomes
 ```
  class PostsController < ApplicationController
  

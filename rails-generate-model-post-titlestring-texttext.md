@@ -6,7 +6,7 @@ title: rails generate model Post title:string text:text
 <h1 id="main">rails generate model Post title:string text:text</h1>
 ###Create file `app/models/post.rb`
 
-Add
+####Add
 ```
  class Post < ActiveRecord::Base
  end
@@ -15,7 +15,7 @@ Add
 
 ###Create file `db/migrate/20131101193007_create_posts.rb`
 
-Add
+####Add
 ```
  class CreatePosts < ActiveRecord::Migration
    def change
@@ -32,7 +32,7 @@ Add
 
 ###Create file `db/schema.rb`
 
-Add
+####Add
 ```
  # encoding: UTF-8
  # This file is auto-generated from the current state of the database. Instead
@@ -62,7 +62,7 @@ Add
 
 ###Create file `spec/models/post_spec.rb`
 
-Add
+####Add
 ```
  require 'spec_helper'
  

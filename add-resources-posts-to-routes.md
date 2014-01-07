@@ -6,26 +6,26 @@ title: Add resources :posts to routes
 <h1 id="main">Add resources :posts to routes</h1>
 ###Update file `config/routes.rb`
 
-Remove
+####Remove
 ```
    # The priority is based upon order of creation: first created -> highest priority.
    # See how all your routes lay out with "rake routes".
 ```
 
 
-Add
+####Add
 ```
    resources :posts
 ```
 
 
-Remove
+####Remove
 ```
    # You can have the root of your site routed with "root"
 ```
 
 
-Remove
+####Remove
 ```
  
    # Example of regular route:
@@ -79,7 +79,7 @@ Remove
 ```
 
 
-Becomes
+####Becomes
 ```
  Blog::Application.routes.draw do
    resources :posts

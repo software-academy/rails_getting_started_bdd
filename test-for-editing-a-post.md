@@ -6,21 +6,21 @@ title: Test for editing a post
 <h1 id="main">Test for editing a post</h1>
 ###Update file `spec/features/posts_spec.rb`
 
-Remove
+####Remove
 ```
        create :post, title: 'My first post'
        create :post, title: 'My second post'
 ```
 
 
-Add
+####Add
 ```
        @post1 = create :post, title: 'My first post'
        @post2 = create :post, title: 'My second post'
 ```
 
 
-Becomes
+####Becomes
 ```
  
    context 'when there are posts' do
@@ -34,7 +34,7 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
      scenario 'can be edited' do
        visit edit_post_path(@post1)
@@ -46,7 +46,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
        expect(page).to have_content('My second post')
      end

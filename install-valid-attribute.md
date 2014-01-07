@@ -6,7 +6,7 @@ title: Install valid_attribute
 <h1 id="main">Install valid_attribute</h1>
 ###Update file `Gemfile`
 
-Add
+####Add
 ```
  group :test do
    gem 'valid_attribute'
@@ -14,7 +14,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
    gem 'factory_girl_rails'
  end
@@ -32,13 +32,13 @@ Becomes
 
 ###Update file `Gemfile.lock`
 
-Add
+####Add
 ```
      valid_attribute (1.3.1)
 ```
 
 
-Becomes
+####Becomes
 ```
      uglifier (2.3.0)
        execjs (>= 0.3.0)
@@ -51,13 +51,13 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
    valid_attribute
 ```
 
 
-Becomes
+####Becomes
 ```
    sqlite3
    turbolinks

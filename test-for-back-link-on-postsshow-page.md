@@ -6,7 +6,7 @@ title: Test for Back link on posts#show page
 <h1 id="main">Test for Back link on posts#show page</h1>
 ###Update file `spec/features/posts_spec.rb`
 
-Add
+####Add
 ```
  
      scenario 'can get back to list page from show page' do
@@ -17,7 +17,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
        expect(page).to have_content('My first post')
        expect(page).to have_content('My second post')

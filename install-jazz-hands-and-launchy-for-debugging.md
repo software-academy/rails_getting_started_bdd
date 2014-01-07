@@ -6,19 +6,19 @@ title: Install jazz_hands and launchy for debugging
 <h1 id="main">Install jazz_hands and launchy for debugging</h1>
 ###Update file `Gemfile`
 
-Add
+####Add
 ```
    gem 'jazz_hands'
 ```
 
 
-Add
+####Add
 ```
    gem 'launchy'
 ```
 
 
-Becomes
+####Becomes
 ```
    gem 'rspec-rails'
    gem 'capybara-webkit'
@@ -37,13 +37,13 @@ Becomes
 
 ###Update file `Gemfile.lock`
 
-Add
+####Add
 ```
      addressable (2.3.5)
 ```
 
 
-Add
+####Add
 ```
      awesome_print (1.2.0)
      binding_of_caller (0.7.2)
@@ -51,7 +51,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
        multi_json (~> 1.3)
        thread_safe (~> 0.1)
@@ -69,13 +69,13 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
      coderay (1.0.9)
 ```
 
 
-Becomes
+####Becomes
 ```
      capybara-webkit (1.0.0)
        capybara (~> 2.0, >= 2.0.2)
@@ -88,7 +88,7 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
      columnize (0.3.6)
      coolline (0.4.2)
@@ -102,13 +102,13 @@ Add
 ```
 
 
-Add
+####Add
 ```
      diffy (3.0.1)
 ```
 
 
-Becomes
+####Becomes
 ```
        coffee-script-source
        execjs
@@ -131,7 +131,7 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
      grit (2.5.0)
        diff-lcs (~> 1.1)
@@ -140,13 +140,13 @@ Add
 ```
 
 
-Add
+####Add
 ```
      hirb (0.7.1)
 ```
 
 
-Add
+####Add
 ```
      jazz_hands (0.5.2)
        awesome_print (~> 1.2)
@@ -163,7 +163,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
      factory_girl_rails (4.2.1)
        factory_girl (~> 4.2.0)
@@ -194,20 +194,20 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
      launchy (2.3.0)
        addressable (~> 2.3)
 ```
 
 
-Add
+####Add
 ```
      method_source (0.8.2)
 ```
 
 
-Becomes
+####Becomes
 ```
        railties (>= 3.0, < 5.0)
        thor (>= 0.14, < 2.0)
@@ -225,7 +225,7 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
      posix-spawn (0.3.6)
      pry (0.9.12.2)
@@ -253,7 +253,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
      nokogiri (1.6.0)
        mini_portile (~> 0.5.0)
@@ -288,13 +288,13 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
      slop (3.4.6)
 ```
 
 
-Becomes
+####Becomes
 ```
      sdoc (0.3.20)
        json (>= 1.1.3)
@@ -307,13 +307,13 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
      yard (0.8.7.2)
 ```
 
 
-Becomes
+####Becomes
 ```
      valid_attribute (1.3.1)
      xpath (2.0.0)
@@ -326,19 +326,19 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
    jazz_hands
 ```
 
 
-Add
+####Add
 ```
    launchy
 ```
 
 
-Becomes
+####Becomes
 ```
    capybara-webkit
    coffee-rails (~> 4.0.0)

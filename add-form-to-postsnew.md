@@ -6,13 +6,13 @@ title: Add form to posts#new
 <h1 id="main">Add form to posts#new</h1>
 ###Update file `app/views/posts/new.html.erb`
 
-Remove
+####Remove
 ```
  <h1>New Post</h1>
 ```
 
 
-Add
+####Add
 ```
  <h1>New Post</h1>
  
@@ -34,7 +34,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
 \ No newline at end of file
  <h1>New Post</h1>

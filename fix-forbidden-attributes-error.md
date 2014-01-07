@@ -6,31 +6,31 @@ title: Fix forbidden attributes error
 <h1 id="main">Fix forbidden attributes error</h1>
 ###Update file `app/controllers/posts_controller.rb`
 
-Change
+####Change
 ```
      @post = Post.new(params[:post])
 ```
 
 
-To
+####To
 ```
      @post = Post.new(params[:post].permit(:title, :text))
 ```
 
 
-Change
+####Change
 ```
      redirect_to action: :show, id: @post.id
 ```
 
 
-To
+####To
 ```
      redirect_to @post
 ```
 
 
-Becomes
+####Becomes
 ```
    end
  

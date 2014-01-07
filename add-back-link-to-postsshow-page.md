@@ -6,13 +6,13 @@ title: Add Back link to posts#show page
 <h1 id="main">Add Back link to posts#show page</h1>
 ###Update file `app/views/posts/show.html.erb`
 
-Remove
+####Remove
 ```
  </p>
 ```
 
 
-Add
+####Add
 ```
  </p>
  
@@ -20,7 +20,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
  <p>
    <strong>Text:</strong>

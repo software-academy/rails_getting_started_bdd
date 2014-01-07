@@ -6,7 +6,7 @@ title: Add posts#show action and view
 <h1 id="main">Add posts#show action and view</h1>
 ###Update file `app/controllers/posts_controller.rb`
 
-Add
+####Add
 ```
  
    def show
@@ -15,7 +15,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
      @post.save
      redirect_to @post
@@ -31,7 +31,7 @@ Becomes
 
 ###Create file `app/views/posts/show.html.erb`
 
-Add
+####Add
 ```
  <p>
    <strong>Title:</strong>

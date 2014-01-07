@@ -6,7 +6,7 @@ title: Test for link to new post on posts page
 <h1 id="main">Test for link to new post on posts page</h1>
 ###Update file `spec/features/posts_spec.rb`
 
-Add
+####Add
 ```
    scenario 'can be created from link on posts page' do
      visit posts_path
@@ -16,7 +16,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
      expect(current_path).to eq posts_path
    end
@@ -34,7 +34,7 @@ Becomes
 ```
 
 
-Becomes
+####Becomes
 ```
        expect(page).to have_content('My second post')
      end

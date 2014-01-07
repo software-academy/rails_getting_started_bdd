@@ -6,7 +6,7 @@ title: Add test for invalid post edit
 <h1 id="main">Add test for invalid post edit</h1>
 ###Update file `spec/controllers/posts_controller_spec.rb`
 
-Remove
+####Remove
 ```
        it "redirects to the :show view" do
          patch :update, id: post.id, post: { title: 'change it' }
@@ -14,7 +14,7 @@ Remove
 ```
 
 
-Add
+####Add
 ```
        context 'when the post is valid' do
          it "redirects to the :show view" do
@@ -31,7 +31,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
      end
  

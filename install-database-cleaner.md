@@ -6,13 +6,13 @@ title: Install database_cleaner
 <h1 id="main">Install database_cleaner</h1>
 ###Update file `Gemfile`
 
-Add
+####Add
 ```
    gem 'database_cleaner'
 ```
 
 
-Becomes
+####Becomes
 ```
  end
  
@@ -27,13 +27,13 @@ Becomes
 
 ###Update file `Gemfile.lock`
 
-Add
+####Add
 ```
      database_cleaner (1.2.0)
 ```
 
 
-Becomes
+####Becomes
 ```
      coffee-script-source (1.6.3)
      columnize (0.3.6)
@@ -46,13 +46,13 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
    database_cleaner
 ```
 
 
-Becomes
+####Becomes
 ```
  DEPENDENCIES
    capybara-webkit

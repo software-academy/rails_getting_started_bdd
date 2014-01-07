@@ -6,7 +6,7 @@ title: Add comments to posts
 <h1 id="main">Add comments to posts</h1>
 ###Create file `app/assets/javascripts/comments.js.coffee`
 
-Add
+####Add
 ```
  # Place all the behaviors and hooks related to the matching controller here.
  # All this logic will automatically be available in application.js.
@@ -16,7 +16,7 @@ Add
 
 ###Create file `app/assets/stylesheets/comments.css.scss`
 
-Add
+####Add
 ```
  // Place all the styles related to the Comments controller here.
  // They will automatically be included in application.css.
@@ -26,7 +26,7 @@ Add
 
 ###Create file `app/controllers/comments_controller.rb`
 
-Add
+####Add
 ```
  class CommentsController < ApplicationController
    def create
@@ -40,7 +40,7 @@ Add
 
 ###Create file `app/helpers/comments_helper.rb`
 
-Add
+####Add
 ```
  module CommentsHelper
  end
@@ -49,7 +49,7 @@ Add
 
 ###Update file `app/views/posts/show.html.erb`
 
-Add
+####Add
 ```
  <h2>Comments</h2>
  <% @post.comments.each do |comment| %>
@@ -81,7 +81,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
    <%= @post.text %>
  </p>
@@ -123,13 +123,13 @@ Becomes
 
 ###Update file `config/routes.rb`
 
-Change
+####Change
 ```
    resources :posts
 ```
 
 
-To
+####To
 ```
    resources :posts do
      resources :comments
@@ -137,7 +137,7 @@ To
 ```
 
 
-Becomes
+####Becomes
 ```
  Blog::Application.routes.draw do
    resources :posts do
@@ -152,7 +152,7 @@ Becomes
 
 ###Create file `spec/controllers/comments_controller_spec.rb`
 
-Add
+####Add
 ```
  require 'spec_helper'
  
@@ -173,7 +173,7 @@ Add
 
 ###Create file `spec/helpers/comments_helper_spec.rb`
 
-Add
+####Add
 ```
  require 'spec_helper'
  

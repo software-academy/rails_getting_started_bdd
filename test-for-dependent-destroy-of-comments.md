@@ -6,19 +6,19 @@ title: Test for dependent destroy of comments
 <h1 id="main">Test for dependent destroy of comments</h1>
 ###Update file `spec/models/post_spec.rb`
 
-Change
+####Change
 ```
    it { should have_many :comments }
 ```
 
 
-To
+####To
 ```
    it { should have_many(:comments).dependent(:destroy) }
 ```
 
 
-Becomes
+####Becomes
 ```
  require 'spec_helper'
  

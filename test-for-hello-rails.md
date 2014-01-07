@@ -6,7 +6,7 @@ title: Test for Hello, Rails
 <h1 id="main">Test for Hello, Rails</h1>
 ###Create file `spec/features/hello_world_spec.rb`
 
-Add
+####Add
 ```
  require 'spec_helper'
  

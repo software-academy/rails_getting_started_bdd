@@ -6,7 +6,7 @@ title: Test for commenting on a post
 <h1 id="main">Test for commenting on a post</h1>
 ###Create file `spec/features/comments_spec.rb`
 
-Add
+####Add
 ```
  require 'spec_helper'
  

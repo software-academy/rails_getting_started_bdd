@@ -6,21 +6,21 @@ title: Add links to edit and show on list page, edit on show
 <h1 id="main">Add links to edit and show on list page, edit on show</h1>
 ###Update file `app/views/posts/index.html.erb`
 
-Add
+####Add
 ```
      <th></th>
      <th></th>
 ```
 
 
-Add
+####Add
 ```
        <td><%= link_to 'Show', post %></td>
        <td><%= link_to 'Edit', edit_post_path(post) %></td>
 ```
 
 
-Becomes
+####Becomes
 ```
    <tr>
      <th>Title</th>
@@ -45,20 +45,20 @@ Becomes
 
 ###Update file `app/views/posts/show.html.erb`
 
-Remove
+####Remove
 ```
  <%= link_to 'Back', posts_path %>
 ```
 
 
-Add
+####Add
 ```
  <%= link_to 'Back', posts_path %>
  | <%= link_to 'Edit', edit_post_path(@post) %>
 ```
 
 
-Becomes
+####Becomes
 ```
    <%= @post.text %>
  </p>

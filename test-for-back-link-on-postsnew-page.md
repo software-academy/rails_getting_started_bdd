@@ -6,7 +6,7 @@ title: Test for back link on posts#new page
 <h1 id="main">Test for back link on posts#new page</h1>
 ###Update file `spec/features/posts_spec.rb`
 
-Add
+####Add
 ```
    scenario 'can get back to list page from new page' do
      visit new_post_path
@@ -16,7 +16,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
      expect(page).to have_content('Rails is Awesome!')
    end

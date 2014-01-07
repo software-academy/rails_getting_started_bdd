@@ -6,7 +6,7 @@ title: Add posts#index action and view
 <h1 id="main">Add posts#index action and view</h1>
 ###Update file `app/controllers/posts_controller.rb`
 
-Add
+####Add
 ```
    def index
      @posts = Post.all
@@ -14,7 +14,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
      redirect_to @post
    end
@@ -32,7 +32,7 @@ Becomes
 
 ###Create file `app/views/posts/index.html.erb`
 
-Add
+####Add
 ```
  <h1>Listing posts</h1>
  

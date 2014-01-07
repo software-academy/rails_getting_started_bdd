@@ -6,19 +6,19 @@ title: Good RSpec, use expect instead of should
 <h1 id="main">Good RSpec, use expect instead of should</h1>
 ###Update file `spec/controllers/posts_controller_spec.rb`
 
-Change
+####Change
 ```
        response.should be_success
 ```
 
 
-To
+####To
 ```
        expect(response).to be_success
 ```
 
 
-Becomes
+####Becomes
 ```
    describe 'GET #new' do
      it "returns http success" do
@@ -31,19 +31,19 @@ Becomes
 ```
 
 
-Change
+####Change
 ```
        response.should be_success
 ```
 
 
-To
+####To
 ```
        expect(response).to be_success
 ```
 
 
-Becomes
+####Becomes
 ```
    describe 'GET #index' do
      it "returns http success" do

@@ -6,7 +6,7 @@ title: Tests for basic authentication
 <h1 id="main">Tests for basic authentication</h1>
 ###Update file `spec/controllers/posts_controller_spec.rb`
 
-Add
+####Add
 ```
    include AuthHelper
  
@@ -16,7 +16,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
  require 'spec_helper'
  
@@ -35,7 +35,7 @@ Becomes
 
 ###Update file `spec/features/posts_spec.rb`
 
-Remove
+####Remove
 ```
    scenario 'can be created' do
      visit new_post_path
@@ -60,7 +60,7 @@ Remove
 ```
 
 
-Add
+####Add
 ```
    context 'when the user has authenticated' do
      background do
@@ -69,7 +69,7 @@ Add
 ```
 
 
-Remove
+####Remove
 ```
    scenario 'can be accessed from link on home page' do
      visit root_path
@@ -79,7 +79,7 @@ Remove
 ```
 
 
-Add
+####Add
 ```
      scenario 'can be created' do
        visit new_post_path
@@ -91,7 +91,7 @@ Add
 ```
 
 
-Remove
+####Remove
 ```
    scenario 'can be created from link on posts page' do
      visit posts_path
@@ -101,7 +101,7 @@ Remove
 ```
 
 
-Add
+####Add
 ```
      scenario 'cannot be created without a title' do
        visit new_post_path
@@ -112,7 +112,7 @@ Add
 ```
 
 
-Remove
+####Remove
 ```
    context 'when there are posts' do
      before do
@@ -121,7 +121,7 @@ Remove
 ```
 
 
-Add
+####Add
 ```
      scenario 'can get back to list page from new page' do
        visit new_post_path
@@ -130,19 +130,19 @@ Add
 ```
 
 
-Change
+####Change
 ```
      scenario 'can be deleted from link on posts page', js: true do
 ```
 
 
-To
+####To
 ```
      scenario 'can be created from link on posts page' do
 ```
 
 
-Remove
+####Remove
 ```
        within 'tr:last-child' do
          page.driver.accept_js_confirms!
@@ -153,14 +153,14 @@ Remove
 ```
 
 
-Add
+####Add
 ```
        click_link 'New post'
        expect(current_path).to eq new_post_path
 ```
 
 
-Remove
+####Remove
 ```
      scenario 'can be edited from link on posts page' do
        visit posts_path
@@ -170,7 +170,7 @@ Remove
 ```
 
 
-Add
+####Add
 ```
      context 'when there are posts' do
        before do
@@ -179,13 +179,13 @@ Add
 ```
 
 
-Remove
+####Remove
 ```
      end
 ```
 
 
-Remove
+####Remove
 ```
      scenario 'can be viewed from link on posts page' do
        visit posts_path
@@ -195,7 +195,7 @@ Remove
 ```
 
 
-Add
+####Add
 ```
        scenario 'can be edited from link on posts page' do
          visit posts_path
@@ -220,13 +220,13 @@ Add
 ```
 
 
-Add
+####Add
 ```
    end
 ```
 
 
-Remove
+####Remove
 ```
      scenario 'can be listed' do
        visit posts_path
@@ -235,7 +235,7 @@ Remove
 ```
 
 
-Add
+####Add
 ```
    context 'when the user has authenticated and javascript is needed' do
      background do
@@ -243,7 +243,7 @@ Add
 ```
 
 
-Remove
+####Remove
 ```
      scenario 'can be edited' do
        visit edit_post_path(@post1)
@@ -254,7 +254,7 @@ Remove
 ```
 
 
-Add
+####Add
 ```
      scenario 'can be deleted from link on posts page', js: true do
        pending('Unable to issue basic auth when js: true') do
@@ -269,13 +269,13 @@ Add
 ```
 
 
-Add
+####Add
 ```
    end
 ```
 
 
-Remove
+####Remove
 ```
      scenario 'can get back to list page from show page' do
        visit post_path(Post.first)
@@ -283,7 +283,7 @@ Remove
 ```
 
 
-Add
+####Add
 ```
    context 'when the user is anonymous' do
      scenario 'can be accessed from link on home page' do
@@ -292,7 +292,7 @@ Add
 ```
 
 
-Remove
+####Remove
 ```
      scenario 'can be edited from show page' do
        visit post_path(Post.first)
@@ -301,7 +301,7 @@ Remove
 ```
 
 
-Add
+####Add
 ```
      context 'when there are posts' do
        before do
@@ -331,7 +331,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
  require 'spec_helper'
  
@@ -457,7 +457,7 @@ Becomes
 
 ###Create file `spec/support/auth_helper.rb`
 
-Add
+####Add
 ```
  module AuthHelper
    def http_login
@@ -473,7 +473,7 @@ Add
 
 ###Create file `spec/support/basic_auth.rb`
 
-Add
+####Add
 ```
  RSpec.configure do |config|
    config.include AuthHelper, type: :controller

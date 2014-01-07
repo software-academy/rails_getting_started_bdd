@@ -6,7 +6,7 @@ title: Controller test for posts#index
 <h1 id="main">Controller test for posts#index</h1>
 ###Update file `spec/controllers/posts_controller_spec.rb`
 
-Add
+####Add
 ```
  
    describe 'GET #index' do
@@ -18,7 +18,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
        expect(response).to redirect_to assigns[:post]
      end

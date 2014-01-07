@@ -6,7 +6,7 @@ title: Add controller test for posts#create with validation
 <h1 id="main">Add controller test for posts#create with validation</h1>
 ###Update file `spec/controllers/posts_controller_spec.rb`
 
-Remove
+####Remove
 ```
      it "redirects to the :show view" do
        post :create, post: { title: 'title', text: 'text' }
@@ -14,7 +14,7 @@ Remove
 ```
 
 
-Add
+####Add
 ```
      context 'when the post is valid' do
        it "redirects to the :show view" do
@@ -31,7 +31,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
    end
  

@@ -6,7 +6,7 @@ title: Expect posts#index to assign Post.all to @posts
 <h1 id="main">Expect posts#index to assign Post.all to @posts</h1>
 ###Update file `spec/controllers/posts_controller_spec.rb`
 
-Add
+####Add
 ```
  
      it "assigns @posts to Post.all" do
@@ -16,7 +16,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
        get :index
        expect(response).to be_success

@@ -6,13 +6,13 @@ title: Configure SimpleCov
 <h1 id="main">Configure SimpleCov</h1>
 ###Update file `.gitignore`
 
-Add
+####Add
 ```
  /coverage
 ```
 
 
-Becomes
+####Becomes
 ```
  # Ignore all logfiles and tempfiles.
  /log/*.log
@@ -24,14 +24,14 @@ Becomes
 
 ###Update file `spec/spec_helper.rb`
 
-Add
+####Add
 ```
  require 'simplecov'
  SimpleCov.start
 ```
 
 
-Becomes
+####Becomes
 ```
  # This file is copied to spec/ when you run 'rails generate rspec:install'
  require 'simplecov'

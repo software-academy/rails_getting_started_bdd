@@ -6,7 +6,7 @@ title: Test for show and edit on index, edit on show
 <h1 id="main">Test for show and edit on index, edit on show</h1>
 ###Update file `spec/features/posts_spec.rb`
 
-Add
+####Add
 ```
      scenario 'can be edited from link on posts page' do
        visit posts_path
@@ -26,7 +26,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
        @post2 = create :post, title: 'My second post'
      end
@@ -54,7 +54,7 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
  
      scenario 'can be edited from show page' do
@@ -65,7 +65,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
        click_link 'Back'
        expect(current_path).to eq posts_path

@@ -6,13 +6,13 @@ title: Install factory_girl_rails
 <h1 id="main">Install factory_girl_rails</h1>
 ###Update file `Gemfile`
 
-Add
+####Add
 ```
    gem 'factory_girl_rails'
 ```
 
 
-Becomes
+####Becomes
 ```
  group :development, :test do
    gem 'rspec-rails'
@@ -27,7 +27,7 @@ Becomes
 
 ###Update file `Gemfile.lock`
 
-Add
+####Add
 ```
      factory_girl (4.2.0)
        activesupport (>= 3.0.0)
@@ -37,7 +37,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
      diff-lcs (1.2.4)
      erubis (2.7.0)
@@ -54,13 +54,13 @@ Becomes
 ```
 
 
-Add
+####Add
 ```
    factory_girl_rails
 ```
 
 
-Becomes
+####Becomes
 ```
  DEPENDENCIES
    capybara-webkit

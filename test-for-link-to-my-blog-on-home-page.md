@@ -6,7 +6,7 @@ title: Test for link to My Blog on home page
 <h1 id="main">Test for link to My Blog on home page</h1>
 ###Update file `spec/features/posts_spec.rb`
 
-Add
+####Add
 ```
    scenario 'can be accessed from link on home page' do
      visit root_path
@@ -16,7 +16,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
      expect(page).to have_content('Rails is Awesome!')
    end

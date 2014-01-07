@@ -6,13 +6,13 @@ title: RSpec configuration for factory_girl
 <h1 id="main">RSpec configuration for factory_girl</h1>
 ###Update file `spec/spec_helper.rb`
 
-Add
+####Add
 ```
    config.include FactoryGirl::Syntax::Methods
 ```
 
 
-Becomes
+####Becomes
 ```
    # the seed, which is printed after each run.
    #     --seed 1234

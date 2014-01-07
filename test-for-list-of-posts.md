@@ -6,7 +6,7 @@ title: Test for list of posts
 <h1 id="main">Test for list of posts</h1>
 ###Update file `spec/features/posts_spec.rb`
 
-Add
+####Add
 ```
  
    context 'when there are posts' do
@@ -24,7 +24,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
      click_button 'Save Post'
      expect(page).to have_content('Rails is Awesome!')

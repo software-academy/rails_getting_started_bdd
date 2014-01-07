@@ -6,19 +6,19 @@ title: Update url in posts#new
 <h1 id="main">Update url in posts#new</h1>
 ###Update file `app/views/posts/new.html.erb`
 
-Change
+####Change
 ```
  <%= form_for :post do |f| %>
 ```
 
 
-To
+####To
 ```
  <%= form_for :post, url: posts_path do |f| %>
 ```
 
 
-Becomes
+####Becomes
 ```
  <h1>New Post</h1>
  

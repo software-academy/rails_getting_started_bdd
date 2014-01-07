@@ -6,7 +6,7 @@ title: Controller tests for posts#edit and posts#update
 <h1 id="main">Controller tests for posts#edit and posts#update</h1>
 ###Update file `spec/controllers/posts_controller_spec.rb`
 
-Add
+####Add
 ```
    context 'when there is a post' do
      let(:post) { create :post }
@@ -28,7 +28,7 @@ Add
 ```
 
 
-Becomes
+####Becomes
 ```
      end
    end
