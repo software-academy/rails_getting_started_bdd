@@ -4,409 +4,481 @@ title: Tests for basic authentication
 ---
 
 <h1 id="main">Tests for basic authentication</h1>
-Update file `spec/controllers/posts_controller_spec.rb`
+###Update file `spec/controllers/posts_controller_spec.rb`
 
 Add
-<pre><code>   include AuthHelper
-&nbsp;
+```
+   include AuthHelper
+ 
    before(:each) do
      http_login
-   end</code></pre>
+   end
+```
 
 
 Becomes
-<pre><code> require &#39;spec_helper&#39;
-&nbsp;
+```
+ require 'spec_helper'
+ 
  describe PostsController do
    include AuthHelper
-&nbsp;
+ 
    before(:each) do
      http_login
    end
-&nbsp;
-   describe &#39;GET #new&#39; do
-     it &quot;returns http success&quot; do
-       get :new
-       expect(response).to be_success
-     end
+ 
+   describe 'GET #new' do
+     it "returns http success" do
+
+```
+
+
+###Update file `spec/features/posts_spec.rb`
+
+Remove
+```
+   scenario 'can be created' do
+     visit new_post_path
+     fill_in 'Title', with: 'Rails is Awesome!'
+     fill_in 'Text', with: 'It really is.'
+     click_button 'Create Post'
+     expect(current_path).to eq post_path(Post.where(title: 'Rails is Awesome!').first)
    end
-&nbsp;
-   context &#39;when there is a post&#39; do
-     let(:post) { create :post }
-</code></pre>
-
-
-Update file `spec/features/posts_spec.rb`
-
-Remove
-<pre><code>   scenario &#39;can be created&#39; do
+ 
+   scenario 'cannot be created without a title' do
      visit new_post_path
-     fill_in &#39;Title&#39;, with: &#39;Rails is Awesome!&#39;
-     fill_in &#39;Text&#39;, with: &#39;It really is.&#39;
-     click_button &#39;Create Post&#39;
-     expect(current_path).to eq post_path(Post.where(title: &#39;Rails is Awesome!&#39;).first)
-   end</code></pre>
+     fill_in 'Title', with: ''
+     click_button 'Create Post'
+     expect(page).to have_content("Title can't be blank")
+   end
+ 
+   scenario 'can get back to list page from new page' do
+     visit new_post_path
+     click_link 'Back'
+     expect(current_path).to eq posts_path
+   end
+```
 
 
 Add
-<pre><code>   context &#39;when the user has authenticated&#39; do
+```
+   context 'when the user has authenticated' do
      background do
-       page.driver.browser.basic_authorize &#39;dhh&#39;, &#39;secret&#39;
-     end</code></pre>
+       page.driver.browser.basic_authorize 'dhh', 'secret'
+     end
+```
 
 
 Remove
-<pre><code>   scenario &#39;cannot be created without a title&#39; do
-     visit new_post_path
-     fill_in &#39;Title&#39;, with: &#39;&#39;
-     click_button &#39;Create Post&#39;
-     expect(page).to have_content(&quot;Title can&#39;t be blank&quot;)
-   end</code></pre>
-
-
-Add
-<pre><code>     scenario &#39;can be created&#39; do
-       visit new_post_path
-       fill_in &#39;Title&#39;, with: &#39;Rails is Awesome!&#39;
-       fill_in &#39;Text&#39;, with: &#39;It really is.&#39;
-       click_button &#39;Create Post&#39;
-       expect(current_path).to eq post_path(Post.where(title: &#39;Rails is Awesome!&#39;).first)
-     end</code></pre>
-
-
-Remove
-<pre><code>   scenario &#39;can get back to list page from new page&#39; do
-     visit new_post_path
-     click_link &#39;Back&#39;
-     expect(current_path).to eq posts_path
-   end</code></pre>
-
-
-Add
-<pre><code>     scenario &#39;cannot be created without a title&#39; do
-       visit new_post_path
-       fill_in &#39;Title&#39;, with: &#39;&#39;
-       click_button &#39;Create Post&#39;
-       expect(page).to have_content(&quot;Title can&#39;t be blank&quot;)
-     end</code></pre>
-
-
-Remove
-<pre><code>   scenario &#39;can be accessed from link on home page&#39; do
+```
+   scenario 'can be accessed from link on home page' do
      visit root_path
-     click_link &#39;My Blog&#39;
+     click_link 'My Blog'
      expect(current_path).to eq posts_path
-   end</code></pre>
+   end
+```
 
 
 Add
-<pre><code>     scenario &#39;can get back to list page from new page&#39; do
+```
+     scenario 'can be created' do
        visit new_post_path
-       click_link &#39;Back&#39;
+       fill_in 'Title', with: 'Rails is Awesome!'
+       fill_in 'Text', with: 'It really is.'
+       click_button 'Create Post'
+       expect(current_path).to eq post_path(Post.where(title: 'Rails is Awesome!').first)
+     end
+```
+
+
+Remove
+```
+   scenario 'can be created from link on posts page' do
+     visit posts_path
+     click_link 'New post'
+     expect(current_path).to eq new_post_path
+   end
+```
+
+
+Add
+```
+     scenario 'cannot be created without a title' do
+       visit new_post_path
+       fill_in 'Title', with: ''
+       click_button 'Create Post'
+       expect(page).to have_content("Title can't be blank")
+     end
+```
+
+
+Remove
+```
+   context 'when there are posts' do
+     before do
+       @post1 = create :post, title: 'My first post'
+       @post2 = create :post, title: 'My second post'
+```
+
+
+Add
+```
+     scenario 'can get back to list page from new page' do
+       visit new_post_path
+       click_link 'Back'
        expect(current_path).to eq posts_path
-     end
-&nbsp;
-     scenario &#39;can be created from link on posts page&#39; do
-       visit posts_path
-       click_link &#39;New post&#39;
-       expect(current_path).to eq new_post_path
-     end
-&nbsp;
-     context &#39;when there are posts&#39; do
-       before do
-         @post1 = create :post, title: &#39;My first post&#39;
-         @post2 = create :post, title: &#39;My second post&#39;
+```
+
+
+Change
+```
+     scenario 'can be deleted from link on posts page', js: true do
+```
+
+
+To
+```
+     scenario 'can be created from link on posts page' do
+```
+
+
+Remove
+```
+       within 'tr:last-child' do
+         page.driver.accept_js_confirms!
+         click_link 'Destroy'
+         expect(current_path).to eq posts_path
+         expect(page).not_to have_content('My second post')
        end
-&nbsp;
-       scenario &#39;can be edited from link on posts page&#39; do
+```
+
+
+Add
+```
+       click_link 'New post'
+       expect(current_path).to eq new_post_path
+```
+
+
+Remove
+```
+     scenario 'can be edited from link on posts page' do
+       visit posts_path
+       within 'tr:last-child' do
+         click_link 'Edit'
+         expect(current_path).to eq edit_post_path(@post2)
+```
+
+
+Add
+```
+     context 'when there are posts' do
+       before do
+         @post1 = create :post, title: 'My first post'
+         @post2 = create :post, title: 'My second post'
+```
+
+
+Remove
+```
+     end
+```
+
+
+Remove
+```
+     scenario 'can be viewed from link on posts page' do
+       visit posts_path
+       within 'tr:last-child' do
+         click_link 'Show'
+         expect(current_path).to eq post_path(@post2)
+```
+
+
+Add
+```
+       scenario 'can be edited from link on posts page' do
          visit posts_path
-         within &#39;tr:last-child&#39; do
-           click_link &#39;Edit&#39;
+         within 'tr:last-child' do
+           click_link 'Edit'
            expect(current_path).to eq edit_post_path(@post2)
          end
        end
-&nbsp;
-       scenario &#39;can be edited&#39; do
+ 
+       scenario 'can be edited' do
          visit edit_post_path(@post1)
-         fill_in &#39;Title&#39;, with: &#39;My first post has a new title&#39;
-         click_button &#39;Update Post&#39;
+         fill_in 'Title', with: 'My first post has a new title'
+         click_button 'Update Post'
          expect(current_path).to eq post_path(@post1)
-         expect(page).to have_content(&#39;My first post has a new title&#39;)
-       end</code></pre>
-
-
-Remove
-<pre><code>   scenario &#39;can be created from link on posts page&#39; do
-     visit posts_path
-     click_link &#39;New post&#39;
-     expect(current_path).to eq new_post_path</code></pre>
-
-
-Add
-<pre><code>       scenario &#39;can be edited from show page&#39; do
-         visit post_path(Post.first)
-         click_link &#39;Edit&#39;
-         expect(current_path).to eq edit_post_path(Post.first)
+         expect(page).to have_content('My first post has a new title')
        end
-     end</code></pre>
-
-
-Remove
-<pre><code>   context &#39;when there are posts&#39; do
-     before do
-       @post1 = create :post, title: &#39;My first post&#39;
-       @post2 = create :post, title: &#39;My second post&#39;</code></pre>
+ 
+       scenario 'can be edited from show page' do
+         visit post_path(Post.first)
+         click_link 'Edit'
+         expect(current_path).to eq edit_post_path(Post.first)
+```
 
 
 Add
-<pre><code>   context &#39;when the user has authenticated and javascript is needed&#39; do
+```
+   end
+```
+
+
+Remove
+```
+     scenario 'can be listed' do
+       visit posts_path
+       expect(page).to have_content('My first post')
+       expect(page).to have_content('My second post')
+```
+
+
+Add
+```
+   context 'when the user has authenticated and javascript is needed' do
      background do
-       # TODO: Issue basic_auth headers</code></pre>
+       # TODO: Issue basic_auth headers
+```
 
 
 Remove
-<pre><code>       visit posts_path
-       within &#39;tr:last-child&#39; do
-         page.driver.accept_js_confirms!
-         click_link &#39;Destroy&#39;</code></pre>
+```
+     scenario 'can be edited' do
+       visit edit_post_path(@post1)
+       fill_in 'Title', with: 'My first post has a new title'
+       click_button 'Update Post'
+       expect(current_path).to eq post_path(@post1)
+       expect(page).to have_content('My first post has a new title')
+```
 
 
 Add
-<pre><code>       pending(&#39;Unable to issue basic auth when js: true&#39;) do
+```
+     scenario 'can be deleted from link on posts page', js: true do
+       pending('Unable to issue basic auth when js: true') do
          visit posts_path
-         within &#39;tr:last-child&#39; do
+         within 'tr:last-child' do
            page.driver.accept_js_confirms!
-           click_link &#39;Destroy&#39;
+           click_link 'Destroy'
            expect(current_path).to eq posts_path
-           expect(page).not_to have_content(&#39;My second post&#39;)
+           expect(page).not_to have_content('My second post')
          end
        end
-     end
+```
+
+
+Add
+```
    end
-&nbsp;
-   context &#39;when the user is anonymous&#39; do
-     scenario &#39;can be accessed from link on home page&#39; do
+```
+
+
+Remove
+```
+     scenario 'can get back to list page from show page' do
+       visit post_path(Post.first)
+       click_link 'Back'
+```
+
+
+Add
+```
+   context 'when the user is anonymous' do
+     scenario 'can be accessed from link on home page' do
        visit root_path
-       click_link &#39;My Blog&#39;
-       expect(current_path).to eq posts_path
-     end
-&nbsp;
-     context &#39;when there are posts&#39; do
+       click_link 'My Blog'
+```
+
+
+Remove
+```
+     scenario 'can be edited from show page' do
+       visit post_path(Post.first)
+       click_link 'Edit'
+       expect(current_path).to eq edit_post_path(Post.first)
+```
+
+
+Add
+```
+     context 'when there are posts' do
        before do
-         @post1 = create :post, title: &#39;My first post&#39;
-         @post2 = create :post, title: &#39;My second post&#39;
+         @post1 = create :post, title: 'My first post'
+         @post2 = create :post, title: 'My second post'
        end
-&nbsp;
-       scenario &#39;can be viewed from link on posts page&#39; do
+ 
+       scenario 'can be viewed from link on posts page' do
          visit posts_path
-         within &#39;tr:last-child&#39; do
-           click_link &#39;Show&#39;
+         within 'tr:last-child' do
+           click_link 'Show'
            expect(current_path).to eq post_path(@post2)
          end
        end
-&nbsp;
-       scenario &#39;can be listed&#39; do
+ 
+       scenario 'can be listed' do
          visit posts_path
-         expect(page).to have_content(&#39;My first post&#39;)
-         expect(page).to have_content(&#39;My second post&#39;)
+         expect(page).to have_content('My first post')
+         expect(page).to have_content('My second post')
        end
-&nbsp;
-       scenario &#39;can get back to list page from show page&#39; do
+ 
+       scenario 'can get back to list page from show page' do
          visit post_path(Post.first)
-         click_link &#39;Back&#39;</code></pre>
-
-
-Remove
-<pre><code>         expect(page).not_to have_content(&#39;My second post&#39;)</code></pre>
-
-
-Remove
-<pre><code>&nbsp;
-     scenario &#39;can be edited from link on posts page&#39; do
-       visit posts_path
-       within &#39;tr:last-child&#39; do
-         click_link &#39;Edit&#39;
-         expect(current_path).to eq edit_post_path(@post2)
+         click_link 'Back'
+         expect(current_path).to eq posts_path
        end
-     end
-&nbsp;
-     scenario &#39;can be viewed from link on posts page&#39; do
-       visit posts_path
-       within &#39;tr:last-child&#39; do
-         click_link &#39;Show&#39;
-         expect(current_path).to eq post_path(@post2)
-       end
-     end
-&nbsp;
-     scenario &#39;can be listed&#39; do
-       visit posts_path
-       expect(page).to have_content(&#39;My first post&#39;)
-       expect(page).to have_content(&#39;My second post&#39;)
-     end
-&nbsp;
-     scenario &#39;can be edited&#39; do
-       visit edit_post_path(@post1)
-       fill_in &#39;Title&#39;, with: &#39;My first post has a new title&#39;
-       click_button &#39;Update Post&#39;
-       expect(current_path).to eq post_path(@post1)
-       expect(page).to have_content(&#39;My first post has a new title&#39;)
-     end
-&nbsp;
-     scenario &#39;can get back to list page from show page&#39; do
-       visit post_path(Post.first)
-       click_link &#39;Back&#39;
-       expect(current_path).to eq posts_path
-     end
-&nbsp;
-     scenario &#39;can be edited from show page&#39; do
-       visit post_path(Post.first)
-       click_link &#39;Edit&#39;
-       expect(current_path).to eq edit_post_path(Post.first)
-     end</code></pre>
+```
 
 
 Becomes
-<pre><code> require &#39;spec_helper&#39;
-&nbsp;
- feature &#39;Posts&#39; do
-   context &#39;when the user has authenticated&#39; do
+```
+ require 'spec_helper'
+ 
+ feature 'Posts' do
+   context 'when the user has authenticated' do
      background do
-       page.driver.browser.basic_authorize &#39;dhh&#39;, &#39;secret&#39;
+       page.driver.browser.basic_authorize 'dhh', 'secret'
      end
-&nbsp;
-     scenario &#39;can be created&#39; do
+ 
+     scenario 'can be created' do
        visit new_post_path
-       fill_in &#39;Title&#39;, with: &#39;Rails is Awesome!&#39;
-       fill_in &#39;Text&#39;, with: &#39;It really is.&#39;
-       click_button &#39;Create Post&#39;
-       expect(current_path).to eq post_path(Post.where(title: &#39;Rails is Awesome!&#39;).first)
+       fill_in 'Title', with: 'Rails is Awesome!'
+       fill_in 'Text', with: 'It really is.'
+       click_button 'Create Post'
+       expect(current_path).to eq post_path(Post.where(title: 'Rails is Awesome!').first)
      end
-&nbsp;
-     scenario &#39;cannot be created without a title&#39; do
+ 
+     scenario 'cannot be created without a title' do
        visit new_post_path
-       fill_in &#39;Title&#39;, with: &#39;&#39;
-       click_button &#39;Create Post&#39;
-       expect(page).to have_content(&quot;Title can&#39;t be blank&quot;)
+       fill_in 'Title', with: ''
+       click_button 'Create Post'
+       expect(page).to have_content("Title can't be blank")
      end
-&nbsp;
-     scenario &#39;can get back to list page from new page&#39; do
+ 
+     scenario 'can get back to list page from new page' do
        visit new_post_path
-       click_link &#39;Back&#39;
+       click_link 'Back'
        expect(current_path).to eq posts_path
      end
-&nbsp;
-     scenario &#39;can be created from link on posts page&#39; do
+ 
+     scenario 'can be created from link on posts page' do
        visit posts_path
-       click_link &#39;New post&#39;
+       click_link 'New post'
        expect(current_path).to eq new_post_path
      end
-&nbsp;
-     context &#39;when there are posts&#39; do
+ 
+     context 'when there are posts' do
        before do
-         @post1 = create :post, title: &#39;My first post&#39;
-         @post2 = create :post, title: &#39;My second post&#39;
+         @post1 = create :post, title: 'My first post'
+         @post2 = create :post, title: 'My second post'
        end
-&nbsp;
-       scenario &#39;can be edited from link on posts page&#39; do
+ 
+       scenario 'can be edited from link on posts page' do
          visit posts_path
-         within &#39;tr:last-child&#39; do
-           click_link &#39;Edit&#39;
+         within 'tr:last-child' do
+           click_link 'Edit'
            expect(current_path).to eq edit_post_path(@post2)
          end
        end
-&nbsp;
-       scenario &#39;can be edited&#39; do
+ 
+       scenario 'can be edited' do
          visit edit_post_path(@post1)
-         fill_in &#39;Title&#39;, with: &#39;My first post has a new title&#39;
-         click_button &#39;Update Post&#39;
+         fill_in 'Title', with: 'My first post has a new title'
+         click_button 'Update Post'
          expect(current_path).to eq post_path(@post1)
-         expect(page).to have_content(&#39;My first post has a new title&#39;)
+         expect(page).to have_content('My first post has a new title')
        end
-&nbsp;
-       scenario &#39;can be edited from show page&#39; do
+ 
+       scenario 'can be edited from show page' do
          visit post_path(Post.first)
-         click_link &#39;Edit&#39;
+         click_link 'Edit'
          expect(current_path).to eq edit_post_path(Post.first)
        end
      end
    end
-&nbsp;
-   context &#39;when the user has authenticated and javascript is needed&#39; do
+ 
+   context 'when the user has authenticated and javascript is needed' do
      background do
        # TODO: Issue basic_auth headers
      end
-&nbsp;
-     scenario &#39;can be deleted from link on posts page&#39;, js: true do
-       pending(&#39;Unable to issue basic auth when js: true&#39;) do
+ 
+     scenario 'can be deleted from link on posts page', js: true do
+       pending('Unable to issue basic auth when js: true') do
          visit posts_path
-         within &#39;tr:last-child&#39; do
+         within 'tr:last-child' do
            page.driver.accept_js_confirms!
-           click_link &#39;Destroy&#39;
+           click_link 'Destroy'
            expect(current_path).to eq posts_path
-           expect(page).not_to have_content(&#39;My second post&#39;)
+           expect(page).not_to have_content('My second post')
          end
        end
      end
    end
-&nbsp;
-   context &#39;when the user is anonymous&#39; do
-     scenario &#39;can be accessed from link on home page&#39; do
+ 
+   context 'when the user is anonymous' do
+     scenario 'can be accessed from link on home page' do
        visit root_path
-       click_link &#39;My Blog&#39;
+       click_link 'My Blog'
        expect(current_path).to eq posts_path
      end
-&nbsp;
-     context &#39;when there are posts&#39; do
+ 
+     context 'when there are posts' do
        before do
-         @post1 = create :post, title: &#39;My first post&#39;
-         @post2 = create :post, title: &#39;My second post&#39;
+         @post1 = create :post, title: 'My first post'
+         @post2 = create :post, title: 'My second post'
        end
-&nbsp;
-       scenario &#39;can be viewed from link on posts page&#39; do
+ 
+       scenario 'can be viewed from link on posts page' do
          visit posts_path
-         within &#39;tr:last-child&#39; do
-           click_link &#39;Show&#39;
+         within 'tr:last-child' do
+           click_link 'Show'
            expect(current_path).to eq post_path(@post2)
          end
        end
-&nbsp;
-       scenario &#39;can be listed&#39; do
+ 
+       scenario 'can be listed' do
          visit posts_path
-         expect(page).to have_content(&#39;My first post&#39;)
-         expect(page).to have_content(&#39;My second post&#39;)
+         expect(page).to have_content('My first post')
+         expect(page).to have_content('My second post')
        end
-&nbsp;
-       scenario &#39;can get back to list page from show page&#39; do
+ 
+       scenario 'can get back to list page from show page' do
          visit post_path(Post.first)
-         click_link &#39;Back&#39;
+         click_link 'Back'
          expect(current_path).to eq posts_path
        end
      end
    end
  end
-</code></pre>
+
+```
 
 
-Create file `spec/support/auth_helper.rb`
+###Create file `spec/support/auth_helper.rb`
 
 Add
-<pre><code> module AuthHelper
+```
+ module AuthHelper
    def http_login
-&nbsp;
-     username = &#39;dhh&#39;
-     password = &#39;secret&#39;
-&nbsp;
-     request.env[&#39;HTTP_AUTHORIZATION&#39;] = ActionController::HttpAuthentication::Basic.encode_credentials(username, password)
+ 
+     username = 'dhh'
+     password = 'secret'
+ 
+     request.env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials(username, password)
    end
- end</code></pre>
+ end
+```
 
 
-Create file `spec/support/basic_auth.rb`
+###Create file `spec/support/basic_auth.rb`
 
 Add
-<pre><code> RSpec.configure do |config|
+```
+ RSpec.configure do |config|
    config.include AuthHelper, type: :controller
- end</code></pre>
+ end
+```
 
 
 

@@ -4,10 +4,12 @@ title: Configure capybara-webkit
 ---
 
 <h1 id="main">Configure capybara-webkit</h1>
-Create file `spec/support/capybara.rb`
+###Create file `spec/support/capybara.rb`
 
 Add
-<pre><code> Capybara.javascript_driver = :webkit</code></pre>
+```
+ Capybara.javascript_driver = :webkit
+```
 
 
 

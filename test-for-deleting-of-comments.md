@@ -4,39 +4,35 @@ title: Test for deleting of comments
 ---
 
 <h1 id="main">Test for deleting of comments</h1>
-Update file `spec/controllers/comments_controller_spec.rb`
+###Update file `spec/controllers/comments_controller_spec.rb`
 
 Add
-<pre><code>&nbsp;
-     context &#39;with a comment&#39; do
+```
+ 
+     context 'with a comment' do
        let(:comment) { create :comment, post: my_post }
-&nbsp;
-       describe &#39;DELETE #destroy&#39; do
-         it &quot;redirects to the post&#39;s :show view&quot; do
+ 
+       describe 'DELETE #destroy' do
+         it "redirects to the post's :show view" do
            delete :destroy, post_id: my_post.id, id: comment.id
            expect(response).to redirect_to post_path(my_post)
          end
        end
-     end</code></pre>
+     end
+```
 
 
 Becomes
-<pre><code> describe CommentsController do
-   context &#39;when there is a post&#39; do
-     let(:my_post) { create :post }
-&nbsp;
-     describe &#39;POST #create&#39; do
-       it &quot;redirects to the post&#39;s :show view&quot; do
-         post :create, { post_id: my_post.id, comment: { commenter: &#39;Concerned Person&#39;, body: &#39;Great Post!&#39; } }
+```
          expect(response).to redirect_to post_path(my_post)
        end
      end
-&nbsp;
-     context &#39;with a comment&#39; do
+ 
+     context 'with a comment' do
        let(:comment) { create :comment, post: my_post }
-&nbsp;
-       describe &#39;DELETE #destroy&#39; do
-         it &quot;redirects to the post&#39;s :show view&quot; do
+ 
+       describe 'DELETE #destroy' do
+         it "redirects to the post's :show view" do
            delete :destroy, post_id: my_post.id, id: comment.id
            expect(response).to redirect_to post_path(my_post)
          end
@@ -44,84 +40,97 @@ Becomes
      end
    end
  end
-</code></pre>
+
+```
 
 
-Update file `spec/factories/comments.rb`
+###Update file `spec/factories/comments.rb`
 
 Change
-<pre><code>     post nil</code></pre>
+```
+     post nil
+```
 
 
 To
-<pre><code>     post</code></pre>
+```
+     post
+```
 
 
 Becomes
-<pre><code> # Read about factories at https://github.com/thoughtbot/factory_girl
-&nbsp;
- FactoryGirl.define do
+```
    factory :comment do
-     commenter &quot;MyString&quot;
-     body &quot;MyText&quot;
+     commenter "MyString"
+     body "MyText"
      post
    end
  end
-</code></pre>
+
+```
 
 
-Update file `spec/features/comments_spec.rb`
-
-Add
-<pre><code>     @comment = build :comment, body: &#39;This is the comment&#39;</code></pre>
-
+###Update file `spec/features/comments_spec.rb`
 
 Add
-<pre><code>     @post.comments &lt;&lt; @comment
-     @post.save</code></pre>
+```
+     @comment = build :comment, body: 'This is the comment'
+```
 
 
 Add
-<pre><code>&nbsp;
-   scenario &#39;can be deleted&#39;, js: true do
-     visit post_path(@post)
-     expect(page).to have_content &#39;This is the comment&#39;
-     page.driver.accept_js_confirms!
-     click_link &#39;Destroy Comment&#39;
-     expect(page).not_to have_content &#39;This is the comment&#39;
-   end</code></pre>
+```
+     @post.comments << @comment
+     @post.save
+```
 
 
 Becomes
-<pre><code> require &#39;spec_helper&#39;
-&nbsp;
- feature &#39;Comments&#39; do
+```
+ 
+ feature 'Comments' do
    background do
-     @comment = build :comment, body: &#39;This is the comment&#39;
+     @comment = build :comment, body: 'This is the comment'
      @post = create :post
-     @post.comments &lt;&lt; @comment
+     @post.comments << @comment
      @post.save
    end
-&nbsp;
-   scenario &#39;can be added when viewing a post&#39; do
+ 
+   scenario 'can be added when viewing a post' do
+
+```
+
+
+Add
+```
+ 
+   scenario 'can be deleted', js: true do
      visit post_path(@post)
-     fill_in &#39;Commenter&#39;, with: &#39;Concerned Citizen&#39;
-     fill_in &#39;Body&#39;, with: &#39;Great post!&#39;
-     click_button &#39;Create Comment&#39;
-     expect(current_path).to eq post_path(@post)
-     expect(page).to have_content(&#39;Comment: Great post!&#39;)
-   end
-&nbsp;
-   scenario &#39;can be deleted&#39;, js: true do
-     visit post_path(@post)
-     expect(page).to have_content &#39;This is the comment&#39;
+     expect(page).to have_content 'This is the comment'
      page.driver.accept_js_confirms!
-     click_link &#39;Destroy Comment&#39;
-     expect(page).not_to have_content &#39;This is the comment&#39;
+     click_link 'Destroy Comment'
+     expect(page).not_to have_content 'This is the comment'
+   end
+```
+
+
+Becomes
+```
+     expect(current_path).to eq post_path(@post)
+     expect(page).to have_content('Comment: Great post!')
+   end
+ 
+   scenario 'can be deleted', js: true do
+     visit post_path(@post)
+     expect(page).to have_content 'This is the comment'
+     page.driver.accept_js_confirms!
+     click_link 'Destroy Comment'
+     expect(page).not_to have_content 'This is the comment'
    end
  end
 \ No newline at end of file
-</code></pre>
+
+```
 
 
 

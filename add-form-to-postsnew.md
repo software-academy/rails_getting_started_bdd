@@ -4,53 +4,59 @@ title: Add form to posts#new
 ---
 
 <h1 id="main">Add form to posts#new</h1>
-Update file `app/views/posts/new.html.erb`
+###Update file `app/views/posts/new.html.erb`
 
 Remove
-<pre><code> &lt;h1&gt;New Post&lt;/h1&gt;</code></pre>
+```
+ <h1>New Post</h1>
+```
 
 
 Add
-<pre><code> &lt;h1&gt;New Post&lt;/h1&gt;
-&nbsp;
- &lt;%= form_for :post do |f| %&gt;
-   &lt;p&gt;
-     &lt;%= f.label :title %&gt;&lt;br&gt;
-     &lt;%= f.text_field :title %&gt;
-   &lt;/p&gt;
-&nbsp;
-   &lt;p&gt;
-     &lt;%= f.label :text %&gt;&lt;br&gt;
-     &lt;%= f.text_area :text %&gt;
-   &lt;/p&gt;
-&nbsp;
-   &lt;p&gt;
-     &lt;%= f.submit %&gt;
-   &lt;/p&gt;
- &lt;% end %&gt;</code></pre>
+```
+ <h1>New Post</h1>
+ 
+ <%= form_for :post do |f| %>
+   <p>
+     <%= f.label :title %><br>
+     <%= f.text_field :title %>
+   </p>
+ 
+   <p>
+     <%= f.label :text %><br>
+     <%= f.text_area :text %>
+   </p>
+ 
+   <p>
+     <%= f.submit %>
+   </p>
+ <% end %>
+```
 
 
 Becomes
-<pre><code>\ No newline at end of file
- &lt;h1&gt;New Post&lt;/h1&gt;
-&nbsp;
- &lt;%= form_for :post do |f| %&gt;
-   &lt;p&gt;
-     &lt;%= f.label :title %&gt;&lt;br&gt;
-     &lt;%= f.text_field :title %&gt;
-   &lt;/p&gt;
-&nbsp;
-   &lt;p&gt;
-     &lt;%= f.label :text %&gt;&lt;br&gt;
-     &lt;%= f.text_area :text %&gt;
-   &lt;/p&gt;
-&nbsp;
-   &lt;p&gt;
-     &lt;%= f.submit %&gt;
-   &lt;/p&gt;
- &lt;% end %&gt;
+```
 \ No newline at end of file
-</code></pre>
+ <h1>New Post</h1>
+ 
+ <%= form_for :post do |f| %>
+   <p>
+     <%= f.label :title %><br>
+     <%= f.text_field :title %>
+   </p>
+ 
+   <p>
+     <%= f.label :text %><br>
+     <%= f.text_area :text %>
+   </p>
+ 
+   <p>
+     <%= f.submit %>
+   </p>
+ <% end %>
+\ No newline at end of file
+
+```
 
 
 

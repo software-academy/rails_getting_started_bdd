@@ -4,51 +4,48 @@ title: Test for list of posts
 ---
 
 <h1 id="main">Test for list of posts</h1>
-Update file `spec/features/posts_spec.rb`
+###Update file `spec/features/posts_spec.rb`
 
 Add
-<pre><code>&nbsp;
-   context &#39;when there are posts&#39; do
+```
+ 
+   context 'when there are posts' do
      before do
-       create :post, title: &#39;My first post&#39;
-       create :post, title: &#39;My second post&#39;
+       create :post, title: 'My first post'
+       create :post, title: 'My second post'
      end
-&nbsp;
-     scenario &#39;can be listed&#39; do
+ 
+     scenario 'can be listed' do
        visit posts_path
-       expect(page).to have_content(&#39;My first post&#39;)
-       expect(page).to have_content(&#39;My second post&#39;)
+       expect(page).to have_content('My first post')
+       expect(page).to have_content('My second post')
      end
-   end</code></pre>
+   end
+```
 
 
 Becomes
-<pre><code> require &#39;spec_helper&#39;
-&nbsp;
- feature &#39;Posts&#39; do
-   scenario &#39;can be created&#39; do
-     visit new_post_path
-     fill_in &#39;Title&#39;, with: &#39;Rails is Awesome!&#39;
-     fill_in &#39;Text&#39;, with: &#39;It really is.&#39;
-     click_button &#39;Save Post&#39;
-     expect(page).to have_content(&#39;Rails is Awesome!&#39;)
+```
+     click_button 'Save Post'
+     expect(page).to have_content('Rails is Awesome!')
    end
-&nbsp;
-   context &#39;when there are posts&#39; do
+ 
+   context 'when there are posts' do
      before do
-       create :post, title: &#39;My first post&#39;
-       create :post, title: &#39;My second post&#39;
+       create :post, title: 'My first post'
+       create :post, title: 'My second post'
      end
-&nbsp;
-     scenario &#39;can be listed&#39; do
+ 
+     scenario 'can be listed' do
        visit posts_path
-       expect(page).to have_content(&#39;My first post&#39;)
-       expect(page).to have_content(&#39;My second post&#39;)
+       expect(page).to have_content('My first post')
+       expect(page).to have_content('My second post')
      end
    end
-&nbsp;
+ 
  end
-</code></pre>
+
+```
 
 
 

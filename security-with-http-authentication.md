@@ -4,29 +4,26 @@ title: Security with HTTP Authentication
 ---
 
 <h1 id="main">Security with HTTP Authentication</h1>
-Update file `app/controllers/posts_controller.rb`
+###Update file `app/controllers/posts_controller.rb`
 
 Add
-<pre><code>&nbsp;
-   http_basic_authenticate_with name: &quot;dhh&quot;, password: &quot;secret&quot;, except: [:index, :show]</code></pre>
+```
+ 
+   http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+```
 
 
 Becomes
-<pre><code> class PostsController &lt; ApplicationController
-&nbsp;
-   http_basic_authenticate_with name: &quot;dhh&quot;, password: &quot;secret&quot;, except: [:index, :show]
-&nbsp;
+```
+ class PostsController < ApplicationController
+ 
+   http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+ 
    def new
      @post = Post.new
    end
-&nbsp;
-   def create
-     @post = Post.new(params[:post].permit(:title, :text))
-&nbsp;
-     if @post.save
-       redirect_to @post
-     else
-</code></pre>
+
+```
 
 
 

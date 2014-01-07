@@ -4,29 +4,35 @@ title: Test for valid Post#title
 ---
 
 <h1 id="main">Test for valid Post#title</h1>
-Update file `spec/models/post_spec.rb`
+###Update file `spec/models/post_spec.rb`
 
 Change
-<pre><code>   pending &quot;add some examples to (or delete) #{__FILE__}&quot;</code></pre>
+```
+   pending "add some examples to (or delete) #{__FILE__}"
+```
 
 
 To
-<pre><code>   describe &#39;#title&#39; do
-     it { expect(subject).to have_valid(:title).when &#39;X&#39;*5 }
-     it { expect(subject).to_not have_valid(:title).when nil, &#39;&#39;, &#39;X&#39;*4 }
-   end</code></pre>
+```
+   describe '#title' do
+     it { expect(subject).to have_valid(:title).when 'X'*5 }
+     it { expect(subject).to_not have_valid(:title).when nil, '', 'X'*4 }
+   end
+```
 
 
 Becomes
-<pre><code> require &#39;spec_helper&#39;
-&nbsp;
+```
+ require 'spec_helper'
+ 
  describe Post do
-   describe &#39;#title&#39; do
-     it { expect(subject).to have_valid(:title).when &#39;X&#39;*5 }
-     it { expect(subject).to_not have_valid(:title).when nil, &#39;&#39;, &#39;X&#39;*4 }
+   describe '#title' do
+     it { expect(subject).to have_valid(:title).when 'X'*5 }
+     it { expect(subject).to_not have_valid(:title).when nil, '', 'X'*4 }
    end
  end
-</code></pre>
+
+```
 
 
 

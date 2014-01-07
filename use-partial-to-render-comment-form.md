@@ -4,63 +4,64 @@ title: Use partial to render comment form
 ---
 
 <h1 id="main">Use partial to render comment form</h1>
-Create file `app/views/comments/_form.html.erb`
+###Create file `app/views/comments/_form.html.erb`
 
 Add
-<pre><code> &lt;%= form_for([@post, @post.comments.build]) do |f| %&gt;
-   &lt;p&gt;
-     &lt;%= f.label :commenter %&gt;&lt;br /&gt;
-     &lt;%= f.text_field :commenter %&gt;
-   &lt;/p&gt;
-   &lt;p&gt;
-     &lt;%= f.label :body %&gt;&lt;br /&gt;
-     &lt;%= f.text_area :body %&gt;
-   &lt;/p&gt;
-   &lt;p&gt;
-     &lt;%= f.submit %&gt;
-   &lt;/p&gt;
- &lt;% end %&gt;</code></pre>
+```
+ <%= form_for([@post, @post.comments.build]) do |f| %>
+   <p>
+     <%= f.label :commenter %><br />
+     <%= f.text_field :commenter %>
+   </p>
+   <p>
+     <%= f.label :body %><br />
+     <%= f.text_area :body %>
+   </p>
+   <p>
+     <%= f.submit %>
+   </p>
+ <% end %>
+```
 
 
-Update file `app/views/posts/show.html.erb`
+###Update file `app/views/posts/show.html.erb`
 
 Remove
-<pre><code> &lt;%= form_for([@post, @post.comments.build]) do |f| %&gt;
-   &lt;p&gt;
-     &lt;%= f.label :commenter %&gt;&lt;br /&gt;
-     &lt;%= f.text_field :commenter %&gt;
-   &lt;/p&gt;
-   &lt;p&gt;
-     &lt;%= f.label :body %&gt;&lt;br /&gt;
-     &lt;%= f.text_area :body %&gt;
-   &lt;/p&gt;
-   &lt;p&gt;
-     &lt;%= f.submit %&gt;
-   &lt;/p&gt;
- &lt;% end %&gt;</code></pre>
+```
+ <%= form_for([@post, @post.comments.build]) do |f| %>
+   <p>
+     <%= f.label :commenter %><br />
+     <%= f.text_field :commenter %>
+   </p>
+   <p>
+     <%= f.label :body %><br />
+     <%= f.text_area :body %>
+   </p>
+   <p>
+     <%= f.submit %>
+   </p>
+ <% end %>
+```
 
 
 Add
-<pre><code> &lt;%= render &quot;comments/form&quot; %&gt;</code></pre>
+```
+ <%= render "comments/form" %>
+```
 
 
 Becomes
-<pre><code>&nbsp;
- &lt;p&gt;
-   &lt;strong&gt;Text:&lt;/strong&gt;
-   &lt;%= @post.text %&gt;
- &lt;/p&gt;
-&nbsp;
- &lt;h2&gt;Comments&lt;/h2&gt;
- &lt;%= render @post.comments %&gt;
-&nbsp;
- &lt;h2&gt;Add a comment:&lt;/h2&gt;
- &lt;%= render &quot;comments/form&quot; %&gt;
-&nbsp;
- &lt;%= link_to &#39;Back&#39;, posts_path %&gt;
- | &lt;%= link_to &#39;Edit&#39;, edit_post_path(@post) %&gt;
+```
+ <%= render @post.comments %>
+ 
+ <h2>Add a comment:</h2>
+ <%= render "comments/form" %>
+ 
+ <%= link_to 'Back', posts_path %>
+ | <%= link_to 'Edit', edit_post_path(@post) %>
 \ No newline at end of file
-</code></pre>
+
+```
 
 
 

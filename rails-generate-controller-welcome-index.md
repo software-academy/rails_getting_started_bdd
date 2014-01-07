@@ -4,112 +4,125 @@ title: rails generate controller welcome index
 ---
 
 <h1 id="main">rails generate controller welcome index</h1>
-Create file `app/assets/javascripts/welcome.js.coffee`
+###Create file `app/assets/javascripts/welcome.js.coffee`
 
 Add
-<pre><code> # Place all the behaviors and hooks related to the matching controller here.
+```
+ # Place all the behaviors and hooks related to the matching controller here.
  # All this logic will automatically be available in application.js.
- # You can use CoffeeScript in this file: http://coffeescript.org/</code></pre>
+ # You can use CoffeeScript in this file: http://coffeescript.org/
+```
 
 
-Create file `app/assets/stylesheets/welcome.css.scss`
+###Create file `app/assets/stylesheets/welcome.css.scss`
 
 Add
-<pre><code> // Place all the styles related to the welcome controller here.
+```
+ // Place all the styles related to the welcome controller here.
  // They will automatically be included in application.css.
- // You can use Sass (SCSS) here: http://sass-lang.com/</code></pre>
+ // You can use Sass (SCSS) here: http://sass-lang.com/
+```
 
 
-Create file `app/controllers/welcome_controller.rb`
+###Create file `app/controllers/welcome_controller.rb`
 
 Add
-<pre><code> class WelcomeController &lt; ApplicationController
+```
+ class WelcomeController < ApplicationController
    def index
    end
- end</code></pre>
+ end
+```
 
 
-Create file `app/helpers/welcome_helper.rb`
-
-Add
-<pre><code> module WelcomeHelper
- end</code></pre>
-
-
-Create file `app/views/welcome/index.html.erb`
+###Create file `app/helpers/welcome_helper.rb`
 
 Add
-<pre><code> &lt;h1&gt;Welcome#index&lt;/h1&gt;
- &lt;p&gt;Find me in app/views/welcome/index.html.erb&lt;/p&gt;</code></pre>
+```
+ module WelcomeHelper
+ end
+```
 
 
-Update file `config/routes.rb`
+###Create file `app/views/welcome/index.html.erb`
 
 Add
-<pre><code>   get &quot;welcome/index&quot;</code></pre>
+```
+ <h1>Welcome#index</h1>
+ <p>Find me in app/views/welcome/index.html.erb</p>
+```
+
+
+###Update file `config/routes.rb`
+
+Add
+```
+   get "welcome/index"
+```
 
 
 Becomes
-<pre><code> Blog::Application.routes.draw do
-   get &quot;welcome/index&quot;
-   # The priority is based upon order of creation: first created -&gt; highest priority.
-   # See how all your routes lay out with &quot;rake routes&quot;.
-&nbsp;
-   # You can have the root of your site routed with &quot;root&quot;
-   # root &#39;welcome#index&#39;
-&nbsp;
-   # Example of regular route:
-   #   get &#39;products/:id&#39; =&gt; &#39;catalog#view&#39;
-&nbsp;
-   # Example of named route that can be invoked with purchase_url(id: product.id)
-</code></pre>
+```
+ Blog::Application.routes.draw do
+   get "welcome/index"
+   # The priority is based upon order of creation: first created -> highest priority.
+   # See how all your routes lay out with "rake routes".
+ 
+
+```
 
 
-Create file `spec/controllers/welcome_controller_spec.rb`
+###Create file `spec/controllers/welcome_controller_spec.rb`
 
 Add
-<pre><code> require &#39;spec_helper&#39;
-&nbsp;
+```
+ require 'spec_helper'
+ 
  describe WelcomeController do
-&nbsp;
-   describe &quot;GET &#39;index&#39;&quot; do
-     it &quot;returns http success&quot; do
-       get &#39;index&#39;
+ 
+   describe "GET 'index'" do
+     it "returns http success" do
+       get 'index'
        response.should be_success
      end
    end
-&nbsp;
- end</code></pre>
+ 
+ end
+```
 
 
-Create file `spec/helpers/welcome_helper_spec.rb`
+###Create file `spec/helpers/welcome_helper_spec.rb`
 
 Add
-<pre><code> require &#39;spec_helper&#39;
-&nbsp;
+```
+ require 'spec_helper'
+ 
  # Specs in this file have access to a helper object that includes
  # the WelcomeHelper. For example:
  #
  # describe WelcomeHelper do
- #   describe &quot;string concat&quot; do
- #     it &quot;concats two strings with spaces&quot; do
- #       expect(helper.concat_strings(&quot;this&quot;,&quot;that&quot;)).to eq(&quot;this that&quot;)
+ #   describe "string concat" do
+ #     it "concats two strings with spaces" do
+ #       expect(helper.concat_strings("this","that")).to eq("this that")
  #     end
  #   end
  # end
  describe WelcomeHelper do
-   pending &quot;add some examples to (or delete) #{__FILE__}&quot;
- end</code></pre>
+   pending "add some examples to (or delete) #{__FILE__}"
+ end
+```
 
 
-Create file `spec/views/welcome/index.html.erb_spec.rb`
+###Create file `spec/views/welcome/index.html.erb_spec.rb`
 
 Add
-<pre><code> require &#39;spec_helper&#39;
-&nbsp;
- describe &quot;welcome/index.html.erb&quot; do
-   pending &quot;add some examples to (or delete) #{__FILE__}&quot;
- end</code></pre>
+```
+ require 'spec_helper'
+ 
+ describe "welcome/index.html.erb" do
+   pending "add some examples to (or delete) #{__FILE__}"
+ end
+```
 
 
 

@@ -4,19 +4,23 @@ title: Add validation for Post#title
 ---
 
 <h1 id="main">Add validation for Post#title</h1>
-Update file `app/models/post.rb`
+###Update file `app/models/post.rb`
 
 Add
-<pre><code>   validates :title, presence: true,
-                     length: { minimum: 5 }</code></pre>
+```
+   validates :title, presence: true,
+                     length: { minimum: 5 }
+```
 
 
 Becomes
-<pre><code> class Post &lt; ActiveRecord::Base
+```
+ class Post < ActiveRecord::Base
    validates :title, presence: true,
                      length: { minimum: 5 }
  end
-</code></pre>
+
+```
 
 
 

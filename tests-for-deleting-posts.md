@@ -4,95 +4,75 @@ title: Tests for deleting posts
 ---
 
 <h1 id="main">Tests for deleting posts</h1>
-Update file `spec/controllers/posts_controller_spec.rb`
+###Update file `spec/controllers/posts_controller_spec.rb`
 
 Add
-<pre><code>&nbsp;
-     describe &#39;DELETE #destroy&#39; do
-       it &quot;redirects to the :index view&quot; do
+```
+ 
+     describe 'DELETE #destroy' do
+       it "redirects to the :index view" do
          delete :destroy, id: post.id
          expect(response).to redirect_to posts_path
        end
-     end</code></pre>
+     end
+```
 
 
 Becomes
-<pre><code>         expect(response).to be_success
-       end
-     end
-&nbsp;
-     describe &#39;PATCH #update&#39; do
-       it &quot;redirects to the :show view&quot; do
-         patch :update, id: post.id, post: { title: &#39;change it&#39; }
+```
          expect(response).to redirect_to post_path(post)
        end
      end
-&nbsp;
-     describe &#39;DELETE #destroy&#39; do
-       it &quot;redirects to the :index view&quot; do
+ 
+     describe 'DELETE #destroy' do
+       it "redirects to the :index view" do
          delete :destroy, id: post.id
          expect(response).to redirect_to posts_path
        end
      end
    end
-&nbsp;
-   describe &#39;POST #create&#39; do
-     context &#39;when the post is valid&#39; do
-       it &quot;redirects to the :show view&quot; do
-         post :create, post: { title: &#39;title&#39;, text: &#39;text&#39; }
-         expect(response).to redirect_to assigns[:post]
-       end
-     end
-&nbsp;
-</code></pre>
+ 
+   describe 'POST #create' do
+
+```
 
 
-Update file `spec/features/posts_spec.rb`
+###Update file `spec/features/posts_spec.rb`
 
 Add
-<pre><code>     scenario &#39;can be deleted from link on posts page&#39;, js: true do
+```
+     scenario 'can be deleted from link on posts page', js: true do
        visit posts_path
-       within &#39;tr:last-child&#39; do
+       within 'tr:last-child' do
          page.driver.accept_js_confirms!
-         click_link &#39;Destroy&#39;
+         click_link 'Destroy'
          expect(current_path).to eq posts_path
-         expect(page).not_to have_content(&#39;My second post&#39;)
+         expect(page).not_to have_content('My second post')
        end
-     end</code></pre>
+     end
+```
 
 
 Becomes
-<pre><code>     click_link &#39;New post&#39;
-     expect(current_path).to eq new_post_path
-   end
-&nbsp;
-   context &#39;when there are posts&#39; do
-     before do
-       @post1 = create :post, title: &#39;My first post&#39;
-       @post2 = create :post, title: &#39;My second post&#39;
+```
+       @post2 = create :post, title: 'My second post'
      end
-&nbsp;
-     scenario &#39;can be deleted from link on posts page&#39;, js: true do
+ 
+     scenario 'can be deleted from link on posts page', js: true do
        visit posts_path
-       within &#39;tr:last-child&#39; do
+       within 'tr:last-child' do
          page.driver.accept_js_confirms!
-         click_link &#39;Destroy&#39;
+         click_link 'Destroy'
          expect(current_path).to eq posts_path
-         expect(page).not_to have_content(&#39;My second post&#39;)
+         expect(page).not_to have_content('My second post')
        end
      end
-&nbsp;
-     scenario &#39;can be edited from link on posts page&#39; do
+ 
+     scenario 'can be edited from link on posts page' do
        visit posts_path
-       within &#39;tr:last-child&#39; do
-         click_link &#39;Edit&#39;
-         expect(current_path).to eq edit_post_path(@post2)
-       end
-     end
-&nbsp;
-     scenario &#39;can be viewed from link on posts page&#39; do
-       visit posts_path
-</code></pre>
+       within 'tr:last-child' do
+
+```
 
 
 

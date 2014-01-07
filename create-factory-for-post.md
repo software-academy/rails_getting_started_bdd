@@ -4,17 +4,19 @@ title: Create factory for Post
 ---
 
 <h1 id="main">Create factory for Post</h1>
-Create file `spec/factories/posts.rb`
+###Create file `spec/factories/posts.rb`
 
 Add
-<pre><code> # Read about factories at https://github.com/thoughtbot/factory_girl
-&nbsp;
+```
+ # Read about factories at https://github.com/thoughtbot/factory_girl
+ 
  FactoryGirl.define do
    factory :post do
-     title &quot;MyString&quot;
-     text &quot;MyText&quot;
+     title "MyString"
+     text "MyText"
    end
- end</code></pre>
+ end
+```
 
 
 

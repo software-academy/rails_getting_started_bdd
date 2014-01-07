@@ -4,26 +4,23 @@ title: Link to new post on the posts page
 ---
 
 <h1 id="main">Link to new post on the posts page</h1>
-Update file `app/views/posts/index.html.erb`
+###Update file `app/views/posts/index.html.erb`
 
 Add
-<pre><code> &lt;%= link_to &#39;New post&#39;, new_post_path %&gt;</code></pre>
+```
+ <%= link_to 'New post', new_post_path %>
+```
 
 
 Becomes
-<pre><code> &lt;h1&gt;Listing posts&lt;/h1&gt;
- &lt;%= link_to &#39;New post&#39;, new_post_path %&gt;
-&nbsp;
- &lt;table&gt;
-   &lt;tr&gt;
-     &lt;th&gt;Title&lt;/th&gt;
-     &lt;th&gt;Text&lt;/th&gt;
-   &lt;/tr&gt;
-&nbsp;
-   &lt;% @posts.each do |post| %&gt;
-     &lt;tr&gt;
-       &lt;td&gt;&lt;%= post.title %&gt;&lt;/td&gt;
-</code></pre>
+```
+ <h1>Listing posts</h1>
+ <%= link_to 'New post', new_post_path %>
+ 
+ <table>
+   <tr>
+
+```
 
 
 

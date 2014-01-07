@@ -4,38 +4,45 @@ title: Update the describe to use routing convention
 ---
 
 <h1 id="main">Update the describe to use routing convention</h1>
-Update file `spec/controllers/posts_controller_spec.rb`
+###Update file `spec/controllers/posts_controller_spec.rb`
 
 Change
-<pre><code>   describe &quot;GET &#39;new&#39;&quot; do</code></pre>
+```
+   describe "GET 'new'" do
+```
 
 
 To
-<pre><code>   describe &#39;GET #new&#39; do</code></pre>
+```
+   describe 'GET #new' do
+```
 
 
 Change
-<pre><code>       get &#39;new&#39;</code></pre>
+```
+       get 'new'
+```
 
 
 To
-<pre><code>       get :new</code></pre>
+```
+       get :new
+```
 
 
 Becomes
-<pre><code> require &#39;spec_helper&#39;
-&nbsp;
+```
+ 
  describe PostsController do
-&nbsp;
-   describe &#39;GET #new&#39; do
-     it &quot;returns http success&quot; do
+ 
+   describe 'GET #new' do
+     it "returns http success" do
        get :new
        response.should be_success
      end
    end
-&nbsp;
- end
-</code></pre>
+
+```
 
 
 
