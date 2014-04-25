@@ -4,29 +4,23 @@ title: Add link to blog posts on home page
 ---
 
 <h1 id="main">Add link to blog posts on home page</h1>
-###Update file `app/views/welcome/index.html.erb`
+Update file `app/views/welcome/index.html.erb`
 
-####Remove
-```
- <h1>Hello, Rails!</h1>
-```
+Remove
+<pre><code> &lt;h1&gt;Hello, Rails!&lt;/h1&gt;</code></pre>
 
 
-####Add
-```
- <h1>Hello, Rails!</h1>
- <%= link_to "My Blog", controller: "posts" %>
-```
+Add
+<pre><code> &lt;h1&gt;Hello, Rails!&lt;/h1&gt;
+ &lt;%= link_to &quot;My Blog&quot;, controller: &quot;posts&quot; %&gt;</code></pre>
 
 
-####Becomes
-```
+Becomes
+<pre><code>\ No newline at end of file
+ &lt;h1&gt;Hello, Rails!&lt;/h1&gt;
+ &lt;%= link_to &quot;My Blog&quot;, controller: &quot;posts&quot; %&gt;
 \ No newline at end of file
- <h1>Hello, Rails!</h1>
- <%= link_to "My Blog", controller: "posts" %>
-\ No newline at end of file
-
-```
+</code></pre>
 
 
 

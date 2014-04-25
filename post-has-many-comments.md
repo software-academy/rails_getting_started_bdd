@@ -4,26 +4,22 @@ title: Post has_many comments
 ---
 
 <h1 id="main">Post has_many comments</h1>
-###Update file `spec/models/post_spec.rb`
+Update file `spec/models/post_spec.rb`
 
-####Add
-```
-   it { should have_many :comments }
-```
+Add
+<pre><code>   it { should have_many :comments }</code></pre>
 
 
-####Becomes
-```
- require 'spec_helper'
- 
+Becomes
+<pre><code> require &#39;spec_helper&#39;
+&nbsp;
  describe Post do
    it { should have_many :comments }
- 
-   describe '#title' do
-     it { expect(subject).to have_valid(:title).when 'X'*5 }
-     it { expect(subject).to_not have_valid(:title).when nil, '', 'X'*4 }
-
-```
+&nbsp;
+   describe &#39;#title&#39; do
+     it { expect(subject).to have_valid(:title).when &#39;X&#39;*5 }
+     it { expect(subject).to_not have_valid(:title).when nil, &#39;&#39;, &#39;X&#39;*4 }
+</code></pre>
 
 
 

@@ -4,34 +4,28 @@ title: Add Back link to posts#new page
 ---
 
 <h1 id="main">Add Back link to posts#new page</h1>
-###Update file `app/views/posts/new.html.erb`
+Update file `app/views/posts/new.html.erb`
 
-####Remove
-```
- <% end %>
-```
+Remove
+<pre><code> &lt;% end %&gt;</code></pre>
 
 
-####Add
-```
- <% end %>
- 
- <%= link_to 'Back', posts_path %>
-```
+Add
+<pre><code> &lt;% end %&gt;
+&nbsp;
+ &lt;%= link_to &#39;Back&#39;, posts_path %&gt;</code></pre>
 
 
-####Becomes
-```
-   <p>
-     <%= f.submit %>
-   </p>
+Becomes
+<pre><code>   &lt;p&gt;
+     &lt;%= f.submit %&gt;
+   &lt;/p&gt;
 \ No newline at end of file
- <% end %>
- 
- <%= link_to 'Back', posts_path %>
+ &lt;% end %&gt;
+&nbsp;
+ &lt;%= link_to &#39;Back&#39;, posts_path %&gt;
 \ No newline at end of file
-
-```
+</code></pre>
 
 
 

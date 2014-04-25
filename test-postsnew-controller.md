@@ -4,34 +4,30 @@ title: Test posts#new controller
 ---
 
 <h1 id="main">Test posts#new controller</h1>
-###Update file `spec/controllers/posts_controller_spec.rb`
+Update file `spec/controllers/posts_controller_spec.rb`
 
-####Add
-```
-   describe "GET 'new'" do
-     it "returns http success" do
-       get 'new'
+Add
+<pre><code>   describe &quot;GET &#39;new&#39;&quot; do
+     it &quot;returns http success&quot; do
+       get &#39;new&#39;
        response.should be_success
      end
-   end
-```
+   end</code></pre>
 
 
-####Becomes
-```
- 
+Becomes
+<pre><code>&nbsp;
  describe PostsController do
- 
-   describe "GET 'new'" do
-     it "returns http success" do
-       get 'new'
+&nbsp;
+   describe &quot;GET &#39;new&#39;&quot; do
+     it &quot;returns http success&quot; do
+       get &#39;new&#39;
        response.should be_success
      end
    end
- 
+&nbsp;
  end
-
-```
+</code></pre>
 
 
 

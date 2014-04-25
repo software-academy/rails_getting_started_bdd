@@ -4,34 +4,30 @@ title: Test for link to My Blog on home page
 ---
 
 <h1 id="main">Test for link to My Blog on home page</h1>
-###Update file `spec/features/posts_spec.rb`
+Update file `spec/features/posts_spec.rb`
 
-####Add
-```
-   scenario 'can be accessed from link on home page' do
+Add
+<pre><code>   scenario &#39;can be accessed from link on home page&#39; do
      visit root_path
-     click_link 'My Blog'
+     click_link &#39;My Blog&#39;
+     expect(current_path).to eq posts_path
+   end</code></pre>
+
+
+Becomes
+<pre><code>     expect(page).to have_content(&#39;Rails is Awesome!&#39;)
+   end
+&nbsp;
+   scenario &#39;can be accessed from link on home page&#39; do
+     visit root_path
+     click_link &#39;My Blog&#39;
      expect(current_path).to eq posts_path
    end
-```
-
-
-####Becomes
-```
-     expect(page).to have_content('Rails is Awesome!')
-   end
- 
-   scenario 'can be accessed from link on home page' do
-     visit root_path
-     click_link 'My Blog'
-     expect(current_path).to eq posts_path
-   end
- 
-   context 'when there are posts' do
+&nbsp;
+   context &#39;when there are posts&#39; do
      before do
-       create :post, title: 'My first post'
-
-```
+       create :post, title: &#39;My first post&#39;
+</code></pre>
 
 
 

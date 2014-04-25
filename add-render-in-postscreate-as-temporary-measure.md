@@ -4,29 +4,25 @@ title: Add render in posts#create as temporary measure
 ---
 
 <h1 id="main">Add render in posts#create as temporary measure</h1>
-###Update file `app/controllers/posts_controller.rb`
+Update file `app/controllers/posts_controller.rb`
 
-####Add
-```
- 
+Add
+<pre><code>&nbsp;
    def create
      render text: params[:post].inspect
-   end
-```
+   end</code></pre>
 
 
-####Becomes
-```
- class PostsController < ApplicationController
+Becomes
+<pre><code> class PostsController &lt; ApplicationController
    def new
    end
- 
+&nbsp;
    def create
      render text: params[:post].inspect
    end
  end
-
-```
+</code></pre>
 
 
 

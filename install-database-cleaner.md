@@ -4,65 +4,50 @@ title: Install database_cleaner
 ---
 
 <h1 id="main">Install database_cleaner</h1>
-###Update file `Gemfile`
+Update file `Gemfile`
 
-####Add
-```
-   gem 'database_cleaner'
-```
+Add
+<pre><code>   gem &#39;database_cleaner&#39;</code></pre>
 
 
-####Becomes
-```
- end
- 
+Becomes
+<pre><code> end
+&nbsp;
  group :test do
-   gem 'database_cleaner'
-   gem 'launchy'
-   gem 'valid_attribute'
+   gem &#39;database_cleaner&#39;
+   gem &#39;launchy&#39;
+   gem &#39;valid_attribute&#39;
  end
-
-```
-
-
-###Update file `Gemfile.lock`
-
-####Add
-```
-     database_cleaner (1.2.0)
-```
+</code></pre>
 
 
-####Becomes
-```
-     coffee-script-source (1.6.3)
+Update file `Gemfile.lock`
+
+Add
+<pre><code>     database_cleaner (1.2.0)</code></pre>
+
+
+Add
+<pre><code>   database_cleaner</code></pre>
+
+
+Becomes
+<pre><code>     coffee-script-source (1.6.3)
      columnize (0.3.6)
      coolline (0.4.2)
      database_cleaner (1.2.0)
      debug_inspector (0.0.2)
      debugger (1.6.2)
-       columnize (>= 0.3.1)
-
-```
-
-
-####Add
-```
-   database_cleaner
-```
-
-
-####Becomes
-```
+       columnize (&gt;= 0.3.1)
+@@ -202,6 +203,7 @@ PLATFORMS
  DEPENDENCIES
    capybara-webkit
-   coffee-rails (~> 4.0.0)
+   coffee-rails (~&gt; 4.0.0)
    database_cleaner
    factory_girl_rails
    jazz_hands
-   jbuilder (~> 1.2)
-
-```
+   jbuilder (~&gt; 1.2)
+</code></pre>
 
 
 

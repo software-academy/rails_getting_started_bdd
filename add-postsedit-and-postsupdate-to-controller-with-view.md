@@ -4,102 +4,89 @@ title: Add posts#edit and posts#update to controller, with view
 ---
 
 <h1 id="main">Add posts#edit and posts#update to controller, with view</h1>
-###Update file `app/controllers/posts_controller.rb`
+Update file `app/controllers/posts_controller.rb`
 
-####Add
-```
-   def edit
+Add
+<pre><code>   def edit
      @post = Post.find(params[:id])
-   end
-```
+   end</code></pre>
 
 
-####Becomes
-```
+Add
+<pre><code>&nbsp;
+   def update
+     @post = Post.find(params[:id])
+&nbsp;
+     if @post.update(params[:post].permit(:title, :text))
+       redirect_to @post
+     else
+       render &#39;edit&#39;
      end
+   end</code></pre>
+
+
+Becomes
+<pre><code>     end
    end
- 
+&nbsp;
    def edit
      @post = Post.find(params[:id])
    end
- 
+&nbsp;
    def index
      @posts = Post.all
    end
-
-```
-
-
-####Add
-```
- 
-   def update
-     @post = Post.find(params[:id])
- 
-     if @post.update(params[:post].permit(:title, :text))
-       redirect_to @post
-     else
-       render 'edit'
-     end
-   end
-```
-
-
-####Becomes
-```
+@@ -20,4 +24,14 @@ class PostsController &lt; ApplicationController
    def show
      @post = Post.find(params[:id])
    end
- 
+&nbsp;
    def update
      @post = Post.find(params[:id])
- 
+&nbsp;
      if @post.update(params[:post].permit(:title, :text))
        redirect_to @post
      else
-       render 'edit'
+       render &#39;edit&#39;
      end
    end
  end
+</code></pre>
 
-```
 
+Create file `app/views/posts/edit.html.erb`
 
-###Create file `app/views/posts/edit.html.erb`
-
-####Add
-```
- <h1>Editing post</h1>
- 
- <%= form_for :post, url: post_path(@post.id), method: :patch do |f| %>
-   <% if @post.errors.any? %>
-     <div id="errorExplanation">
-       <h2><%= pluralize(@post.errors.count, "error") %> prohibited
-         this post from being saved:</h2>
-       <ul>
-       <% @post.errors.full_messages.each do |msg| %>
-         <li><%= msg %></li>
-       <% end %>
-       </ul>
-     </div>
-   <% end %>
-   <p>
-     <%= f.label :title %><br>
-     <%= f.text_field :title %>
-   </p>
- 
-   <p>
-     <%= f.label :text %><br>
-     <%= f.text_area :text %>
-   </p>
- 
-   <p>
-     <%= f.submit %>
-   </p>
- <% end %>
- 
- <%= link_to 'Back', posts_path %>
-```
+Add
+<pre><code> &lt;h1&gt;Editing post&lt;/h1&gt;
+&nbsp;
+ &lt;%= form_for :post, url: post_path(@post.id), method: :patch do |f| %&gt;
+   &lt;% if @post.errors.any? %&gt;
+     &lt;div id=&quot;errorExplanation&quot;&gt;
+       &lt;h2&gt;&lt;%= pluralize(@post.errors.count, &quot;error&quot;) %&gt; prohibited
+         this post from being saved:&lt;/h2&gt;
+       &lt;ul&gt;
+       &lt;% @post.errors.full_messages.each do |msg| %&gt;
+         &lt;li&gt;&lt;%= msg %&gt;&lt;/li&gt;
+       &lt;% end %&gt;
+       &lt;/ul&gt;
+     &lt;/div&gt;
+   &lt;% end %&gt;
+   &lt;p&gt;
+     &lt;%= f.label :title %&gt;&lt;br&gt;
+     &lt;%= f.text_field :title %&gt;
+   &lt;/p&gt;
+&nbsp;
+   &lt;p&gt;
+     &lt;%= f.label :text %&gt;&lt;br&gt;
+     &lt;%= f.text_area :text %&gt;
+   &lt;/p&gt;
+&nbsp;
+   &lt;p&gt;
+     &lt;%= f.submit %&gt;
+   &lt;/p&gt;
+ &lt;% end %&gt;
+&nbsp;
+ &lt;%= link_to &#39;Back&#39;, posts_path %&gt;</code></pre>
 
 
 

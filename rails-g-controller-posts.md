@@ -4,76 +4,64 @@ title: rails g controller posts
 ---
 
 <h1 id="main">rails g controller posts</h1>
-###Create file `app/assets/javascripts/posts.js.coffee`
+Create file `app/assets/javascripts/posts.js.coffee`
 
-####Add
-```
- # Place all the behaviors and hooks related to the matching controller here.
+Add
+<pre><code> # Place all the behaviors and hooks related to the matching controller here.
  # All this logic will automatically be available in application.js.
- # You can use CoffeeScript in this file: http://coffeescript.org/
-```
+ # You can use CoffeeScript in this file: http://coffeescript.org/</code></pre>
 
 
-###Create file `app/assets/stylesheets/posts.css.scss`
+Create file `app/assets/stylesheets/posts.css.scss`
 
-####Add
-```
- // Place all the styles related to the posts controller here.
+Add
+<pre><code> // Place all the styles related to the posts controller here.
  // They will automatically be included in application.css.
- // You can use Sass (SCSS) here: http://sass-lang.com/
-```
+ // You can use Sass (SCSS) here: http://sass-lang.com/</code></pre>
 
 
-###Create file `app/controllers/posts_controller.rb`
+Create file `app/controllers/posts_controller.rb`
 
-####Add
-```
- class PostsController < ApplicationController
- end
-```
+Add
+<pre><code> class PostsController &lt; ApplicationController
+ end</code></pre>
 
 
-###Create file `app/helpers/posts_helper.rb`
+Create file `app/helpers/posts_helper.rb`
 
-####Add
-```
- module PostsHelper
- end
-```
+Add
+<pre><code> module PostsHelper
+ end</code></pre>
 
 
-###Create file `spec/controllers/posts_controller_spec.rb`
+Create file `spec/controllers/posts_controller_spec.rb`
 
-####Add
-```
- require 'spec_helper'
- 
+Add
+<pre><code> require &#39;spec_helper&#39;
+&nbsp;
  describe PostsController do
- 
- end
-```
+&nbsp;
+ end</code></pre>
 
 
-###Create file `spec/helpers/posts_helper_spec.rb`
+Create file `spec/helpers/posts_helper_spec.rb`
 
-####Add
-```
- require 'spec_helper'
- 
+Add
+<pre><code> require &#39;spec_helper&#39;
+&nbsp;
  # Specs in this file have access to a helper object that includes
  # the PostsHelper. For example:
  #
  # describe PostsHelper do
- #   describe "string concat" do
- #     it "concats two strings with spaces" do
- #       expect(helper.concat_strings("this","that")).to eq("this that")
+ #   describe &quot;string concat&quot; do
+ #     it &quot;concats two strings with spaces&quot; do
+ #       expect(helper.concat_strings(&quot;this&quot;,&quot;that&quot;)).to eq(&quot;this that&quot;)
  #     end
  #   end
  # end
  describe PostsHelper do
-   pending "add some examples to (or delete) #{__FILE__}"
- end
-```
+   pending &quot;add some examples to (or delete) #{__FILE__}&quot;
+ end</code></pre>
 
 
 

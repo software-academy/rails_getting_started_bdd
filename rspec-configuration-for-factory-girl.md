@@ -4,23 +4,19 @@ title: RSpec configuration for factory_girl
 ---
 
 <h1 id="main">RSpec configuration for factory_girl</h1>
-###Update file `spec/spec_helper.rb`
+Update file `spec/spec_helper.rb`
 
-####Add
-```
-   config.include FactoryGirl::Syntax::Methods
-```
+Add
+<pre><code>   config.include FactoryGirl::Syntax::Methods</code></pre>
 
 
-####Becomes
-```
-   # the seed, which is printed after each run.
+Becomes
+<pre><code>   # the seed, which is printed after each run.
    #     --seed 1234
-   config.order = "random"
+   config.order = &quot;random&quot;
    config.include FactoryGirl::Syntax::Methods
  end
-
-```
+</code></pre>
 
 
 

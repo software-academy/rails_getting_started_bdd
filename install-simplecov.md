@@ -4,71 +4,56 @@ title: Install SimpleCov
 ---
 
 <h1 id="main">Install SimpleCov</h1>
-###Update file `Gemfile`
+Update file `Gemfile`
 
-####Add
-```
-   gem 'simplecov', require: false
-```
+Add
+<pre><code>   gem &#39;simplecov&#39;, require: false</code></pre>
 
 
-####Becomes
-```
-   gem 'database_cleaner'
-   gem 'launchy'
-   gem 'shoulda-matchers'
-   gem 'simplecov', require: false
-   gem 'valid_attribute'
+Becomes
+<pre><code>   gem &#39;database_cleaner&#39;
+   gem &#39;launchy&#39;
+   gem &#39;shoulda-matchers&#39;
+   gem &#39;simplecov&#39;, require: false
+   gem &#39;valid_attribute&#39;
  end
- 
-
-```
-
-
-###Update file `Gemfile.lock`
-
-####Add
-```
-     simplecov (0.7.1)
-       multi_json (~> 1.0)
-       simplecov-html (~> 0.7.1)
-     simplecov-html (0.7.1)
-```
+&nbsp;
+</code></pre>
 
 
-####Becomes
-```
-       rdoc (~> 3.10)
+Update file `Gemfile.lock`
+
+Add
+<pre><code>     simplecov (0.7.1)
+       multi_json (~&gt; 1.0)
+       simplecov-html (~&gt; 0.7.1)
+     simplecov-html (0.7.1)</code></pre>
+
+
+Add
+<pre><code>   simplecov</code></pre>
+
+
+Becomes
+<pre><code>       rdoc (~&gt; 3.10)
      shoulda-matchers (2.4.0)
-       activesupport (>= 3.0.0)
+       activesupport (&gt;= 3.0.0)
      simplecov (0.7.1)
-       multi_json (~> 1.0)
-       simplecov-html (~> 0.7.1)
+       multi_json (~&gt; 1.0)
+       simplecov-html (~&gt; 0.7.1)
      simplecov-html (0.7.1)
      slop (3.4.6)
      sprockets (2.10.0)
-       hike (~> 1.2)
-
-```
-
-
-####Add
-```
-   simplecov
-```
-
-
-####Becomes
-```
-   sass-rails (~> 4.0.0)
+       hike (~&gt; 1.2)
+@@ -216,6 +220,7 @@ DEPENDENCIES
+   sass-rails (~&gt; 4.0.0)
    sdoc
    shoulda-matchers
    simplecov
    sqlite3
    turbolinks
-   uglifier (>= 1.3.0)
-
-```
+   uglifier (&gt;= 1.3.0)
+</code></pre>
 
 
 

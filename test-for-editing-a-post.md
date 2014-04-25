@@ -4,66 +4,53 @@ title: Test for editing a post
 ---
 
 <h1 id="main">Test for editing a post</h1>
-###Update file `spec/features/posts_spec.rb`
+Update file `spec/features/posts_spec.rb`
 
-####Remove
-```
-       create :post, title: 'My first post'
-       create :post, title: 'My second post'
-```
+Remove
+<pre><code>       create :post, title: &#39;My first post&#39;
+       create :post, title: &#39;My second post&#39;</code></pre>
 
 
-####Add
-```
-       @post1 = create :post, title: 'My first post'
-       @post2 = create :post, title: 'My second post'
-```
+Add
+<pre><code>       @post1 = create :post, title: &#39;My first post&#39;
+       @post2 = create :post, title: &#39;My second post&#39;</code></pre>
 
 
-####Becomes
-```
- 
-   context 'when there are posts' do
+Add
+<pre><code>     scenario &#39;can be edited&#39; do
+       visit edit_post_path(@post1)
+       fill_in &#39;Title&#39;, with: &#39;My first post has a new title&#39;
+       click_button &#39;Save Post&#39;
+       expect(current_path).to eq post_path(@post1)
+       expect(page).to have_content(&#39;My first post has a new title&#39;)
+     end</code></pre>
+
+
+Becomes
+<pre><code>&nbsp;
+   context &#39;when there are posts&#39; do
      before do
-       @post1 = create :post, title: 'My first post'
-       @post2 = create :post, title: 'My second post'
+       @post1 = create :post, title: &#39;My first post&#39;
+       @post2 = create :post, title: &#39;My second post&#39;
      end
- 
-     scenario 'can be listed' do
-
-```
-
-
-####Add
-```
-     scenario 'can be edited' do
+&nbsp;
+     scenario &#39;can be listed&#39; do
+@@ -46,6 +46,14 @@ feature &#39;Posts&#39; do
+       expect(page).to have_content(&#39;My second post&#39;)
+     end
+&nbsp;
+     scenario &#39;can be edited&#39; do
        visit edit_post_path(@post1)
-       fill_in 'Title', with: 'My first post has a new title'
-       click_button 'Save Post'
+       fill_in &#39;Title&#39;, with: &#39;My first post has a new title&#39;
+       click_button &#39;Save Post&#39;
        expect(current_path).to eq post_path(@post1)
-       expect(page).to have_content('My first post has a new title')
+       expect(page).to have_content(&#39;My first post has a new title&#39;)
      end
-```
-
-
-####Becomes
-```
-       expect(page).to have_content('My second post')
-     end
- 
-     scenario 'can be edited' do
-       visit edit_post_path(@post1)
-       fill_in 'Title', with: 'My first post has a new title'
-       click_button 'Save Post'
-       expect(current_path).to eq post_path(@post1)
-       expect(page).to have_content('My first post has a new title')
-     end
- 
-     scenario 'can get back to list page from show page' do
+&nbsp;
+     scenario &#39;can get back to list page from show page&#39; do
        visit post_path(Post.first)
-       click_link 'Back'
-
-```
+       click_link &#39;Back&#39;
+</code></pre>
 
 
 

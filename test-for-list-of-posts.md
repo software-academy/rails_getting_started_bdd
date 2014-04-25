@@ -4,48 +4,44 @@ title: Test for list of posts
 ---
 
 <h1 id="main">Test for list of posts</h1>
-###Update file `spec/features/posts_spec.rb`
+Update file `spec/features/posts_spec.rb`
 
-####Add
-```
- 
-   context 'when there are posts' do
+Add
+<pre><code>&nbsp;
+   context &#39;when there are posts&#39; do
      before do
-       create :post, title: 'My first post'
-       create :post, title: 'My second post'
+       create :post, title: &#39;My first post&#39;
+       create :post, title: &#39;My second post&#39;
      end
- 
-     scenario 'can be listed' do
+&nbsp;
+     scenario &#39;can be listed&#39; do
        visit posts_path
-       expect(page).to have_content('My first post')
-       expect(page).to have_content('My second post')
+       expect(page).to have_content(&#39;My first post&#39;)
+       expect(page).to have_content(&#39;My second post&#39;)
      end
-   end
-```
+   end</code></pre>
 
 
-####Becomes
-```
-     click_button 'Save Post'
-     expect(page).to have_content('Rails is Awesome!')
+Becomes
+<pre><code>     click_button &#39;Save Post&#39;
+     expect(page).to have_content(&#39;Rails is Awesome!&#39;)
    end
- 
-   context 'when there are posts' do
+&nbsp;
+   context &#39;when there are posts&#39; do
      before do
-       create :post, title: 'My first post'
-       create :post, title: 'My second post'
+       create :post, title: &#39;My first post&#39;
+       create :post, title: &#39;My second post&#39;
      end
- 
-     scenario 'can be listed' do
+&nbsp;
+     scenario &#39;can be listed&#39; do
        visit posts_path
-       expect(page).to have_content('My first post')
-       expect(page).to have_content('My second post')
+       expect(page).to have_content(&#39;My first post&#39;)
+       expect(page).to have_content(&#39;My second post&#39;)
      end
    end
- 
+&nbsp;
  end
-
-```
+</code></pre>
 
 
 

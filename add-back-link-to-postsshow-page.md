@@ -4,34 +4,28 @@ title: Add Back link to posts#show page
 ---
 
 <h1 id="main">Add Back link to posts#show page</h1>
-###Update file `app/views/posts/show.html.erb`
+Update file `app/views/posts/show.html.erb`
 
-####Remove
-```
- </p>
-```
+Remove
+<pre><code> &lt;/p&gt;</code></pre>
 
 
-####Add
-```
- </p>
- 
- <%= link_to 'Back', posts_path %>
-```
+Add
+<pre><code> &lt;/p&gt;
+&nbsp;
+ &lt;%= link_to &#39;Back&#39;, posts_path %&gt;</code></pre>
 
 
-####Becomes
-```
- <p>
-   <strong>Text:</strong>
-   <%= @post.text %>
+Becomes
+<pre><code> &lt;p&gt;
+   &lt;strong&gt;Text:&lt;/strong&gt;
+   &lt;%= @post.text %&gt;
 \ No newline at end of file
- </p>
- 
- <%= link_to 'Back', posts_path %>
+ &lt;/p&gt;
+&nbsp;
+ &lt;%= link_to &#39;Back&#39;, posts_path %&gt;
 \ No newline at end of file
-
-```
+</code></pre>
 
 
 

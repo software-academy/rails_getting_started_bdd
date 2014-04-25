@@ -4,44 +4,35 @@ title: Test for link to new post on posts page
 ---
 
 <h1 id="main">Test for link to new post on posts page</h1>
-###Update file `spec/features/posts_spec.rb`
+Update file `spec/features/posts_spec.rb`
 
-####Add
-```
-   scenario 'can be created from link on posts page' do
+Add
+<pre><code>   scenario &#39;can be created from link on posts page&#39; do
      visit posts_path
-     click_link 'New post'
+     click_link &#39;New post&#39;
+     expect(current_path).to eq new_post_path
+   end</code></pre>
+
+
+Becomes
+<pre><code>     expect(current_path).to eq posts_path
+   end
+&nbsp;
+   scenario &#39;can be created from link on posts page&#39; do
+     visit posts_path
+     click_link &#39;New post&#39;
      expect(current_path).to eq new_post_path
    end
-```
-
-
-####Becomes
-```
-     expect(current_path).to eq posts_path
-   end
- 
-   scenario 'can be created from link on posts page' do
-     visit posts_path
-     click_link 'New post'
-     expect(current_path).to eq new_post_path
-   end
- 
-   context 'when there are posts' do
+&nbsp;
+   context &#39;when there are posts&#39; do
      before do
-       create :post, title: 'My first post'
-
-```
-
-
-####Becomes
-```
-       expect(page).to have_content('My second post')
+       create :post, title: &#39;My first post&#39;
+@@ -27,5 +33,4 @@ feature &#39;Posts&#39; do
+       expect(page).to have_content(&#39;My second post&#39;)
      end
    end
  end
-
-```
+</code></pre>
 
 
 

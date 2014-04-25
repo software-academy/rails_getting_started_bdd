@@ -4,34 +4,30 @@ title: Test for back link on posts#new page
 ---
 
 <h1 id="main">Test for back link on posts#new page</h1>
-###Update file `spec/features/posts_spec.rb`
+Update file `spec/features/posts_spec.rb`
 
-####Add
-```
-   scenario 'can get back to list page from new page' do
+Add
+<pre><code>   scenario &#39;can get back to list page from new page&#39; do
      visit new_post_path
-     click_link 'Back'
+     click_link &#39;Back&#39;
+     expect(current_path).to eq posts_path
+   end</code></pre>
+
+
+Becomes
+<pre><code>     expect(page).to have_content(&#39;Rails is Awesome!&#39;)
+   end
+&nbsp;
+   scenario &#39;can get back to list page from new page&#39; do
+     visit new_post_path
+     click_link &#39;Back&#39;
      expect(current_path).to eq posts_path
    end
-```
-
-
-####Becomes
-```
-     expect(page).to have_content('Rails is Awesome!')
-   end
- 
-   scenario 'can get back to list page from new page' do
-     visit new_post_path
-     click_link 'Back'
-     expect(current_path).to eq posts_path
-   end
- 
-   scenario 'can be accessed from link on home page' do
+&nbsp;
+   scenario &#39;can be accessed from link on home page&#39; do
      visit root_path
-     click_link 'My Blog'
-
-```
+     click_link &#39;My Blog&#39;
+</code></pre>
 
 
 

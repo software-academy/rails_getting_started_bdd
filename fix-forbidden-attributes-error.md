@@ -4,45 +4,35 @@ title: Fix forbidden attributes error
 ---
 
 <h1 id="main">Fix forbidden attributes error</h1>
-###Update file `app/controllers/posts_controller.rb`
+Update file `app/controllers/posts_controller.rb`
 
-####Change
-```
-     @post = Post.new(params[:post])
-```
+Change
+<pre><code>     @post = Post.new(params[:post])</code></pre>
 
 
-####To
-```
-     @post = Post.new(params[:post].permit(:title, :text))
-```
+To
+<pre><code>     @post = Post.new(params[:post].permit(:title, :text))</code></pre>
 
 
-####Change
-```
-     redirect_to action: :show, id: @post.id
-```
+Change
+<pre><code>     redirect_to action: :show, id: @post.id</code></pre>
 
 
-####To
-```
-     redirect_to @post
-```
+To
+<pre><code>     redirect_to @post</code></pre>
 
 
-####Becomes
-```
-   end
- 
+Becomes
+<pre><code>   end
+&nbsp;
    def create
      @post = Post.new(params[:post].permit(:title, :text))
- 
+&nbsp;
      @post.save
      redirect_to @post
    end
  end
-
-```
+</code></pre>
 
 
 

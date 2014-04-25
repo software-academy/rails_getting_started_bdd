@@ -4,58 +4,54 @@ title: Controller tests for posts#edit and posts#update
 ---
 
 <h1 id="main">Controller tests for posts#edit and posts#update</h1>
-###Update file `spec/controllers/posts_controller_spec.rb`
+Update file `spec/controllers/posts_controller_spec.rb`
 
-####Add
-```
-   context 'when there is a post' do
+Add
+<pre><code>   context &#39;when there is a post&#39; do
      let(:post) { create :post }
- 
-     describe 'GET #edit' do
-       it "returns http success" do
+&nbsp;
+     describe &#39;GET #edit&#39; do
+       it &quot;returns http success&quot; do
          get :edit, id: post.id
          expect(response).to be_success
        end
      end
- 
-     describe 'PATCH #update' do
-       it "redirects to the :show view" do
-         patch :update, id: post.id, post: { title: 'change it' }
+&nbsp;
+     describe &#39;PATCH #update&#39; do
+       it &quot;redirects to the :show view&quot; do
+         patch :update, id: post.id, post: { title: &#39;change it&#39; }
          expect(response).to redirect_to post_path(post)
        end
      end
-   end
-```
+   end</code></pre>
 
 
-####Becomes
-```
-     end
+Becomes
+<pre><code>     end
    end
- 
-   context 'when there is a post' do
+&nbsp;
+   context &#39;when there is a post&#39; do
      let(:post) { create :post }
- 
-     describe 'GET #edit' do
-       it "returns http success" do
+&nbsp;
+     describe &#39;GET #edit&#39; do
+       it &quot;returns http success&quot; do
          get :edit, id: post.id
          expect(response).to be_success
        end
      end
- 
-     describe 'PATCH #update' do
-       it "redirects to the :show view" do
-         patch :update, id: post.id, post: { title: 'change it' }
+&nbsp;
+     describe &#39;PATCH #update&#39; do
+       it &quot;redirects to the :show view&quot; do
+         patch :update, id: post.id, post: { title: &#39;change it&#39; }
          expect(response).to redirect_to post_path(post)
        end
      end
    end
- 
-   describe 'POST #create' do
-     context 'when the post is valid' do
-       it "redirects to the :show view" do
-
-```
+&nbsp;
+   describe &#39;POST #create&#39; do
+     context &#39;when the post is valid&#39; do
+       it &quot;redirects to the :show view&quot; do
+</code></pre>
 
 
 

@@ -4,45 +4,39 @@ title: Add posts#show action and view
 ---
 
 <h1 id="main">Add posts#show action and view</h1>
-###Update file `app/controllers/posts_controller.rb`
+Update file `app/controllers/posts_controller.rb`
 
-####Add
-```
- 
+Add
+<pre><code>&nbsp;
    def show
      @post = Post.find(params[:id])
-   end
-```
+   end</code></pre>
 
 
-####Becomes
-```
-     @post.save
+Becomes
+<pre><code>     @post.save
      redirect_to @post
    end
- 
+&nbsp;
    def show
      @post = Post.find(params[:id])
    end
  end
+</code></pre>
 
-```
 
+Create file `app/views/posts/show.html.erb`
 
-###Create file `app/views/posts/show.html.erb`
-
-####Add
-```
- <p>
-   <strong>Title:</strong>
-   <%= @post.title %>
- </p>
- 
- <p>
-   <strong>Text:</strong>
-   <%= @post.text %>
- </p>
-```
+Add
+<pre><code> &lt;p&gt;
+   &lt;strong&gt;Title:&lt;/strong&gt;
+   &lt;%= @post.title %&gt;
+ &lt;/p&gt;
+&nbsp;
+ &lt;p&gt;
+   &lt;strong&gt;Text:&lt;/strong&gt;
+   &lt;%= @post.text %&gt;
+ &lt;/p&gt;</code></pre>
 
 
 

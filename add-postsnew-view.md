@@ -4,31 +4,25 @@ title: Add posts#new view
 ---
 
 <h1 id="main">Add posts#new view</h1>
-###Update file `app/controllers/posts_controller.rb`
+Update file `app/controllers/posts_controller.rb`
 
-####Add
-```
-   def new
-   end
-```
+Add
+<pre><code>   def new
+   end</code></pre>
 
 
-####Becomes
-```
- class PostsController < ApplicationController
+Becomes
+<pre><code> class PostsController &lt; ApplicationController
    def new
    end
  end
+</code></pre>
 
-```
 
+Create file `app/views/posts/new.html.erb`
 
-###Create file `app/views/posts/new.html.erb`
-
-####Add
-```
- <h1>New Post</h1>
-```
+Add
+<pre><code> &lt;h1&gt;New Post&lt;/h1&gt;</code></pre>
 
 
 

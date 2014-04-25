@@ -4,48 +4,40 @@ title: Configure database_cleaner
 ---
 
 <h1 id="main">Configure database_cleaner</h1>
-###Update file `spec/spec_helper.rb`
+Update file `spec/spec_helper.rb`
 
-####Change
-```
-   config.use_transactional_fixtures = true
-```
+Change
+<pre><code>   config.use_transactional_fixtures = true</code></pre>
 
 
-####To
-```
-   config.use_transactional_fixtures = false
-```
+To
+<pre><code>   config.use_transactional_fixtures = false</code></pre>
 
 
-####Becomes
-```
-   # If you're not using ActiveRecord, or you'd prefer not to run each of your
+Becomes
+<pre><code>   # If you&#39;re not using ActiveRecord, or you&#39;d prefer not to run each of your
    # examples within a transaction, remove the following line or assign false
    # instead of true.
    config.use_transactional_fixtures = false
- 
+&nbsp;
    # If true, the base class of anonymous controllers will be inferred
    # automatically. This will be the default behavior in future versions of
+</code></pre>
 
-```
 
+Create file `spec/support/database.rb`
 
-###Create file `spec/support/database.rb`
-
-####Add
-```
- RSpec.configure do |config|
+Add
+<pre><code> RSpec.configure do |config|
    config.before(:each) do
      DatabaseCleaner.strategy = example.metadata[:js] ? :truncation : :transaction
      DatabaseCleaner.start
    end
- 
+&nbsp;
    config.after(:each) do
      DatabaseCleaner.clean
    end
- end
-```
+ end</code></pre>
 
 
 

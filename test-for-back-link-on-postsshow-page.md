@@ -4,34 +4,30 @@ title: Test for Back link on posts#show page
 ---
 
 <h1 id="main">Test for Back link on posts#show page</h1>
-###Update file `spec/features/posts_spec.rb`
+Update file `spec/features/posts_spec.rb`
 
-####Add
-```
- 
-     scenario 'can get back to list page from show page' do
+Add
+<pre><code>&nbsp;
+     scenario &#39;can get back to list page from show page&#39; do
        visit post_path(Post.first)
-       click_link 'Back'
+       click_link &#39;Back&#39;
        expect(current_path).to eq posts_path
-     end
-```
+     end</code></pre>
 
 
-####Becomes
-```
-       expect(page).to have_content('My first post')
-       expect(page).to have_content('My second post')
+Becomes
+<pre><code>       expect(page).to have_content(&#39;My first post&#39;)
+       expect(page).to have_content(&#39;My second post&#39;)
      end
- 
-     scenario 'can get back to list page from show page' do
+&nbsp;
+     scenario &#39;can get back to list page from show page&#39; do
        visit post_path(Post.first)
-       click_link 'Back'
+       click_link &#39;Back&#39;
        expect(current_path).to eq posts_path
      end
    end
  end
-
-```
+</code></pre>
 
 
 

@@ -4,31 +4,25 @@ title: Test for dependent destroy of comments
 ---
 
 <h1 id="main">Test for dependent destroy of comments</h1>
-###Update file `spec/models/post_spec.rb`
+Update file `spec/models/post_spec.rb`
 
-####Change
-```
-   it { should have_many :comments }
-```
+Change
+<pre><code>   it { should have_many :comments }</code></pre>
 
 
-####To
-```
-   it { should have_many(:comments).dependent(:destroy) }
-```
+To
+<pre><code>   it { should have_many(:comments).dependent(:destroy) }</code></pre>
 
 
-####Becomes
-```
- require 'spec_helper'
- 
+Becomes
+<pre><code> require &#39;spec_helper&#39;
+&nbsp;
  describe Post do
    it { should have_many(:comments).dependent(:destroy) }
- 
-   describe '#title' do
-     it { expect(subject).to have_valid(:title).when 'X'*5 }
-
-```
+&nbsp;
+   describe &#39;#title&#39; do
+     it { expect(subject).to have_valid(:title).when &#39;X&#39;*5 }
+</code></pre>
 
 
 

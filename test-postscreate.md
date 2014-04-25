@@ -4,33 +4,29 @@ title: Test posts#create
 ---
 
 <h1 id="main">Test posts#create</h1>
-###Update file `spec/controllers/posts_controller_spec.rb`
+Update file `spec/controllers/posts_controller_spec.rb`
 
-####Add
-```
-   describe 'POST #create' do
-     it "redirects to the :show view" do
-       post :create, post: { title: 'title', text: 'text' }
+Add
+<pre><code>   describe &#39;POST #create&#39; do
+     it &quot;redirects to the :show view&quot; do
+       post :create, post: { title: &#39;title&#39;, text: &#39;text&#39; }
        expect(response).to redirect_to assigns[:post]
      end
-   end
-```
+   end</code></pre>
 
 
-####Becomes
-```
-     end
+Becomes
+<pre><code>     end
    end
- 
-   describe 'POST #create' do
-     it "redirects to the :show view" do
-       post :create, post: { title: 'title', text: 'text' }
+&nbsp;
+   describe &#39;POST #create&#39; do
+     it &quot;redirects to the :show view&quot; do
+       post :create, post: { title: &#39;title&#39;, text: &#39;text&#39; }
        expect(response).to redirect_to assigns[:post]
      end
    end
  end
-
-```
+</code></pre>
 
 
 

@@ -4,26 +4,23 @@ title: Comments can be deleted from the show view
 ---
 
 <h1 id="main">Comments can be deleted from the show view</h1>
-###Update file `app/controllers/comments_controller.rb`
+Update file `app/controllers/comments_controller.rb`
 
-####Add
-```
- 
+Add
+<pre><code>&nbsp;
    def destroy
      @post = Post.find(params[:post_id])
      @comment = @post.comments.find(params[:id])
      @comment.destroy
      redirect_to post_path(@post)
-   end
-```
+   end</code></pre>
 
 
-####Becomes
-```
-     @comment = @post.comments.create(params[:comment].permit(:commenter, :body))
+Becomes
+<pre><code>     @comment = @post.comments.create(params[:comment].permit(:commenter, :body))
      redirect_to post_path(@post)
    end
- 
+&nbsp;
    def destroy
      @post = Post.find(params[:post_id])
      @comment = @post.comments.find(params[:id])
@@ -31,38 +28,33 @@ title: Comments can be deleted from the show view
      redirect_to post_path(@post)
    end
  end
+</code></pre>
 
-```
 
+Update file `app/views/comments/_comment.html.erb`
 
-###Update file `app/views/comments/_comment.html.erb`
-
-####Add
-```
- </p>
- 
- <p>
-   <%= link_to 'Destroy Comment', [comment.post, comment],
+Add
+<pre><code> &lt;/p&gt;
+&nbsp;
+ &lt;p&gt;
+   &lt;%= link_to &#39;Destroy Comment&#39;, [comment.post, comment],
                 method: :delete,
-                data: { confirm: 'Are you sure?' } %>
-```
+                data: { confirm: &#39;Are you sure?&#39; } %&gt;</code></pre>
 
 
-####Becomes
-```
- <p>
-   <strong>Comment:</strong>
-   <%= comment.body %>
- </p>
- 
- <p>
-   <%= link_to 'Destroy Comment', [comment.post, comment],
+Becomes
+<pre><code> &lt;p&gt;
+   &lt;strong&gt;Comment:&lt;/strong&gt;
+   &lt;%= comment.body %&gt;
+ &lt;/p&gt;
+&nbsp;
+ &lt;p&gt;
+   &lt;%= link_to &#39;Destroy Comment&#39;, [comment.post, comment],
                 method: :delete,
-                data: { confirm: 'Are you sure?' } %>
- </p>
+                data: { confirm: &#39;Are you sure?&#39; } %&gt;
+ &lt;/p&gt;
 \ No newline at end of file
-
-```
+</code></pre>
 
 
 

@@ -4,19 +4,17 @@ title: Test for Hello, Rails
 ---
 
 <h1 id="main">Test for Hello, Rails</h1>
-###Create file `spec/features/hello_world_spec.rb`
+Create file `spec/features/hello_world_spec.rb`
 
-####Add
-```
- require 'spec_helper'
- 
- feature 'The world' do
-   scenario 'sees Hello, Rails!' do
-     visit '/'
-     expect(page).to have_content('Hello, Rails!')
+Add
+<pre><code> require &#39;spec_helper&#39;
+&nbsp;
+ feature &#39;The world&#39; do
+   scenario &#39;sees Hello, Rails!&#39; do
+     visit &#39;/&#39;
+     expect(page).to have_content(&#39;Hello, Rails!&#39;)
    end
- end
-```
+ end</code></pre>
 
 
 

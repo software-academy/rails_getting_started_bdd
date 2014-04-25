@@ -4,126 +4,108 @@ title: Generate comments, add associations
 ---
 
 <h1 id="main">Generate comments, add associations</h1>
-###Create file `app/models/comment.rb`
+Create file `app/models/comment.rb`
 
-####Add
-```
- class Comment < ActiveRecord::Base
+Add
+<pre><code> class Comment &lt; ActiveRecord::Base
    belongs_to :post
- end
-```
+ end</code></pre>
 
 
-###Update file `app/models/post.rb`
+Update file `app/models/post.rb`
 
-####Add
-```
-   has_many :comments
-```
+Add
+<pre><code>   has_many :comments</code></pre>
 
 
-####Becomes
-```
- class Post < ActiveRecord::Base
+Becomes
+<pre><code> class Post &lt; ActiveRecord::Base
    has_many :comments
    validates :title, presence: true,
                      length: { minimum: 5 }
  end
+</code></pre>
 
-```
 
+Create file `db/migrate/20131106022339_create_comments.rb`
 
-###Create file `db/migrate/20131106022339_create_comments.rb`
-
-####Add
-```
- class CreateComments < ActiveRecord::Migration
+Add
+<pre><code> class CreateComments &lt; ActiveRecord::Migration
    def change
      create_table :comments do |t|
        t.string :commenter
        t.text :body
        t.references :post, index: true
- 
+&nbsp;
        t.timestamps
      end
    end
- end
-```
+ end</code></pre>
 
 
-###Update file `db/schema.rb`
+Update file `db/schema.rb`
 
-####Change
-```
- ActiveRecord::Schema.define(version: 20131101193007) do
-```
+Change
+<pre><code> ActiveRecord::Schema.define(version: 20131101193007) do</code></pre>
 
 
-####To
-```
- ActiveRecord::Schema.define(version: 20131106022339) do
- 
-   create_table "comments", force: true do |t|
-     t.string   "commenter"
-     t.text     "body"
-     t.integer  "post_id"
-     t.datetime "created_at"
-     t.datetime "updated_at"
+To
+<pre><code> ActiveRecord::Schema.define(version: 20131106022339) do
+&nbsp;
+   create_table &quot;comments&quot;, force: true do |t|
+     t.string   &quot;commenter&quot;
+     t.text     &quot;body&quot;
+     t.integer  &quot;post_id&quot;
+     t.datetime &quot;created_at&quot;
+     t.datetime &quot;updated_at&quot;
    end
- 
-   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
-```
+&nbsp;
+   add_index &quot;comments&quot;, [&quot;post_id&quot;], name: &quot;index_comments_on_post_id&quot;</code></pre>
 
 
-####Becomes
-```
- #
- # It's strongly recommended that you check this file into your version control system.
- 
+Becomes
+<pre><code> #
+ # It&#39;s strongly recommended that you check this file into your version control system.
+&nbsp;
  ActiveRecord::Schema.define(version: 20131106022339) do
- 
-   create_table "comments", force: true do |t|
-     t.string   "commenter"
-     t.text     "body"
-     t.integer  "post_id"
-     t.datetime "created_at"
-     t.datetime "updated_at"
+&nbsp;
+   create_table &quot;comments&quot;, force: true do |t|
+     t.string   &quot;commenter&quot;
+     t.text     &quot;body&quot;
+     t.integer  &quot;post_id&quot;
+     t.datetime &quot;created_at&quot;
+     t.datetime &quot;updated_at&quot;
    end
- 
-   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
- 
-   create_table "posts", force: true do |t|
-     t.string   "title"
+&nbsp;
+   add_index &quot;comments&quot;, [&quot;post_id&quot;], name: &quot;index_comments_on_post_id&quot;
+&nbsp;
+   create_table &quot;posts&quot;, force: true do |t|
+     t.string   &quot;title&quot;
+</code></pre>
 
-```
 
+Create file `spec/factories/comments.rb`
 
-###Create file `spec/factories/comments.rb`
-
-####Add
-```
- # Read about factories at https://github.com/thoughtbot/factory_girl
- 
+Add
+<pre><code> # Read about factories at https://github.com/thoughtbot/factory_girl
+&nbsp;
  FactoryGirl.define do
    factory :comment do
-     commenter "MyString"
-     body "MyText"
+     commenter &quot;MyString&quot;
+     body &quot;MyText&quot;
      post nil
    end
- end
-```
+ end</code></pre>
 
 
-###Create file `spec/models/comment_spec.rb`
+Create file `spec/models/comment_spec.rb`
 
-####Add
-```
- require 'spec_helper'
- 
+Add
+<pre><code> require &#39;spec_helper&#39;
+&nbsp;
  describe Comment do
    it { should belong_to :post }
- end
-```
+ end</code></pre>
 
 
 
