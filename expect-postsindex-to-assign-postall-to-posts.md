@@ -4,28 +4,33 @@ title: Expect posts#index to assign Post.all to @posts
 ---
 
 <h1 id="main">Expect posts#index to assign Post.all to @posts</h1>
-Update file `spec/controllers/posts_controller_spec.rb`
 
-Add
-<pre><code>&nbsp;
-     it &quot;assigns @posts to Post.all&quot; do
+###Update file `spec/controllers/posts_controller_spec.rb`
+
+####Add
+```
+ 
+     it "assigns @posts to Post.all" do
        get :index
        expect(assigns[:posts]).to eq Post.all
-     end</code></pre>
+     end
+```
 
 
-Becomes
-<pre><code>       get :index
+####Becomes
+```
+       get :index
        expect(response).to be_success
      end
-&nbsp;
-     it &quot;assigns @posts to Post.all&quot; do
+ 
+     it "assigns @posts to Post.all" do
        get :index
        expect(assigns[:posts]).to eq Post.all
      end
    end
  end
-</code></pre>
+
+```
 
 
 

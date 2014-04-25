@@ -4,141 +4,164 @@ title: Extract form into partial
 ---
 
 <h1 id="main">Extract form into partial</h1>
-Create file `app/views/posts/_form.html.erb`
 
-Add
-<pre><code> &lt;%= form_for @post do |f| %&gt;
-   &lt;% if @post.errors.any? %&gt;
-   &lt;div id=&quot;error_explanation&quot;&gt;
-     &lt;h2&gt;&lt;%= pluralize(@post.errors.count, &quot;error&quot;) %&gt; prohibited
-       this post from being saved:&lt;/h2&gt;
-     &lt;ul&gt;
-     &lt;% @post.errors.full_messages.each do |msg| %&gt;
-       &lt;li&gt;&lt;%= msg %&gt;&lt;/li&gt;
-     &lt;% end %&gt;
-     &lt;/ul&gt;
-   &lt;/div&gt;
-   &lt;% end %&gt;
-   &lt;p&gt;
-     &lt;%= f.label :title %&gt;&lt;br&gt;
-     &lt;%= f.text_field :title %&gt;
-   &lt;/p&gt;
-&nbsp;
-   &lt;p&gt;
-     &lt;%= f.label :text %&gt;&lt;br&gt;
-     &lt;%= f.text_area :text %&gt;
-   &lt;/p&gt;
-&nbsp;
-   &lt;p&gt;
-     &lt;%= f.submit %&gt;
-   &lt;/p&gt;
- &lt;% end %&gt;</code></pre>
+###Create file `app/views/posts/_form.html.erb`
 
-
-Update file `app/views/posts/edit.html.erb`
-
-Change
-<pre><code> &lt;h1&gt;Editing post&lt;/h1&gt;</code></pre>
+####Add
+```
+ <%= form_for @post do |f| %>
+   <% if @post.errors.any? %>
+   <div id="error_explanation">
+     <h2><%= pluralize(@post.errors.count, "error") %> prohibited
+       this post from being saved:</h2>
+     <ul>
+     <% @post.errors.full_messages.each do |msg| %>
+       <li><%= msg %></li>
+     <% end %>
+     </ul>
+   </div>
+   <% end %>
+   <p>
+     <%= f.label :title %><br>
+     <%= f.text_field :title %>
+   </p>
+ 
+   <p>
+     <%= f.label :text %><br>
+     <%= f.text_area :text %>
+   </p>
+ 
+   <p>
+     <%= f.submit %>
+   </p>
+ <% end %>
+```
 
 
-To
-<pre><code> &lt;h1&gt;Edit post&lt;/h1&gt;</code></pre>
+###Update file `app/views/posts/edit.html.erb`
+
+####Change
+```
+ <h1>Editing post</h1>
+```
 
 
-Remove
-<pre><code> &lt;%= form_for :post, url: post_path(@post.id), method: :patch do |f| %&gt;
-   &lt;% if @post.errors.any? %&gt;
-     &lt;div id=&quot;errorExplanation&quot;&gt;
-       &lt;h2&gt;&lt;%= pluralize(@post.errors.count, &quot;error&quot;) %&gt; prohibited
-         this post from being saved:&lt;/h2&gt;
-       &lt;ul&gt;
-       &lt;% @post.errors.full_messages.each do |msg| %&gt;
-         &lt;li&gt;&lt;%= msg %&gt;&lt;/li&gt;
-       &lt;% end %&gt;
-       &lt;/ul&gt;
-     &lt;/div&gt;
-   &lt;% end %&gt;
-   &lt;p&gt;
-     &lt;%= f.label :title %&gt;&lt;br&gt;
-     &lt;%= f.text_field :title %&gt;
-   &lt;/p&gt;
-&nbsp;
-   &lt;p&gt;
-     &lt;%= f.label :text %&gt;&lt;br&gt;
-     &lt;%= f.text_area :text %&gt;
-   &lt;/p&gt;
-&nbsp;
-   &lt;p&gt;
-     &lt;%= f.submit %&gt;
-   &lt;/p&gt;
- &lt;% end %&gt;</code></pre>
+####To
+```
+ <h1>Edit post</h1>
+```
 
 
-Add
-<pre><code> &lt;%= render &#39;form&#39; %&gt;</code></pre>
+####Remove
+```
+ <%= form_for :post, url: post_path(@post.id), method: :patch do |f| %>
+   <% if @post.errors.any? %>
+     <div id="errorExplanation">
+       <h2><%= pluralize(@post.errors.count, "error") %> prohibited
+         this post from being saved:</h2>
+       <ul>
+       <% @post.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+       <% end %>
+       </ul>
+     </div>
+   <% end %>
+   <p>
+     <%= f.label :title %><br>
+     <%= f.text_field :title %>
+   </p>
+ 
+   <p>
+     <%= f.label :text %><br>
+     <%= f.text_area :text %>
+   </p>
+ 
+   <p>
+     <%= f.submit %>
+   </p>
+ <% end %>
+```
 
 
-Becomes
-<pre><code> &lt;h1&gt;Edit post&lt;/h1&gt;
-&nbsp;
- &lt;%= render &#39;form&#39; %&gt;
-&nbsp;
- &lt;%= link_to &#39;Back&#39;, posts_path %&gt;
+####Add
+```
+ <%= render 'form' %>
+```
+
+
+####Becomes
+```
+ <h1>Edit post</h1>
+ 
+ <%= render 'form' %>
+ 
+ <%= link_to 'Back', posts_path %>
 \ No newline at end of file
-</code></pre>
+
+```
 
 
-Update file `app/views/posts/new.html.erb`
+###Update file `app/views/posts/new.html.erb`
 
-Change
-<pre><code> &lt;h1&gt;New Post&lt;/h1&gt;</code></pre>
-
-
-To
-<pre><code> &lt;h1&gt;New post&lt;/h1&gt;</code></pre>
+####Change
+```
+ <h1>New Post</h1>
+```
 
 
-Remove
-<pre><code> &lt;%= form_for :post, url: posts_path do |f| %&gt;
-   &lt;% if @post.errors.any? %&gt;
-     &lt;div id=&quot;errorExplanation&quot;&gt;
-       &lt;h2&gt;&lt;%= pluralize(@post.errors.count, &quot;error&quot;) %&gt; prohibited
-         this post from being saved:&lt;/h2&gt;
-       &lt;ul&gt;
-       &lt;% @post.errors.full_messages.each do |msg| %&gt;
-         &lt;li&gt;&lt;%= msg %&gt;&lt;/li&gt;
-       &lt;% end %&gt;
-       &lt;/ul&gt;
-     &lt;/div&gt;
-   &lt;% end %&gt;
-   &lt;p&gt;
-     &lt;%= f.label :title %&gt;&lt;br&gt;
-     &lt;%= f.text_field :title %&gt;
-   &lt;/p&gt;
-&nbsp;
-   &lt;p&gt;
-     &lt;%= f.label :text %&gt;&lt;br&gt;
-     &lt;%= f.text_area :text %&gt;
-   &lt;/p&gt;
-&nbsp;
-   &lt;p&gt;
-     &lt;%= f.submit %&gt;
-   &lt;/p&gt;
- &lt;% end %&gt;</code></pre>
+####To
+```
+ <h1>New post</h1>
+```
 
 
-Add
-<pre><code> &lt;%= render &#39;form&#39; %&gt;</code></pre>
+####Remove
+```
+ <%= form_for :post, url: posts_path do |f| %>
+   <% if @post.errors.any? %>
+     <div id="errorExplanation">
+       <h2><%= pluralize(@post.errors.count, "error") %> prohibited
+         this post from being saved:</h2>
+       <ul>
+       <% @post.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+       <% end %>
+       </ul>
+     </div>
+   <% end %>
+   <p>
+     <%= f.label :title %><br>
+     <%= f.text_field :title %>
+   </p>
+ 
+   <p>
+     <%= f.label :text %><br>
+     <%= f.text_area :text %>
+   </p>
+ 
+   <p>
+     <%= f.submit %>
+   </p>
+ <% end %>
+```
 
 
-Becomes
-<pre><code> &lt;h1&gt;New post&lt;/h1&gt;
-&nbsp;
- &lt;%= render &#39;form&#39; %&gt;
-&nbsp;
- &lt;%= link_to &#39;Back&#39;, posts_path %&gt;
+####Add
+```
+ <%= render 'form' %>
+```
+
+
+####Becomes
+```
+ <h1>New post</h1>
+ 
+ <%= render 'form' %>
+ 
+ <%= link_to 'Back', posts_path %>
 \ No newline at end of file
-</code></pre>
+
+```
 
 
 

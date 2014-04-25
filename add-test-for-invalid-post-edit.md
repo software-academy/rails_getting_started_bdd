@@ -4,49 +4,56 @@ title: Add test for invalid post edit
 ---
 
 <h1 id="main">Add test for invalid post edit</h1>
-Update file `spec/controllers/posts_controller_spec.rb`
 
-Remove
-<pre><code>       it &quot;redirects to the :show view&quot; do
-         patch :update, id: post.id, post: { title: &#39;change it&#39; }
-         expect(response).to redirect_to post_path(post)</code></pre>
+###Update file `spec/controllers/posts_controller_spec.rb`
+
+####Remove
+```
+       it "redirects to the :show view" do
+         patch :update, id: post.id, post: { title: 'change it' }
+         expect(response).to redirect_to post_path(post)
+```
 
 
-Add
-<pre><code>       context &#39;when the post is valid&#39; do
-         it &quot;redirects to the :show view&quot; do
-           patch :update, id: post.id, post: { title: &#39;change it&#39; }
+####Add
+```
+       context 'when the post is valid' do
+         it "redirects to the :show view" do
+           patch :update, id: post.id, post: { title: 'change it' }
            expect(response).to redirect_to post_path(post)
          end
        end
-&nbsp;
-       context &#39;when the post is not valid&#39; do
-         it &quot;renders the :new view&quot; do
-           patch :update, id: post.id, post: { title: &#39;&#39; }
+ 
+       context 'when the post is not valid' do
+         it "renders the :new view" do
+           patch :update, id: post.id, post: { title: '' }
            expect(response).to render_template :edit
-         end</code></pre>
+         end
+```
 
 
-Becomes
-<pre><code>     end
-&nbsp;
-     describe &#39;PATCH #update&#39; do
-       context &#39;when the post is valid&#39; do
-         it &quot;redirects to the :show view&quot; do
-           patch :update, id: post.id, post: { title: &#39;change it&#39; }
+####Becomes
+```
+     end
+ 
+     describe 'PATCH #update' do
+       context 'when the post is valid' do
+         it "redirects to the :show view" do
+           patch :update, id: post.id, post: { title: 'change it' }
            expect(response).to redirect_to post_path(post)
          end
        end
-&nbsp;
-       context &#39;when the post is not valid&#39; do
-         it &quot;renders the :new view&quot; do
-           patch :update, id: post.id, post: { title: &#39;&#39; }
+ 
+       context 'when the post is not valid' do
+         it "renders the :new view" do
+           patch :update, id: post.id, post: { title: '' }
            expect(response).to render_template :edit
          end
        end
      end
-&nbsp;
-</code></pre>
+ 
+
+```
 
 
 

@@ -4,25 +4,28 @@ title: Test for commenting on a post
 ---
 
 <h1 id="main">Test for commenting on a post</h1>
-Create file `spec/features/comments_spec.rb`
 
-Add
-<pre><code> require &#39;spec_helper&#39;
-&nbsp;
- feature &#39;Comments&#39; do
+###Create file `spec/features/comments_spec.rb`
+
+####Add
+```
+ require 'spec_helper'
+ 
+ feature 'Comments' do
    background do
      @post = create :post
    end
-&nbsp;
-   scenario &#39;can be added when viewing a post&#39; do
+ 
+   scenario 'can be added when viewing a post' do
      visit post_path(@post)
-     fill_in &#39;Commenter&#39;, with: &#39;Concerned Citizen&#39;
-     fill_in &#39;Body&#39;, with: &#39;Great post!&#39;
-     click_button &#39;Create Comment&#39;
+     fill_in 'Commenter', with: 'Concerned Citizen'
+     fill_in 'Body', with: 'Great post!'
+     click_button 'Create Comment'
      expect(current_path).to eq post_path(@post)
-     expect(page).to have_content(&#39;Comment: Great post!&#39;)
+     expect(page).to have_content('Comment: Great post!')
    end
- end</code></pre>
+ end
+```
 
 
 

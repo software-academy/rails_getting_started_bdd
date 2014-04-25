@@ -4,32 +4,38 @@ title: rails generate model Post title:string text:text
 ---
 
 <h1 id="main">rails generate model Post title:string text:text</h1>
-Create file `app/models/post.rb`
 
-Add
-<pre><code> class Post &lt; ActiveRecord::Base
- end</code></pre>
+###Create file `app/models/post.rb`
+
+####Add
+```
+ class Post < ActiveRecord::Base
+ end
+```
 
 
-Create file `db/migrate/20131101193007_create_posts.rb`
+###Create file `db/migrate/20131101193007_create_posts.rb`
 
-Add
-<pre><code> class CreatePosts &lt; ActiveRecord::Migration
+####Add
+```
+ class CreatePosts < ActiveRecord::Migration
    def change
      create_table :posts do |t|
        t.string :title
        t.text :text
-&nbsp;
+ 
        t.timestamps
      end
    end
- end</code></pre>
+ end
+```
 
 
-Create file `db/schema.rb`
+###Create file `db/schema.rb`
 
-Add
-<pre><code> # encoding: UTF-8
+####Add
+```
+ # encoding: UTF-8
  # This file is auto-generated from the current state of the database. Instead
  # of editing this file, please use the migrations feature of Active Record to
  # incrementally modify your database, and then regenerate this schema definition.
@@ -38,30 +44,33 @@ Add
  # database schema. If you need to create the application database on another
  # system, you should be using db:schema:load, not running all the migrations
  # from scratch. The latter is a flawed and unsustainable approach (the more migrations
- # you&#39;ll amass, the slower it&#39;ll run and the greater likelihood for issues).
+ # you'll amass, the slower it'll run and the greater likelihood for issues).
  #
- # It&#39;s strongly recommended that you check this file into your version control system.
-&nbsp;
+ # It's strongly recommended that you check this file into your version control system.
+ 
  ActiveRecord::Schema.define(version: 20131101193007) do
-&nbsp;
-   create_table &quot;posts&quot;, force: true do |t|
-     t.string   &quot;title&quot;
-     t.text     &quot;text&quot;
-     t.datetime &quot;created_at&quot;
-     t.datetime &quot;updated_at&quot;
+ 
+   create_table "posts", force: true do |t|
+     t.string   "title"
+     t.text     "text"
+     t.datetime "created_at"
+     t.datetime "updated_at"
    end
-&nbsp;
- end</code></pre>
+ 
+ end
+```
 
 
-Create file `spec/models/post_spec.rb`
+###Create file `spec/models/post_spec.rb`
 
-Add
-<pre><code> require &#39;spec_helper&#39;
-&nbsp;
+####Add
+```
+ require 'spec_helper'
+ 
  describe Post do
-   pending &quot;add some examples to (or delete) #{__FILE__}&quot;
- end</code></pre>
+   pending "add some examples to (or delete) #{__FILE__}"
+ end
+```
 
 
 

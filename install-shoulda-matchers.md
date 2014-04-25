@@ -4,52 +4,68 @@ title: Install shoulda-matchers
 ---
 
 <h1 id="main">Install shoulda-matchers</h1>
-Update file `Gemfile`
 
-Add
-<pre><code>   gem &#39;shoulda-matchers&#39;</code></pre>
+###Update file `Gemfile`
+
+####Add
+```
+   gem 'shoulda-matchers'
+```
 
 
-Becomes
-<pre><code> group :test do
-   gem &#39;database_cleaner&#39;
-   gem &#39;launchy&#39;
-   gem &#39;shoulda-matchers&#39;
-   gem &#39;valid_attribute&#39;
+####Becomes
+```
+ group :test do
+   gem 'database_cleaner'
+   gem 'launchy'
+   gem 'shoulda-matchers'
+   gem 'valid_attribute'
  end
-&nbsp;
-</code></pre>
+ 
+
+```
 
 
-Update file `Gemfile.lock`
+###Update file `Gemfile.lock`
 
-Add
-<pre><code>     shoulda-matchers (2.4.0)
-       activesupport (&gt;= 3.0.0)</code></pre>
-
-
-Add
-<pre><code>   shoulda-matchers</code></pre>
-
-
-Becomes
-<pre><code>     sdoc (0.3.20)
-       json (&gt;= 1.1.3)
-       rdoc (~&gt; 3.10)
+####Add
+```
      shoulda-matchers (2.4.0)
-       activesupport (&gt;= 3.0.0)
+       activesupport (>= 3.0.0)
+```
+
+
+####Becomes
+```
+     sdoc (0.3.20)
+       json (>= 1.1.3)
+       rdoc (~> 3.10)
+     shoulda-matchers (2.4.0)
+       activesupport (>= 3.0.0)
      slop (3.4.6)
      sprockets (2.10.0)
-       hike (~&gt; 1.2)
-@@ -213,6 +215,7 @@ DEPENDENCIES
+       hike (~> 1.2)
+
+```
+
+
+####Add
+```
+   shoulda-matchers
+```
+
+
+####Becomes
+```
    rspec-rails
-   sass-rails (~&gt; 4.0.0)
+   sass-rails (~> 4.0.0)
    sdoc
    shoulda-matchers
    sqlite3
    turbolinks
-   uglifier (&gt;= 1.3.0)
-</code></pre>
+   uglifier (>= 1.3.0)
+
+```
 
 
 

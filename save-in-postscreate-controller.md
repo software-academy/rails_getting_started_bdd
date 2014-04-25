@@ -4,30 +4,37 @@ title: Save in posts#create controller
 ---
 
 <h1 id="main">Save in posts#create controller</h1>
-Update file `app/controllers/posts_controller.rb`
 
-Change
-<pre><code>     render text: params[:post].inspect</code></pre>
+###Update file `app/controllers/posts_controller.rb`
+
+####Change
+```
+     render text: params[:post].inspect
+```
 
 
-To
-<pre><code>     @post = Post.new(params[:post])
-&nbsp;
+####To
+```
+     @post = Post.new(params[:post])
+ 
      @post.save
-     redirect_to action: :show, id: @post.id</code></pre>
+     redirect_to action: :show, id: @post.id
+```
 
 
-Becomes
-<pre><code>   end
-&nbsp;
+####Becomes
+```
+   end
+ 
    def create
      @post = Post.new(params[:post])
-&nbsp;
+ 
      @post.save
      redirect_to action: :show, id: @post.id
    end
  end
-</code></pre>
+
+```
 
 
 

@@ -4,23 +4,30 @@ title: Dependent destroy of comments
 ---
 
 <h1 id="main">Dependent destroy of comments</h1>
-Update file `app/models/post.rb`
 
-Change
-<pre><code>   has_many :comments</code></pre>
+###Update file `app/models/post.rb`
+
+####Change
+```
+   has_many :comments
+```
 
 
-To
-<pre><code>   has_many :comments, dependent: :destroy</code></pre>
+####To
+```
+   has_many :comments, dependent: :destroy
+```
 
 
-Becomes
-<pre><code> class Post &lt; ActiveRecord::Base
+####Becomes
+```
+ class Post < ActiveRecord::Base
    has_many :comments, dependent: :destroy
    validates :title, presence: true,
                      length: { minimum: 5 }
  end
-</code></pre>
+
+```
 
 
 

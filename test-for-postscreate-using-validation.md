@@ -4,39 +4,46 @@ title: Test for posts#create using validation
 ---
 
 <h1 id="main">Test for posts#create using validation</h1>
-Update file `spec/features/posts_spec.rb`
 
-Change
-<pre><code>     expect(page).to have_content(&#39;Rails is Awesome!&#39;)</code></pre>
+###Update file `spec/features/posts_spec.rb`
+
+####Change
+```
+     expect(page).to have_content('Rails is Awesome!')
+```
 
 
-To
-<pre><code>     expect(current_path).to eq post_path(Post.where(title: &#39;Rails is Awesome!&#39;).first)
+####To
+```
+     expect(current_path).to eq post_path(Post.where(title: 'Rails is Awesome!').first)
    end
-&nbsp;
-   scenario &#39;cannot be created without a title&#39; do
+ 
+   scenario 'cannot be created without a title' do
      visit new_post_path
-     fill_in &#39;Title&#39;, with: &#39;&#39;
-     click_button &#39;Save Post&#39;
-     expect(page).to have_content(&quot;Title can&#39;t be blank&quot;)</code></pre>
+     fill_in 'Title', with: ''
+     click_button 'Save Post'
+     expect(page).to have_content("Title can't be blank")
+```
 
 
-Becomes
-<pre><code>     fill_in &#39;Title&#39;, with: &#39;Rails is Awesome!&#39;
-     fill_in &#39;Text&#39;, with: &#39;It really is.&#39;
-     click_button &#39;Save Post&#39;
-     expect(current_path).to eq post_path(Post.where(title: &#39;Rails is Awesome!&#39;).first)
+####Becomes
+```
+     fill_in 'Title', with: 'Rails is Awesome!'
+     fill_in 'Text', with: 'It really is.'
+     click_button 'Save Post'
+     expect(current_path).to eq post_path(Post.where(title: 'Rails is Awesome!').first)
    end
-&nbsp;
-   scenario &#39;cannot be created without a title&#39; do
+ 
+   scenario 'cannot be created without a title' do
      visit new_post_path
-     fill_in &#39;Title&#39;, with: &#39;&#39;
-     click_button &#39;Save Post&#39;
-     expect(page).to have_content(&quot;Title can&#39;t be blank&quot;)
+     fill_in 'Title', with: ''
+     click_button 'Save Post'
+     expect(page).to have_content("Title can't be blank")
    end
-&nbsp;
-   scenario &#39;can get back to list page from new page&#39; do
-</code></pre>
+ 
+   scenario 'can get back to list page from new page' do
+
+```
 
 
 
