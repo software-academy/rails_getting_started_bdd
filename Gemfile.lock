@@ -41,6 +41,8 @@ GEM
     capybara-webkit (1.0.0)
       capybara (~> 2.0, >= 2.0.2)
       json
+    chamber (0.0.4)
+      hashie (~> 2.0)
     coderay (1.0.9)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -59,6 +61,11 @@ GEM
       debugger-ruby_core_source (~> 1.2.3)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.3)
+    delayed_job (4.0.0)
+      activesupport (>= 3.0, < 4.1)
+    delayed_job_active_record (4.0.0)
+      activerecord (>= 3.0, < 4.1)
+      delayed_job (>= 3.0, < 4.1)
     diff-lcs (1.2.4)
     diffy (3.0.1)
     erubis (2.7.0)
@@ -72,6 +79,7 @@ GEM
       diff-lcs (~> 1.1)
       mime-types (~> 1.15)
       posix-spawn (~> 0.3.6)
+    hashie (2.0.5)
     hike (1.2.3)
     hirb (0.7.1)
     i18n (0.6.5)
@@ -208,8 +216,10 @@ PLATFORMS
 
 DEPENDENCIES
   capybara-webkit
+  chamber
   coffee-rails (~> 4.0.0)
   database_cleaner
+  delayed_job_active_record
   factory_girl_rails
   jazz_hands
   jbuilder (~> 1.2)

@@ -1,0 +1,14 @@
+development:
+
+
+staging:
+  SENDGRID_USERNAME:
+    environment: "SENDGRID_USERNAME"
+  SENDGRID_PASSWORD:
+    environment: "SENDGRID_PASSWORD"
+
+production:
+  SENDGRID_USERNAME:
+    environment: "SENDGRID_USERNAME"
+  SENDGRID_PASSWORD:
+    environment: "SENDGRID_PASSWORD"
